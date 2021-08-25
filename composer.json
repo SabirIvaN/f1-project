@@ -1,9 +1,12 @@
 {
-    "name": "laravel/laravel",
+    "name": "sabirivan/f1-project",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
-    "license": "MIT",
+    "description": "A web-application for a company that sells and refills cartridges, as well as repairs F1 printers.",
+    "keywords": [
+        "laravel",
+        "project",
+        "f1"
+    ],
     "require": {
         "php": "^7.3|^8.0",
         "fruitcake/laravel-cors": "^2.0",
