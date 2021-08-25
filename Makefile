@@ -11,6 +11,9 @@ seed:
 	php artisan migrate:fresh
 	php artisan db:seed
 
+lint:
+	composer phpcs
+
 test:
 	php artisan test
 
