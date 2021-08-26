@@ -1,9 +1,12 @@
 {
-    "name": "laravel/laravel",
+    "name": "sabirivan/f1-project",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
-    "license": "MIT",
+    "description": "A web-application for a company that sells and refills cartridges, as well as repairs F1 printers.",
+    "keywords": [
+        "laravel",
+        "project",
+        "f1"
+    ],
     "require": {
         "php": "^7.3|^8.0",
         "fruitcake/laravel-cors": "^2.0",
@@ -18,7 +21,9 @@
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
-        "phpunit/phpunit": "^9.3.3"
+        "phpunit/phpunit": "^9.3.3",
+        "roave/security-advisories": "dev-latest",
+        "squizlabs/php_codesniffer": "*"
     },
     "autoload": {
         "psr-4": {
@@ -33,6 +38,8 @@
         }
     },
     "scripts": {
+        "phpcs": "phpcs",
+        "phpunit": "phpunit",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
