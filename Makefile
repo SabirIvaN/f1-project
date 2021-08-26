@@ -17,5 +17,8 @@ lint:
 test:
 	php artisan test
 
+run:
+	npm run watch
+
 logs:
 	tail -f storage/logs/*.log
