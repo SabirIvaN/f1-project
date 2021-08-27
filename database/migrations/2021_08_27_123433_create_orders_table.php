@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
                 ->references('id')
                 ->on('services')
                 ->onDelete('cascade');
-            $table->string('title');
+            $table->string('name');
             $table->string('address');
             $table->text('comment');
             $table->timestamps();
