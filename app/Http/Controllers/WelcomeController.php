@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
@@ -13,7 +14,9 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        return view('web.welcome');
+        $services = Service::all();
+
+        return view('web.welcome', ['services' => $services]);
     }
 
     /**
