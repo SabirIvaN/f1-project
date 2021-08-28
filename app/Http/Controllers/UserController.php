@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class WelcomeController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $services = Service::all();
+        $users = User::all();
 
-        return view('web.content.welcome', ['services' => $services]);
+        return view('web.content.user.index', ['users' => $users]);
     }
 
     /**

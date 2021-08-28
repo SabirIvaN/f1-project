@@ -65,7 +65,7 @@
     </h3>
     <div class="container px-3">
         <div class="row text-center">
-            @each('web.service.subviews.element', $services, 'service')
+            @each('web.content.service.subviews.element', $services, 'service')
         </div>
         <p class="text-center">
             {!! __('content.welcome.services.remark') !!}

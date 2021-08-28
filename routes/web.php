@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\WelcomeController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +14,5 @@ use App\Http\Controllers\WelcomeController;
 */
 
 Route::resource('/', App\Http\Controllers\WelcomeController::class)->only(['index']);
+
+Route::resource('/contacts', App\Http\Controllers\UserController::class)->only(['index']);
