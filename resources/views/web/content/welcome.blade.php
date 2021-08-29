@@ -1,6 +1,6 @@
 @extends('web.layout.app')
 
-@section('title', __('pages.welcome.title'))
+@section('title', __('content.welcome.title'))
 
 @section('content')
 <section class="my-4 py-4">
@@ -28,12 +28,12 @@
                 </p>
             </div>
             <div class="col-md-5 fs-2 fw-bold text-center py-3">
-                ( ^ ‿ ~ )
+                <span class="smile-green">( ^ ‿ ~ )</span>
             </div>
         </div>
         <div class="row align-items-center mb-4">
             <div class="col-md-5 fs-2 fw-bold text-center py-3">
-                ( ◕ ‿ ◕ )
+                <span class="smile-yellow">( ◕ ‿ ◕ )</span>
             </div>
             <div class="col-md-7">
                 <h3 class="fs-3 fw-bold mb-3">
@@ -54,7 +54,7 @@
                 </p>
             </div>
             <div class="col-md-5 fs-2 fw-bold text-center py-3">
-                ♡( ◡ ‿ ◡ )
+                <span class="smile-red">♡( ◡ ‿ ◡ )</span>
             </div>
         </div>
     </div>

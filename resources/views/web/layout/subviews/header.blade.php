@@ -11,12 +11,12 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{!! route('index') !!}">
+                    <a class="nav-link {!! Checker::checkActive('/') !!}" href="{!! route('index') !!}">
                         {!! __('content.welcome.title') !!}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{!! route('contacts.index') !!}">
+                    <a class="nav-link {!! Checker::checkActive('contacts') !!}" href="{!! route('contacts.index') !!}">
                         {!! __('content.user.title') !!}
                     </a>
                 </li>

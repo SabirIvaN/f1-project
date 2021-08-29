@@ -17,7 +17,7 @@ class PositionSeeder extends Seeder
         DB::table('positions')->insert([
             'user_id' => 1,
             'title' => 'Главный менеджер',
-            'description' => 'Обращайтесь по вопросам сотрудничества и обслуживания.',
+            'description' => 'Обращайтесь по вопросам сотрудничества и обслуживания и финансов.',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

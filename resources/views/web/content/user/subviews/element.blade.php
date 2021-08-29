@@ -1,4 +1,4 @@
-<div class="col-sm-6 mb-5">
+<div class="col-sm-6 col-filing mb-5">
     <h4 class="fs-4 mb-4">
         {!! $user->position->title !!}:
     </h4>

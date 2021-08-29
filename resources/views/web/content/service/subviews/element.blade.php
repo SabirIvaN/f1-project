@@ -1,5 +1,5 @@
-<div class="col-sm-4">
-    <div class="card my-4 shadow-sm rounded-0">
+<div class="col-sm-4 col-filing">
+    <div class="card card-filing  my-4 shadow-sm rounded-0">
         <div class="card-header bg-white py-3">
             <h4 class="fs-4 fw-normal my-1">
                 {{ $service->title }}
