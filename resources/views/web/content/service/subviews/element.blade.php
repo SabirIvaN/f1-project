@@ -1,4 +1,4 @@
-<div class="col-sm-4 col-filing">
+<div class="col-sm-4 col-sm-filing">
     <div class="card card-filing  my-4 shadow-sm rounded-0">
         <div class="card-header bg-white py-3">
             <h4 class="fs-4 fw-normal my-1">
@@ -14,7 +14,7 @@
                 <li>{{ $item }}</li>
                 @endforeach
             </ul>
-            <button class="btn btn-lg btn-primary w-100 fs-5 text-uppercase rounded-0" type="button">
+            <button class="btn btn-lg btn-primary w-100 fs-5 text-uppercase rounded-0" type="button" data-bs-toggle="modal" data-bs-target="#modal-{!! $service->id !!}">
                 {!! __('content.service.subviews.element.button.title') !!}
             </button>
         </div>

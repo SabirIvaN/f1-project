@@ -19,6 +19,11 @@
     <footer>
         @include('web.layout.subviews.footer')
     </footer>
+    @if (url()->current() === route('index'))
+    <section>
+        @each('web.content.order.subviews.modal', $services, 'service')
+    </section>
+    @endif
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
