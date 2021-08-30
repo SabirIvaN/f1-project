@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('/', App\Http\Controllers\WelcomeController::class)->only(['index']);
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'show'])->name('welcome.show');
 
-Route::resource('/contacts', App\Http\Controllers\UserController::class)->only(['index']);
+Route::get('/contacts', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
+
+Route::post('/orders', [App\Http\Controllers\OrderController::class, 'store'])->name('order.store');

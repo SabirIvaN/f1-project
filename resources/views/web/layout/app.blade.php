@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <title>{{ __('layout.name') }} — @yield('title')</title>
+    <title>{{ __('layout.title') }} — @yield('title')</title>
 </head>
 <body>
     <header>
@@ -19,7 +19,7 @@
     <footer>
         @include('web.layout.subviews.footer')
     </footer>
-    @if (url()->current() === route('index'))
+    @if (url()->current() === route('welcome.show'))
     <section>
         @each('web.content.order.subviews.modal', $services, 'service')
     </section>

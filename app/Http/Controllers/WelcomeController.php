@@ -14,9 +14,7 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $services = Service::all();
-
-        return view('web.content.welcome', ['services' => $services]);
+        //
     }
 
     /**
@@ -46,9 +44,11 @@ class WelcomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $services = Service::all();
+
+        return view('web.content.welcome', ['services' => $services]);
     }
 
     /**
