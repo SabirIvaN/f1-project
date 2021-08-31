@@ -23,6 +23,7 @@ class OrderFactory extends Factory
     {
         return [
             'service_id' => $this->faker->randomElement(\App\Models\Service::all())['id'],
+            'city_id' => $this->faker->randomElement(\App\Models\City::all())['id'],
             'name' => $this->faker->name(),
             'address'  => $this->faker->sentence(),
             'comment' => $this->faker->text(),

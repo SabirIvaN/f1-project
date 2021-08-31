@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -46,9 +47,10 @@ class WelcomeController extends Controller
      */
     public function show()
     {
+        $cities = City::all();
         $services = Service::all();
 
-        return view('web.content.welcome', ['services' => $services]);
+        return view('web.content.welcome', ['services' => $services, 'cities' => $cities]);
     }
 
     /**

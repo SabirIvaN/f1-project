@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Service;
+use App\Models\City;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ServiceFactory extends Factory
+class CityFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Service::class;
+    protected $model = City::class;
 
     /**
      * Define the model's default state.
@@ -23,8 +23,6 @@ class ServiceFactory extends Factory
     {
         return [
             'name' => $this->faker->sentence(),
-            'price' => $this->faker->randomNumber(),
-            'description'  => $this->faker->text(),
         ];
     }
 }

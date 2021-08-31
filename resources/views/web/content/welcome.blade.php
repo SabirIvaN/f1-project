@@ -27,12 +27,12 @@
                     {!! __('content.welcome.benefits.first.description') !!}
                 </p>
             </div>
-            <div class="col-md-5 fs-2 fw-bold text-center py-3">
+            <div class="col-md-5 fs-1 fw-bold text-center py-3">
                 <span class="smile-green">( ^ ‿ ~ )</span>
             </div>
         </div>
         <div class="row align-items-center mb-4">
-            <div class="col-md-5 fs-2 fw-bold text-center py-3">
+            <div class="col-md-5 fs-1 fw-bold text-center py-3">
                 <span class="smile-yellow">( ◕ ‿ ◕ )</span>
             </div>
             <div class="col-md-7">
@@ -53,7 +53,7 @@
                     {!! __('content.welcome.benefits.third.description') !!}
                 </p>
             </div>
-            <div class="col-md-5 fs-2 fw-bold text-center py-3">
+            <div class="col-md-5 fs-1 fw-bold text-center py-3">
                 <span class="smile-red">♡( ◡ ‿ ◡ )</span>
             </div>
         </div>

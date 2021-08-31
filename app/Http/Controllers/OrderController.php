@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\Order;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -37,12 +38,16 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+
+        $city = City::find($data['city']);
         $service = Service::find($data['service']);
+
         $order = new Order();
 
         $order->fill($data);
-
-        $service->orders()->save($order);
+        $order->city()->associate($city);
+        $order->service()->associate($service);
+        $order->save();
 
         return redirect()->route('welcome.show');
     }

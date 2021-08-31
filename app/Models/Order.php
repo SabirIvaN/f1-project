@@ -15,6 +15,7 @@ class Order extends Model
      * @var array
      */
     protected $fillable = [
+        'service_id',
         'name',
         'address',
         'comment',
@@ -25,6 +26,14 @@ class Order extends Model
      */
     public function service()
     {
-        return $this->belongsTo(Post::class);
+        return $this->belongsTo(Service::class);
+    }
+
+    /**
+     * Get the city that owns the comment.
+     */
+    public function city()
+    {
+        return $this->belongsTo(City::class);
     }
 }

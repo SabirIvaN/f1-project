@@ -23,7 +23,7 @@ class PositionFactory extends Factory
     {
         return [
             'user_id' => $this->faker->randomElement(\App\Models\User::all())['id'],
-            'title' => $this->faker->sentence(),
+            'name' => $this->faker->sentence(),
             'description'  => $this->faker->text(),
         ];
     }

@@ -1,7 +1,8 @@
+@csrf
 <input type="hidden" id="service" name="service" value="{!! $service->id !!}">
 <div class="modal-header text-center py-3">
     <h5 class="modal-title w-100 fs-4" id="exampleModalLabel">
-        {!! $service->title !!}
+        {!! $service->name !!}
     </h5>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
@@ -26,11 +27,23 @@
             <input type="email" class="form-control rounded-0" id="email" name="email" placeholder="{!! __('content.order.subviews.modal.email.placeholder') !!}">
         </div>
     </div>
-    <div class="mb-3">
-        <label for="address" class="col-form-label">
-            {!! __('content.order.subviews.modal.address.title') !!}
-        </label>
-        <input type="text" class="form-control rounded-0" id="address" name="address" placeholder="{!! __('content.order.subviews.modal.address.placeholder') !!}">
+    <div class="row row-cols-2">
+        <div class="col col-md-filing mb-3">
+            <label for="city" class="col-form-label">
+                {!! __('content.order.subviews.modal.place.city.title') !!}
+            </label>
+            <select class="form-select rounded-0" id="city" name="city">
+            @foreach ($cities as $city)
+                <option value="{!! $city->id !!}" @if($city->id === 1) selected @endif>{!! $city->name !!}</option>
+            @endforeach
+            </select>
+        </div>
+        <div class="col col-md-filing mb-3">
+            <label for="address" class="col-form-label">
+                {!! __('content.order.subviews.modal.place.address.title') !!}
+            </label>
+            <input type="text" class="form-control rounded-0" id="address" name="address" placeholder="{!! __('content.order.subviews.modal.place.address.placeholder') !!}">
+        </div>
     </div>
     <div class="mb-3">
         <label for="comment" class="col-form-label">

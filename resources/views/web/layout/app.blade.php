@@ -21,7 +21,7 @@
     </footer>
     @if (url()->current() === route('welcome.show'))
     <section>
-        @each('web.content.order.subviews.modal', $services, 'service')
+        @include('web.content.order.subviews.pop-up')
     </section>
     @endif
     <script src="{{ mix('js/app.js') }}"></script>

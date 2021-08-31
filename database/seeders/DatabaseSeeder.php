@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(2)->create();
         // \App\Models\Service::factory(3)->create();
         // \App\Models\Position::factory(2)->create();
+        // \App\Models\City::factory(5)->create();
         // \App\Models\Order::factory(10)->create();
 
         /* Seeders */
@@ -25,6 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(ServiceSeeder::class);
         $this->call(PositionSeeder::class);
+        $this->call(CitySeeder::class);
         // $this->call(OrderSeeder::class);
     }
 }

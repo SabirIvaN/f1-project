@@ -2,7 +2,7 @@
     <div class="card card-filing  my-4 shadow-sm rounded-0">
         <div class="card-header bg-white py-3">
             <h4 class="fs-4 fw-normal my-1">
-                {{ $service->title }}
+                {{ $service->name }}
             </h4>
         </div>
         <div class="card-body py-3">

@@ -20,6 +20,11 @@ class CreateOrdersTable extends Migration
                 ->references('id')
                 ->on('services')
                 ->onDelete('cascade');
+            $table->unsignedBigInteger('city_id');
+            $table->foreign('city_id')
+                ->references('id')
+                ->on('cities')
+                ->onDelete('cascade');
             $table->string('name');
             $table->string('address');
             $table->text('comment');
