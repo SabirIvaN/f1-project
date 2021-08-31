@@ -1,3 +1,4 @@
+@foreach ($services as $service)
 <div class="col-sm-4 col-sm-filing">
     <div class="card card-filing  my-4 shadow-sm rounded-0">
         <div class="card-header bg-white py-3">
@@ -20,3 +21,4 @@
         </div>
     </div>
 </div>
+@endforeach
