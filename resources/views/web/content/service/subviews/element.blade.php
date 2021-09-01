@@ -1,6 +1,6 @@
 @foreach ($services as $service)
 <div class="col-sm-4 col-sm-filing">
-    <div class="card card-filing  my-4 shadow-sm rounded-0">
+    <div class="card card-filing  my-4 shadow-sm">
         <div class="card-header bg-white py-3">
             <h4 class="fs-4 fw-normal my-1">
                 {!! $service->name !!}
@@ -15,7 +15,7 @@
                 <li>{!! $item !!}</li>
                 @endforeach
             </ul>
-            <a class="btn btn-lg btn-primary w-100 fs-5 text-uppercase rounded-0" href="{!! route('order.create', $service->id) !!}" data-bs-toggle="modal" data-bs-target="#modal-{!! $service->id !!}">
+            <a class="btn btn-lg btn-primary w-100 fs-5 text-uppercase" href="{!! route('order.create', $service->id) !!}" data-bs-toggle="modal" data-bs-target="#modal-{!! $service->id !!}">
                 {!! __('content.service.subviews.element.button.title') !!}
             </a>
         </div>

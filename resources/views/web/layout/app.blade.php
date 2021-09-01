@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{!! str_replace('_', '-', app()->getLocale()) !!}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{!! mix('css/app.css') !!}">
 
-    <title>{{ __('layout.title') }} — @yield('title')</title>
+    <title>{!! __('layout.title') !!} — @yield('title')</title>
 </head>
 <body>
     <header>
@@ -20,8 +20,8 @@
         <div class="container">
         @if($errors->any())
             @foreach($errors->all() as $error)
-            <div class="container alert alert-danger my-5 py-5 rounded-0" role="alert">
-                {{ $error }}
+            <div class="container alert alert-danger my-5 py-5" role="alert">
+                {!! $error !!}
             </div>
             @endforeach
         @endif
