@@ -8,7 +8,7 @@
         {!! __('content.user.contacts.title') !!}
     </h2>
     <div class="row row-cols-2 py-5">
-        @each('web.content.user.subviews.element', $users, 'user')
+        @include('web.content.user.subviews.element')
     </div>
 </section>
 @endsection

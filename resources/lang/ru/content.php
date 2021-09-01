@@ -6,7 +6,7 @@ return [
     ],
     'order' => [
         'subviews' => [
-            'modal' => [
+            'form' => [
                 'name' => [
                     'placeholder' => 'Фамилия Имя Отчество',
                     'title' => 'Как к Вам можно обратиться?',

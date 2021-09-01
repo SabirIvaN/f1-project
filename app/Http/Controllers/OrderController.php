@@ -10,6 +10,20 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
     /**
+     * Show the form for creating a new resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function create($id)
+    {
+        $cities = City::all();
+        $service = Service::find($id);
+
+        return view('web.content.order.create', ['cities' => $cities, 'service' => $service]);
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

@@ -1,3 +1,4 @@
+@foreach ($users as $user)
 <div class="col-sm-6 col-sm-filing mb-5">
     <h4 class="fs-4 mb-4">
         {!! $user->position->name !!}:
@@ -12,3 +13,4 @@
         {!!$user->email !!}
     </b>
 </div>
+@endforeach

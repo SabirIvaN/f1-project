@@ -17,4 +17,6 @@ Route::get('/', [App\Http\Controllers\WelcomeController::class, 'show'])->name('
 
 Route::get('/contacts', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
 
-Route::post('/orders', [App\Http\Controllers\OrderController::class, 'store'])->name('order.store');
+Route::get('/orders/create/{id}', [App\Http\Controllers\OrderController::class, 'create'])->name('order.create');
+
+Route::post('/orders/store', [App\Http\Controllers\OrderController::class, 'store'])->name('order.store');

@@ -5,4 +5,6 @@ require('./bootstrap');
 require('inputmask');
 
 // Components
+require('./components/btn-close');
+require('./components/navbar');
 require('./components/phone-mask');

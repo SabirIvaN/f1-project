@@ -5,10 +5,10 @@
                 {!! __('layout.title') !!}
             </a>
         </h1>
-        <button class="navbar-toggler rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler rounded-0 d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-between d-block" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link {!! Checker::checkActive('/') !!}" href="{!! route('welcome.show') !!}">
