@@ -234,6 +234,7 @@ return [
         /* Custom aliases */
 
         'Checker' => App\Helpers\Checker::class,
+        'Console' => App\Helpers\Console::class,
     ],
 
 ];

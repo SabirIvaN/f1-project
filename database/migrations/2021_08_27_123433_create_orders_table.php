@@ -26,6 +26,8 @@ class CreateOrdersTable extends Migration
                 ->on('cities')
                 ->onDelete('cascade');
             $table->string('name');
+            $table->string('phone');
+            $table->string('email');
             $table->string('address');
             $table->text('comment');
             $table->timestamps();

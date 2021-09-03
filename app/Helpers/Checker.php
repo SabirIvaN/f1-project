@@ -9,7 +9,7 @@ class Checker
      *
      * @return string
      */
-    public static function checkActive(string $url): string
+    public static function activeLink(string $url): string
     {
         if (request()->is($url) || request()->is("{$url}/*")) {
             return 'active';

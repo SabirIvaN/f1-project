@@ -15,7 +15,11 @@ class Order extends Model
      * @var array
      */
     protected $fillable = [
+        'service_id',
+        'city_id',
         'name',
+        'phone',
+        'email',
         'address',
         'comment',
     ];

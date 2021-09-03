@@ -1,6 +1,6 @@
 <form action="{!! route('order.store') !!}" method="POST">
     @csrf
-    <input type="hidden" id="service" name="service" value="{!! $service->id !!}">
+    <input type="hidden" id="service" name="service_id" value="{!! $service->id !!}">
     <div class="modal-header @if(url()->current() !== route('welcome.show')) border-bottom-0 pt-4 pb-1 @endif text-center py-3">
         <h5 class="modal-title @if(url()->current() !== route('welcome.show')) fw-bold @endif w-100 fs-4" id="exampleModalLabel">
             {!! $service->name !!}
@@ -35,7 +35,7 @@
                 <label for="city" class="col-form-label">
                     {!! __('content.order.subviews.form.place.city.title') !!}
                 </label>
-                <select class="form-select" id="city" name="city">
+                <select class="form-select" id="city" name="city_id">
                 @foreach ($cities as $city)
                     <option value="{!! $city->id !!}" @if($city->id === 1) selected @endif>{!! $city->name !!}</option>
                 @endforeach
