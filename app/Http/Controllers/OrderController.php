@@ -34,6 +34,7 @@ class OrderController extends Controller
         $data = $request->all();
 
         $order = new Order();
+
         $order->fill($data);
         $order->city()->associate(City::find($data['city_id']));
         $order->service()->associate(Service::find($data['service_id']));

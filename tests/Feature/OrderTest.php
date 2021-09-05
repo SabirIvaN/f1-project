@@ -2,25 +2,16 @@
 
 namespace Tests\Feature;
 
-use App\Helpers\Console;
-
-use App\Models\User;
+use Tests\TestCase;
 use App\Models\City;
 use App\Models\Order;
 use App\Models\Service;
-
-use Faker\Factory;
-
-use Tests\TestCase;
-
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Artisan;
 
 class OrderTest extends TestCase
 {
     use RefreshDatabase;
 
-    private User $user;
     private City $city;
     private Service $service;
     private array $order;
@@ -29,19 +20,9 @@ class OrderTest extends TestCase
     {
         parent::setUp();
 
-        $faker = Factory::create();
-
-        $this->user = User::factory()->create();
         $this->city = City::factory()->create();
         $this->service = Service::factory()->create();
         $this->order = Order::factory()
-            ->state([
-                'name' => Factory::create()->name(),
-                'phone' => $faker->phoneNumber(),
-                'email' => $faker->email(),
-                'address' => $faker->address(),
-                'comment' => $faker->text(),
-            ])
             ->for($this->city)
             ->for($this->service)
             ->make()
@@ -66,10 +47,10 @@ class OrderTest extends TestCase
      */
     public function testStore()
     {
-        Console::output($this->user);
-
+        $this->withoutMiddleware();
         $this->post(route('order.store'), $this->order)
             ->assertSessionHasNoErrors()
             ->assertRedirect();
+        $this->assertDatabaseHas('orders', $this->order);
     }
 }
