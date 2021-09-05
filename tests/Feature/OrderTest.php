@@ -3,11 +3,16 @@
 namespace Tests\Feature;
 
 use App\Helpers\Console;
+
+use App\Models\User;
 use App\Models\City;
 use App\Models\Order;
 use App\Models\Service;
+
 use Faker\Factory;
+
 use Tests\TestCase;
+
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Artisan;
 
@@ -15,18 +20,18 @@ class OrderTest extends TestCase
 {
     use RefreshDatabase;
 
+    private User $user;
     private City $city;
     private Service $service;
-    private Order $orders;
+    private array $order;
 
     protected function setUp(): void
     {
         parent::setUp();
 
-        Artisan::call('db:seed');
-
         $faker = Factory::create();
 
+        $this->user = User::factory()->create();
         $this->city = City::factory()->create();
         $this->service = Service::factory()->create();
         $this->order = Order::factory()
@@ -39,8 +44,8 @@ class OrderTest extends TestCase
             ])
             ->for($this->city)
             ->for($this->service)
-            ->make();
-        Console::output($this->city);
+            ->make()
+            ->toArray();
     }
 
     /**
@@ -52,8 +57,6 @@ class OrderTest extends TestCase
     {
         $this->get(route('order.create', $this->service))
             ->assertOk();
-
-        $this->assertDatabaseHas('orders', ['id' => 1]);
     }
 
     /**
@@ -63,8 +66,10 @@ class OrderTest extends TestCase
      */
     public function testStore()
     {
-        // $this->post(route('order.store'), $orderArray)->assertStatus(403);
+        Console::output($this->user);
 
-        // $this->assertDatabaseHas('orders', $orderArray);
+        $this->post(route('order.store'), $this->order)
+            ->assertSessionHasNoErrors()
+            ->assertRedirect();
     }
 }
