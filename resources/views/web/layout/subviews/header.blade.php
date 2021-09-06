@@ -12,19 +12,19 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link {!! Checker::activeLink('/') !!}" href="{!! route('welcome.show') !!}">
-                        {!! __('content.welcome.title') !!}
+                        {!! __('views.web.layout.subviews.header.welcome.title') !!}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {!! Checker::activeLink('contacts') !!}" href="{!! route('user.index') !!}">
-                        {!! __('content.user.title') !!}
+                        {!! __('views.web.layout.subviews.header.user.title') !!}
                     </a>
                 </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        {!! __('content.admin.title') !!}
+                        {!! __('views.web.layout.subviews.header.admin.title') !!}
                     </a>
                 </li>
             </ul>

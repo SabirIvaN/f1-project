@@ -1,27 +1,27 @@
 @extends('web.layout.app')
 
-@section('title', __('content.welcome.title'))
+@section('title', __('views.web.layout.subviews.header.welcome.title'))
 
 @section('content')
 <section class="my-4 py-4">
     <h2 class="fs-1 fw-bold my-5">
-        {!! __('content.welcome.banners.start.title') !!}
+        {!! __('views.web.content.welcome.banner.start.title') !!}
     </h2>
     <p class="fs-4">
-        {!! __('content.welcome.banners.start.description') !!}
+        {!! __('views.web.content.welcome.banner.start.description') !!}
     </p>
 </section>
 <section class="my-4 py-4">
     <h3 class="fs-1 fw-bold text-center my-5">
-        {!! __('content.welcome.benefits.title') !!}
+        {!! __('views.web.content.welcome.benefit.title') !!}
     </h3>
     <div class="row align-items-center mb-4">
         <div class="col-md-7">
             <h3 class="fs-3 fw-bold mb-3">
-                {!! __('content.welcome.benefits.first.title') !!}
+                {!! __('views.web.content.welcome.benefit.first.title') !!}
             </h3>
             <p>
-                {!! __('content.welcome.benefits.first.description') !!}
+                {!! __('views.web.content.welcome.benefit.first.description') !!}
             </p>
         </div>
         <div class="col-md-5 fs-1 fw-bold text-center py-3">
@@ -34,20 +34,20 @@
         </div>
         <div class="col-md-7">
             <h3 class="fs-3 fw-bold mb-3">
-                {!! __('content.welcome.benefits.second.title') !!}
+                {!! __('views.web.content.welcome.benefit.second.title') !!}
             </h3>
             <p>
-                {!! __('content.welcome.benefits.second.description') !!}
+                {!! __('views.web.content.welcome.benefit.second.description') !!}
             </p>
         </div>
     </div>
     <div class="row align-items-center mb-4">
         <div class="col-md-7">
             <h3 class="fs-3 fw-bold mb-3">
-                {!! __('content.welcome.benefits.third.title') !!}
+                {!! __('views.web.content.welcome.benefit.third.title') !!}
             </h3>
             <p>
-                {!! __('content.welcome.benefits.third.description') !!}
+                {!! __('views.web.content.welcome.benefit.third.description') !!}
             </p>
         </div>
         <div class="col-md-5 fs-1 fw-bold text-center py-3">
@@ -57,20 +57,20 @@
 </section>
 <section class="my-4 pb-4">
     <h3 class="fs-1 fw-bold text-center my-5">
-        {!! __('content.welcome.services.title') !!}
+        {!! __('views.web.content.welcome.service.title') !!}
     </h3>
     <div class="container px-3">
         <div class="row text-center">
             @include('web.content.service.subviews.element')
         </div>
         <p class="text-center">
-            {!! __('content.welcome.services.remark') !!}
+            {!! __('views.web.content.welcome.service.remark') !!}
         </p>
     </div>
 </section>
 <section class="mt-4 mb-5 py-5">
     <h2 class="fs-1 fw-bold text-center">
-        {!! __('content.welcome.banners.end.title') !!}
+        {!! __('views.web.content.welcome.banner.end.title') !!}
     </h2>
 </section>
 @endsection

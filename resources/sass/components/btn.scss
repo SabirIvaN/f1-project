@@ -1,0 +1,10 @@
+.btn-close {
+    color: transparent;
+
+    &:active,
+    &:focus,
+    &:hover,
+    &:visited {
+        color: transparent;
+    }
+}

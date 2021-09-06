@@ -40,7 +40,7 @@ class OrderController extends Controller
         $order->service()->associate(Service::find($data['service_id']));
         $order->save();
 
-        flash(__('content.service.flash.order'))->success()->important();
+        flash(__('views.web.content.service.flash.order'))->success()->important();
 
         return redirect()->route('welcome.show');
     }

@@ -16,7 +16,7 @@
                 @endforeach
             </ul>
             <a class="btn btn-lg btn-primary w-100 fs-5 text-uppercase" href="{!! route('order.create', $service->id) !!}" data-bs-toggle="modal" data-bs-target="#modal-{!! $service->id !!}">
-                {!! __('content.service.subviews.element.button.title') !!}
+                {!! __('views.web.content.service.subviews.element.button.title') !!}
             </a>
         </div>
     </div>
