@@ -15,35 +15,35 @@
     </div>
     <div class="modal-body py-3">
         <div class="mb-3">
-            <label for="name" class="col-form-label">
-                {!! __('views.web.content.order.subviews.form.name.title') !!}
-            </label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="{!! __('views.web.content.order.subviews.form.name.placeholder') !!}">
+
+            {!! Form::label('name', __('views.web.content.order.subviews.form.name.title'), ['class' => 'col-form-label']) !!}
+
+            {!! Form::text('name', null, ['class'=> 'form-control', 'id' => 'name', 'placeholder' => __('views.web.content.order.subviews.form.name.placeholder')]) !!}
+
         </div>
         <div class="row row-cols-2">
             <div class="col col-md-filing mb-3">
-                <label for="phone" class="col-form-label">
-                    {!! __('views.web.content.order.subviews.form.phone.title') !!}
-                </label>
-                <input type="tel" class="form-control" id="phone" name="phone" placeholder="{!! __('views.web.content.order.subviews.form.phone.placeholder') !!}">
+
+                {!! Form::label('phone', __('views.web.content.order.subviews.form.phone.title'), ['class' => 'col-form-label']) !!}
+
+                {!! Form::tel('phone', null, ['class'=> 'form-control', 'id' => 'phone', 'placeholder' => __('views.web.content.order.subviews.form.phone.placeholder')]) !!}
+
             </div>
             <div class="col col-md-filing mb-3">
-                <label for="email" class="col-form-label">
-                    {!! __('views.web.content.order.subviews.form.email.title') !!}
-                </label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="{!! __('views.web.content.order.subviews.form.email.placeholder') !!}">
+
+                {!! Form::label('email', __('views.web.content.order.subviews.form.email.title'), ['class' => 'col-form-label']) !!}
+
+                {!! Form::email('email', null, ['class'=> 'form-control', 'id' => 'email', 'placeholder' => __('views.web.content.order.subviews.form.email.placeholder')]) !!}
+
             </div>
         </div>
         <div class="row row-cols-2">
             <div class="col col-md-filing mb-3">
-                <label for="city" class="col-form-label">
-                    {!! __('views.web.content.order.subviews.form.place.city.title') !!}
-                </label>
-                <select class="form-select" id="city" name="city_id">
-                @foreach ($cities as $city)
-                    <option value="{!! $city->id !!}" @if($city->id === 1) selected @endif>{!! $city->name !!}</option>
-                @endforeach
-                </select>
+
+                {!! Form::label('city', __('views.web.content.order.subviews.form.place.city.title'), ['class' => 'col-form-label']) !!}
+
+                {!! Form::select('city_id', $cities->pluck('name', 'id'), null, ['class' => 'form-select', 'id' => 'city']) !!}
+
             </div>
             <div class="col col-md-filing mb-3">
                 <label for="address" class="col-form-label">
