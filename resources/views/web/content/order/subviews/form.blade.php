@@ -1,13 +1,17 @@
 {!! Form::open(['url' => route('order.store'), 'method' => 'POST']) !!}
-    @csrf
-    <input type="hidden" id="service" name="service_id" value="{!! $service->id !!}">
+
+    {!! Form::hidden('service_id', $service->id) !!}
+
     <div class="modal-header @if(url()->current() !== route('welcome.show')) border-bottom-0 pt-4 pb-1 @endif text-center py-3">
+
         <h5 class="modal-title @if(url()->current() !== route('welcome.show')) fw-bold @endif w-100 fs-4" id="exampleModalLabel">
             {!! $service->name !!}
         </h5>
+
         @if (url()->current() === route('welcome.show'))
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            {!! Form::button(__('views.web.layout.button.close.title'), ['class' => 'btn-close', 'data-bs-dismiss' => 'modal', 'aria-label' => 'Close']) !!}
         @endif
+
     </div>
     <div class="modal-body py-3">
         <div class="mb-3">

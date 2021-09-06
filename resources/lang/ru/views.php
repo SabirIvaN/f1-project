@@ -1,15 +1,6 @@
 <?php
 
 return [
-    'vendor' => [
-        'flash' => [
-            'button' => [
-                'close' => [
-                    'title' => 'Закрыть',
-                ],
-            ],
-        ],
-    ],
     'web' => [
         'content' => [
             'order' => [
@@ -111,6 +102,11 @@ return [
                     'admin' => [
                         'title' => 'Вы администратор?'
                     ],
+                ],
+            ],
+            'button' => [
+                'close' => [
+                    'title' => 'Закрыть',
                 ],
             ],
             'title' => 'F1',
