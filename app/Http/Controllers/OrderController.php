@@ -36,8 +36,8 @@ class OrderController extends Controller
         $order = new Order();
 
         $order->fill($data);
-        $order->city()->associate(City::find($data['city_id']));
-        $order->service()->associate(Service::find($data['service_id']));
+        $order->city()->associate(City::find($data['city']));
+        $order->service()->associate(Service::find($data['service']));
         $order->save();
 
         flash(__('views.web.content.service.flash.order'))->success()->important();
