@@ -1,6 +1,6 @@
 {!! Form::open(['url' => route('order.store'), 'method' => 'POST']) !!}
 
-    {!! Form::hidden('service', $service->id) !!}
+    {!! Form::hidden('service_id', $service->id) !!}
 
     <div class="modal-header @if(url()->current() !== route('welcome.show')) border-bottom-0 pt-4 pb-1 @endif text-center py-3">
 
@@ -42,7 +42,7 @@
 
                 {!! Form::label('city', __('views.web.content.order.subviews.form.place.city.title'), ['class' => 'col-form-label']) !!}
 
-                {!! Form::select('city', $cities->pluck('name', 'id'), null, ['class' => 'form-select', 'id' => 'city']) !!}
+                {!! Form::select('city_id', $cities->pluck('name', 'id'), null, ['class' => 'form-select', 'id' => 'city']) !!}
 
             </div>
             <div class="col col-md-filing mb-3">
