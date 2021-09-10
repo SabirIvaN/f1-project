@@ -5,7 +5,12 @@
 @section('content')
 <section class="my-4 py-4">
     <h2 class="fs-1 fw-bold my-5">
-        {!! __('views.web.content.welcome.banner.start.title') !!}
+        <span id="start-banner-ru">
+            {!! __('views.web.content.welcome.banner.start.title.ru') !!}
+        </span>
+        <span class="d-none" id="start-banner-en">
+            {!! __('views.web.content.welcome.banner.start.title.en') !!}
+        </span>
     </h2>
     <p class="fs-4">
         {!! __('views.web.content.welcome.banner.start.description') !!}
@@ -70,7 +75,12 @@
 </section>
 <section class="mt-4 mb-5 py-5">
     <h2 class="fs-1 fw-bold text-center">
-        {!! __('views.web.content.welcome.banner.end.title') !!}
+        <span id="end-banner-ru">
+            {!! __('views.web.content.welcome.banner.end.title.ru') !!}
+        </span>
+        <span class="d-none" id="end-banner-en">
+            {!! __('views.web.content.welcome.banner.end.title.en') !!}
+        </span>
     </h2>
 </section>
 @endsection

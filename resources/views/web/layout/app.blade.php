@@ -9,7 +9,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{!! mix('css/app.css') !!}">
 
-    <title>{!! __('layout.title') !!} — @yield('title')</title>
+    <title>{!! __('views.web.layout.title') !!} — @yield('title')</title>
 </head>
 <body>
     <header>
