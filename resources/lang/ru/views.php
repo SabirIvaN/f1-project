@@ -46,6 +46,7 @@ return [
                         'button' => [
                             'title' => 'Выбрать',
                         ],
+                        'currency' => '₽',
                     ],
                 ],
             ],

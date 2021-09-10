@@ -2,7 +2,7 @@
     <div class="container my-2">
         <h1>
             <a class="navbar-brand fs-1 fw-bold" href="#">
-                {!! __('layout.title') !!}
+                {!! __('views.web.layout.title') !!}
             </a>
         </h1>
         <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

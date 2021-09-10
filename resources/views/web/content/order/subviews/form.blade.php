@@ -46,22 +46,24 @@
 
             </div>
             <div class="col col-md-filing mb-3">
-                <label for="address" class="col-form-label">
-                    {!! __('views.web.content.order.subviews.form.place.address.title') !!}
-                </label>
-                <input type="text" class="form-control" id="address" name="address" placeholder="{!! __('views.web.content.order.subviews.form.place.address.placeholder') !!}">
+
+                {!! Form::label('address', __('views.web.content.order.subviews.form.place.address.title'), ['class' => 'col-form-label']) !!}
+
+                {!! Form::text('address', null, ['class' => 'form-control', 'id' => 'address', 'placeholder' => __('views.web.content.order.subviews.form.place.address.placeholder')]) !!}
+
             </div>
         </div>
         <div class="mb-3">
-            <label for="comment" class="col-form-label">
-                {!! __('views.web.content.order.subviews.form.comment.title') !!}
-            </label>
-            <textarea class="form-control" rows="5" id="comment" name="comment" placeholder="{!! __('views.web.content.order.subviews.form.comment.placeholder') !!}"></textarea>
+
+            {!! Form::label('comment', __('views.web.content.order.subviews.form.comment.title')) !!}
+
+            {!! Form::textarea('comment', null, ['class' => 'form-control', 'id' => 'comment', 'rows' => '5', 'placeholder' => __('views.web.content.order.subviews.form.comment.placeholder')]) !!}
+
         </div>
     </div>
     <div class="modal-footer @if(url()->current() !== route('welcome.show')) border-top-0 pb-4 pt-0 @else py-3 @endif">
-        <button type="submit" class="btn btn-primary text-uppercase">
-            {!! __('views.web.content.order.subviews.form.button.title') !!}
-        </button>
+
+        {!! Form::submit(__('views.web.content.order.subviews.form.button.title'), ['class' => 'btn btn-primary text-uppercase']) !!}
+
     </div>
 {!! Form::close() !!}

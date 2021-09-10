@@ -8,7 +8,7 @@
         </div>
         <div class="card-body py-3">
             <h5 class="fs-1 fw-bold my-1">
-                ₽{!! $service->price !!}
+                {!! __('views.web.content.service.subviews.element.currency') !!}{!! $service->price !!}
             </h5>
             <ul class="list-unstyled my-4">
                 @foreach(explode(', ', $service->description) as $item)
