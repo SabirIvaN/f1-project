@@ -1,0 +1,25 @@
+html,
+body {
+    @extend .w-100;
+    @extend .h-100;
+}
+
+body {
+    font-display: swap;
+    font-family: "Consolas", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .justify-content-between;
+}
+
+* {
+    @extend .rounded-0;
+}
+
+textarea {
+    resize: none;
+}

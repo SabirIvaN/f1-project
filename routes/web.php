@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'show'])->name('welcome.show');
+
+Route::get('/contacts', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
+
+Route::prefix('/orders')->group(function() {
+
+    Route::get('/create/{id}', [App\Http\Controllers\OrderController::class, 'create'])->name('order.create');
+
+    Route::post('/store', [App\Http\Controllers\OrderController::class, 'store'])->name('order.store');
+
 });
