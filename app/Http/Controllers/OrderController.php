@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\City;
 use App\Models\Order;
 use App\Models\Service;
+use App\Notifications\User\OrderNotification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 
 class OrderController extends Controller
 {
@@ -40,7 +42,9 @@ class OrderController extends Controller
         $order->service()->associate(Service::find($data['service_id']));
         $order->save();
 
-        flash(__('views.web.content.service.flash.order'))->success()->important();
+        Notification::route('mail', $order->email)->notify(new OrderNotification($order));
+
+        flash(__('vendor.flash.order'))->success()->important();
 
         return redirect()->route('welcome.show');
     }

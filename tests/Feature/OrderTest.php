@@ -48,6 +48,7 @@ class OrderTest extends TestCase
     public function testStore()
     {
         $this->withoutMiddleware();
+        $this->withoutNotifications();
         $this->post(route('order.store'), $this->order)
             ->assertSessionHasNoErrors()
             ->assertRedirect();
