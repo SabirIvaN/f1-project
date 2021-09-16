@@ -29,13 +29,13 @@
                 {!! __('web.content.welcome.benefit.first.description') !!}
             </p>
         </div>
-        <div class="col-md-5 fs-1 fw-bold text-center py-3">
-            <span class="smile-green">( ^ ‿ ~ )</span>
+        <div class="col-md-5 fw-bold text-center py-3">
+            <pre class="fs-1 smile-green">( ^ ‿ ~ )</pre>
         </div>
     </div>
     <div class="row align-items-center mb-4">
-        <div class="col-md-5 fs-1 fw-bold text-center py-3">
-            <span class="smile-yellow">( ◕ ‿ ◕ )</span>
+        <div class="col-md-5 fw-bold text-center py-3">
+            <pre class="fs-1 smile-yellow">( o ‿ o )</pre>
         </div>
         <div class="col-md-7">
             <h3 class="fs-3 fw-bold mb-3">
@@ -52,11 +52,11 @@
                 {!! __('web.content.welcome.benefit.third.title') !!}
             </h3>
             <p>
-                {!! __('web.content.welcome.benefit.third.description') !!}
+                {!! __('web.content.welcome.benefit.third.description')  !!}
             </p>
         </div>
-        <div class="col-md-5 fs-1 fw-bold text-center py-3">
-            <span class="smile-red">♡( ◡ ‿ ◡ )</span>
+        <div class="col-md-5 fw-bold text-center py-3">
+            <pre class="fs-1 smile-red">♡( ◡ ‿ ◡ )</pre>
         </div>
     </div>
 </section>

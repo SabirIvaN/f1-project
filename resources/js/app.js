@@ -9,4 +9,5 @@ require('typed.js');
 require('./components/btn');
 require('./components/masks');
 require('./components/navbar');
+require('./components/smile');
 require('./components/typed');

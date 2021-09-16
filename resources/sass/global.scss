@@ -20,6 +20,15 @@ body {
     @extend .rounded-0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+    @extend .m-0;
+    @extend .p-0;
+}
+
 textarea {
     resize: none;
 }
