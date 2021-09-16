@@ -43,8 +43,8 @@ class OrderNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage())
-            ->line('Спасибо за заказ! Мы скоро с Вами свяжемся.')
-            ->line('Пожалуйста, проверьте информацию о Вашем заказе. Если Вы найдете ошибку, свяжитесь с нами.')
+            ->line(__('notification.order.gratitude'))
+            ->line(__('notification.order.check'))
             ->markdown('vendor.notifications.email', ['order' => $this->order]);
     }
 

@@ -29,7 +29,7 @@ class CreateOrdersTable extends Migration
             $table->string('phone');
             $table->string('email');
             $table->string('address');
-            $table->text('comment');
+            $table->text('comment')->nullable();
             $table->timestamps();
         });
     }

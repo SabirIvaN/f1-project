@@ -18,7 +18,7 @@
 
             {!! Form::label('name', __('web.content.order.subviews.form.name.title'), ['class' => 'col-form-label']) !!}
 
-            {!! Form::text('name', null, ['class'=> 'form-control', 'id' => 'name', 'placeholder' => __('web.content.order.subviews.form.name.placeholder')]) !!}
+            {!! Form::text('name', null, ['class'=> 'form-control', 'id' => 'name', 'placeholder' => __('web.content.order.subviews.form.name.placeholder'), 'required']) !!}
 
         </div>
         <div class="row row-cols-2">
@@ -26,14 +26,14 @@
 
                 {!! Form::label('phone', __('web.content.order.subviews.form.phone.title'), ['class' => 'col-form-label']) !!}
 
-                {!! Form::tel('phone', null, ['class'=> 'form-control', 'id' => 'phone', 'placeholder' => __('web.content.order.subviews.form.phone.placeholder')]) !!}
+                {!! Form::tel('phone', null, ['class'=> 'form-control', 'id' => 'phone', 'placeholder' => __('web.content.order.subviews.form.phone.placeholder'), 'required']) !!}
 
             </div>
             <div class="col col-md-filing mb-3">
 
                 {!! Form::label('email', __('web.content.order.subviews.form.email.title'), ['class' => 'col-form-label']) !!}
 
-                {!! Form::email('email', null, ['class'=> 'form-control', 'id' => 'email', 'placeholder' => __('web.content.order.subviews.form.email.placeholder')]) !!}
+                {!! Form::email('email', null, ['class'=> 'form-control', 'id' => 'email', 'placeholder' => __('web.content.order.subviews.form.email.placeholder'), 'required']) !!}
 
             </div>
         </div>
@@ -49,7 +49,7 @@
 
                 {!! Form::label('address', __('web.content.order.subviews.form.place.address.title'), ['class' => 'col-form-label']) !!}
 
-                {!! Form::text('address', null, ['class' => 'form-control', 'id' => 'address', 'placeholder' => __('web.content.order.subviews.form.place.address.placeholder')]) !!}
+                {!! Form::text('address', null, ['class' => 'form-control', 'id' => 'address', 'placeholder' => __('web.content.order.subviews.form.place.address.placeholder'), 'required']) !!}
 
             </div>
         </div>

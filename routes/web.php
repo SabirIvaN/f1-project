@@ -19,6 +19,5 @@ Route::get('/contacts', [App\Http\Controllers\UserController::class, 'index'])->
 
 Route::prefix('/orders')->group(function () {
     Route::get('/create/{id}', [App\Http\Controllers\OrderController::class, 'create'])->name('order.create');
-
     Route::post('/store', [App\Http\Controllers\OrderController::class, 'store'])->name('order.store');
 });
