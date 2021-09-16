@@ -48,6 +48,6 @@ class OrderTest extends TestCase
         $this->withoutMiddleware();
         $this->post(route('order.store'), $this->order);
 
-        Notification::assertSentTo(new AnonymousNotifiable, OrderNotification::class);
+        Notification::assertSentTo(new AnonymousNotifiable(), OrderNotification::class);
     }
 }

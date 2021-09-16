@@ -15,4 +15,5 @@ require('laravel-mix-artisan-serve');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
+    .sourceMaps()
     .serve();
