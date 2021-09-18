@@ -17,8 +17,6 @@ class Order extends Model
      * @var array
      */
     protected $fillable = [
-        'service_id',
-        'city_id',
         'name',
         'phone',
         'email',
@@ -27,18 +25,18 @@ class Order extends Model
     ];
 
     /**
-     * Get the service that owns the comment.
+     * Get all of the cities that are assigned this order.
      */
-    public function service()
+    public function cities()
     {
-        return $this->belongsTo(Service::class);
+        return $this->morphedByMany(City::class, 'orderable');
     }
 
     /**
-     * Get the city that owns the comment.
+     * Get all of the services that are assigned this order.
      */
-    public function city()
+    public function services()
     {
-        return $this->belongsTo(City::class);
+        return $this->morphedByMany(Service::class, 'orderable');
     }
 }

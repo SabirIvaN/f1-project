@@ -19,10 +19,10 @@ class City extends Model
     ];
 
     /**
-     * Get the orders for the blog post.
+     * Get all of the city's orders.
      */
     public function orders()
     {
-        return $this->hasMany(Order::class);
+        return $this->morphToMany(Order::class, 'orderable');
     }
 }
