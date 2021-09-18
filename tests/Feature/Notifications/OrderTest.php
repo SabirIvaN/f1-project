@@ -1,12 +1,16 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Notifications;
 
-use Tests\TestCase;
 use App\Models\City;
 use App\Models\Order;
 use App\Models\Service;
+use App\Models\User;
+use App\Notifications\User\OrderNotification;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Notifications\AnonymousNotifiable;
+use Illuminate\Support\Facades\Notification;
+use Tests\TestCase;
 
 class OrderTest extends TestCase
 {
@@ -20,6 +24,9 @@ class OrderTest extends TestCase
     {
         parent::setUp();
 
+        $this->artisan('migrate');
+
+        $this->user = User::factory()->create();
         $this->city = City::factory()->create();
         $this->service = Service::factory()->create();
         $this->order = Order::factory()
@@ -30,27 +37,17 @@ class OrderTest extends TestCase
     }
 
     /**
-     * Testing the create function.
+     * Testing the send notification function.
      *
      * @return void
      */
-    public function testCreate()
+    public function testSend()
     {
-        $this->get(route('order.create', $this->service))
-            ->assertOk();
-    }
+        Notification::fake();
 
-    /**
-     * Testing the store function.
-     *
-     * @return void
-     */
-    public function testStore()
-    {
         $this->withoutMiddleware();
-        $this->post(route('order.store'), $this->order)
-            ->assertSessionHasNoErrors()
-            ->assertRedirect();
-        $this->assertDatabaseHas('orders', $this->order);
+        $this->post(route('order.store'), $this->order);
+
+        Notification::assertSentTo(new AnonymousNotifiable(), OrderNotification::class);
     }
 }

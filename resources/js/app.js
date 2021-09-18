@@ -3,8 +3,11 @@ require('./bootstrap');
 
 // Dependencies
 require('inputmask');
+require('typed.js');
 
 // Components
-require('./components/btn-close');
+require('./components/btn');
+require('./components/masks');
 require('./components/navbar');
-require('./components/phone-mask');
+require('./components/smile');
+require('./components/typed');

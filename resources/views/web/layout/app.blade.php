@@ -9,7 +9,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{!! mix('css/app.css') !!}">
 
-    <title>{!! __('layout.title') !!} — @yield('title')</title>
+    <title>{!! __('web.layout.title') !!} — @yield('title')</title>
 </head>
 <body>
     <header>
@@ -20,8 +20,10 @@
         <div class="container">
         @if($errors->any())
             @foreach($errors->all() as $error)
-            <div class="container alert alert-danger my-5 py-5" role="alert">
+            <div class="alert alert-danger my-5 py-5" role="alert">
                 {!! $error !!}
+
+                {!! Form::button(__('web.layout.button.close.title'), ['class' => 'btn-close', 'data-bs-dismiss' => 'alert', 'aria-label' => 'Close']) !!}
             </div>
             @endforeach
         @endif
