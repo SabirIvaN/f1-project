@@ -22,7 +22,6 @@ class PositionFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => $this->faker->randomElement(\App\Models\User::all())['id'],
             'name' => $this->faker->sentence(),
             'description'  => $this->faker->text(),
         ];

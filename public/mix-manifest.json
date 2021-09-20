@@ -1,4 +1,13 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/js/pages/welcome.js": "/js/pages/welcome.js",
+    "/css/app.css": "/css/app.css",
+    "/fonts/consolas.woff": "/fonts/consolas.woff",
+    "/fonts/consolas.woff2": "/fonts/consolas.woff2",
+    "/fonts/consolasbold.woff": "/fonts/consolasbold.woff",
+    "/fonts/consolasbold.woff2": "/fonts/consolasbold.woff2",
+    "/fonts/consolasbolditalic.woff": "/fonts/consolasbolditalic.woff",
+    "/fonts/consolasbolditalic.woff2": "/fonts/consolasbolditalic.woff2",
+    "/fonts/consolasitalic.woff": "/fonts/consolasitalic.woff",
+    "/fonts/consolasitalic.woff2": "/fonts/consolasitalic.woff2"
 }

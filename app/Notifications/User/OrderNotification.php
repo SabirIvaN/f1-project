@@ -47,17 +47,4 @@ class OrderNotification extends Notification
             ->line(__('notification.order.check'))
             ->markdown('vendor.notifications.email', ['order' => $this->order]);
     }
-
-    /**
-     * Get the array representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return array
-     */
-    public function toArray($notifiable)
-    {
-        return [
-            //
-        ];
-    }
 }

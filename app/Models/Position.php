@@ -20,10 +20,10 @@ class Position extends Model
     ];
 
     /**
-     * Get the user that owns the position.
+     * Get the users that owns the position.
      */
-    public function user()
+    public function users()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(User::class);
     }
 }

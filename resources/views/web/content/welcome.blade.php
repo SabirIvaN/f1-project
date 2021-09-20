@@ -84,3 +84,7 @@
     </h2>
 </section>
 @endsection
+
+@push('scripts')
+    <script src="{!! mix('js/pages/welcome.js') !!}"></script>
+@endpush

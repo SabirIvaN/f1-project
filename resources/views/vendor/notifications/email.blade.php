@@ -18,14 +18,14 @@
 
 {{-- Service --}}
 @component('mail::table')
-|                  |                                |
-| ---------------- | ------------------------------ |
-| @lang('ФИО:')    | {!! $order->name !!}           |
-| @lang('Телефон:')| {!! $order->phone !!}          |
-| @lang('Услуга:') | {!! $order->service->name !!}  |
-| @lang('Цена:')   | {!! $order->service->price !!} |
-| @lang('Город:')  | {!! $order->city->name !!}     |
-| @lang('Адрес:')  | {!! $order->address !!}        |
+|                  |                                                                             |
+| ---------------- | --------------------------------------------------------------------------- |
+| @lang('ФИО:')    | {!! $order->name !!}                                                        |
+| @lang('Телефон:')| {!! $order->phone !!}                                                       |
+| @lang('Услуга:') | @foreach ($order->services as $service) {!! $service->name !!} @endforeach  |
+| @lang('Цена:')   | @foreach ($order->services as $service) {!! $service->price !!} руб. @endforeach |
+| @lang('Город:')  | @foreach ($order->cities as $city) {!! $city->name !!} @endforeach          |
+| @lang('Адрес:')  | {!! $order->address !!}                                                     |
 @endcomponent
 
 {{-- Salutation --}}

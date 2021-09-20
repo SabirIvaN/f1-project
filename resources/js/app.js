@@ -3,11 +3,8 @@ require('./bootstrap');
 
 // Dependencies
 require('inputmask');
+require('light-switch-bootstrap');
 require('typed.js');
 
-// Components
-require('./components/btn');
-require('./components/masks');
+// Global components
 require('./components/navbar');
-require('./components/smile');
-require('./components/typed');

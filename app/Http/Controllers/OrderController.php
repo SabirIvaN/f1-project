@@ -33,19 +33,19 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        // $data = $request->all();
+        $data = $request->all();
 
-        // $order = new Order();
+        $order = new Order();
 
-        // $order->fill($data);
-        // $order->city()->associate(City::find($data['city_id']));
-        // $order->service()->associate(Service::find($data['service_id']));
-        // $order->save();
+        $order->fill($data);
+        $order->save();
+        $order->cities()->attach(City::find($data['city_id']));
+        $order->services()->attach(Service::find($data['service_id']));
 
-        // Notification::route('mail', $order->email)->notify(new OrderNotification($order));
+        Notification::route('mail', $order->email)->notify(new OrderNotification($order));
 
-        // flash(__('vendor.flash.order'))->success()->important();
+        flash(__('vendor.flash.order'))->success()->important();
 
-        // return redirect()->route('welcome.show');
+        return redirect()->route('welcome.show');
     }
 }

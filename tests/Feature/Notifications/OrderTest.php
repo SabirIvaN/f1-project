@@ -5,8 +5,8 @@ namespace Tests\Feature\Notifications;
 use App\Models\City;
 use App\Models\Order;
 use App\Models\Service;
-use App\Models\User;
 use App\Notifications\User\OrderNotification;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Notifications\AnonymousNotifiable;
 use Illuminate\Support\Facades\Notification;
@@ -16,8 +16,10 @@ class OrderTest extends TestCase
 {
     use RefreshDatabase;
 
-    private City $city;
-    private Service $service;
+    private Collection $city;
+    private Collection $service;
+
+    private array $data;
     private array $order;
 
     protected function setUp(): void
@@ -26,14 +28,20 @@ class OrderTest extends TestCase
 
         $this->artisan('migrate');
 
-        $this->user = User::factory()->create();
-        $this->city = City::factory()->create();
-        $this->service = Service::factory()->create();
+        $this->service = Service::factory()->count(3)->create();
+        $this->city = City::factory()->count(10)->create();
+
         $this->order = Order::factory()
-            ->for($this->city)
-            ->for($this->service)
             ->make()
             ->toArray();
+
+        $this->data = array_merge(
+            [
+                'city_id' => $this->city->random()->id,
+                'service_id' => $this->service->random()->id
+            ],
+            $this->order
+        );
     }
 
     /**
@@ -46,7 +54,7 @@ class OrderTest extends TestCase
         Notification::fake();
 
         $this->withoutMiddleware();
-        $this->post(route('order.store'), $this->order);
+        $this->post(route('order.store'), $this->data);
 
         Notification::assertSentTo(new AnonymousNotifiable(), OrderNotification::class);
     }
