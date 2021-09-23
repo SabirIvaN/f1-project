@@ -233,6 +233,7 @@ return [
 
         /* Custom aliases */
 
+        'Activist' => App\Helpers\Activist::class,
         'Checker' => App\Helpers\Checker::class,
         'Console' => App\Helpers\Console::class,
     ],

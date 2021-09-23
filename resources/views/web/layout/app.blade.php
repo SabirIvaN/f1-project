@@ -44,13 +44,9 @@
     </section>
     @endif
 
-    <div className="form-check form-switch">
-        <label className="form-check-label" htmlFor="lightSwitch"> Dark Mode </label>
-        <input className="form-check-input" type="checkbox" id="lightSwitch"/>
-      </div>
-
     <!-- Scripts -->
     <script src="{!! mix('js/app.js') !!}"></script>
+
     @stack('scripts')
 </body>
 </html>

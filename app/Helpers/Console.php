@@ -9,7 +9,7 @@ class Console
      *
      * @return string
      */
-    public static function output($data)
+    public static function log($data)
     {
         echo json_encode($data, JSON_PRETTY_PRINT);
     }

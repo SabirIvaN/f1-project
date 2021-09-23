@@ -15,8 +15,6 @@ class OrderSeeder extends Seeder
     public function run()
     {
         DB::table('orders')->insert([
-            'service_id' => 3,
-            'city_id' => 5,
             'name' => 'Кузьмина Агата Артуровна',
             'phone' => '4(63)242-52-51',
             'email' => 'reichel.tia@yahoo.com',
@@ -26,8 +24,6 @@ class OrderSeeder extends Seeder
             'updated_at' => now(),
         ]);
         DB::table('orders')->insert([
-            'service_id' => 1,
-            'city_id' => 4,
             'name' => 'Бочаров Кирилл Даниэльевич',
             'phone' => '1(264)951-48-77',
             'email' => 'arely24@yahoo.com',
@@ -37,8 +33,6 @@ class OrderSeeder extends Seeder
             'updated_at' => now(),
         ]);
         DB::table('orders')->insert([
-            'service_id' => 1,
-            'city_id' => 3,
             'name' => 'Тихонова София Ивановна',
             'phone' => '49(319)419-20-38',
             'email' => 'shanel32@okon.com',
@@ -48,8 +42,6 @@ class OrderSeeder extends Seeder
             'updated_at' => now(),
         ]);
         DB::table('orders')->insert([
-            'service_id' => 2,
-            'city_id' => 2,
             'name' => 'Гусева Мария Данииловна',
             'phone' => '8(627)665-90-40',
             'email' => 'torey91@hotmail.com',
@@ -59,8 +51,6 @@ class OrderSeeder extends Seeder
             'updated_at' => now(),
         ]);
         DB::table('orders')->insert([
-            'service_id' => 3,
-            'city_id' => 1,
             'name' => 'Кравцова Полина Игоревна',
             'phone' => '834(512)772-82-21',
             'email' => 'torey91@hotmail.com',
@@ -70,8 +60,6 @@ class OrderSeeder extends Seeder
             'updated_at' => now(),
         ]);
         DB::table('orders')->insert([
-            'service_id' => 2,
-            'city_id' => 5,
             'name' => 'Смирнова Маргарита Петровна',
             'phone' => '1(26)115-06-53',
             'email' => 'gino96@hotmail.com',
@@ -81,8 +69,6 @@ class OrderSeeder extends Seeder
             'updated_at' => now(),
         ]);
         DB::table('orders')->insert([
-            'service_id' => 1,
-            'city_id' => 4,
             'name' => 'Алексеева Вероника Дмитриевна',
             'phone' => '58(6187)485-53-51',
             'email' => 'alan.graham@shanahan.biz',
@@ -92,8 +78,6 @@ class OrderSeeder extends Seeder
             'updated_at' => now(),
         ]);
         DB::table('orders')->insert([
-            'service_id' => 2,
-            'city_id' => 3,
             'name' => 'Грачев Александр Максимович',
             'phone' => '58(6187)485-53-51',
             'email' => 'yundt.lourdes@yahoo.com',
@@ -103,8 +87,6 @@ class OrderSeeder extends Seeder
             'updated_at' => now(),
         ]);
         DB::table('orders')->insert([
-            'service_id' => 2,
-            'city_id' => 2,
             'name' => 'Ерофеева Мария Кирилловна',
             'phone' => '275(10)625-14-57',
             'email' => 'feil.desiree@yahoo.com',
@@ -114,8 +96,6 @@ class OrderSeeder extends Seeder
             'updated_at' => now(),
         ]);
         DB::table('orders')->insert([
-            'service_id' => 1,
-            'city_id' => 1,
             'name' => 'Бирюков Фёдор Александрович',
             'phone' => '9(7421)987-22-72',
             'email' => 'dexter68@keeling.com',

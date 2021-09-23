@@ -15,14 +15,12 @@ class PositionSeeder extends Seeder
     public function run()
     {
         DB::table('positions')->insert([
-            'user_id' => 1,
             'name' => 'Главный менеджер',
             'description' => 'Обращайтесь по вопросам сотрудничества и обслуживания и финансов.',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('positions')->insert([
-            'user_id' => 2,
             'name' => 'Главный инженер',
             'description' => 'Обращайтесь по вопросам починки принтеров, замены и заправки картриджей.',
             'created_at' => now(),
