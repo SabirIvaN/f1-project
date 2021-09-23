@@ -1,5 +1,5 @@
 // Bootstrap
-require('./bootstrap');
+require('./components/bootstrap');
 
 // Dependencies
 require('inputmask');

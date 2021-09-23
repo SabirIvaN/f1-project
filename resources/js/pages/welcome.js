@@ -1,4 +1,4 @@
-require('../components/btn');
-require('../components/masks');
-require('../components/smile');
+require('../components/btn-close');
+require('../components/tel-mask');
+require('../components/smiles');
 require('../components/typed');
