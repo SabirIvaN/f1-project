@@ -11,8 +11,9 @@ class Activist
      *
      * @return string
      */
-    public static function map (Collection $collection, string $field): object {
-        return $collection->map(function (Object $object) use ($field) {
+    public static function map(Collection $collection, string $field): object
+    {
+        return $collection->map(function (object $object) use ($field) {
             return collect($object)->only([$field])->all();
         });
     }
