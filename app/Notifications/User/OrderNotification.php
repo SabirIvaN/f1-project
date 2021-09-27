@@ -13,24 +13,25 @@ class OrderNotification extends Notification
     use Queueable;
 
     private Order $order;
+    private bool $comment;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($order)
+    public function __construct($order, $comment = false)
     {
         $this->order = $order;
+        $this->comment = $comment;
     }
 
     /**
      * Get the notification's delivery channels.
      *
-     * @param  mixed  $notifiable
      * @return array
      */
-    public function via($notifiable)
+    public function via()
     {
         return ['mail'];
     }
@@ -38,12 +39,11 @@ class OrderNotification extends Notification
     /**
      * Get the mail representation of the notification.
      *
-     * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
-    public function toMail($notifiable)
+    public function toMail()
     {
-        $order = [
+        $rows = [
             'name' => [
                 'title' =>  __('notification.order.name'),
                 'content' => $this->order->name,
@@ -54,15 +54,15 @@ class OrderNotification extends Notification
             ],
             'service' => [
                 'title' => __('notification.order.service'),
-                'content' => Activist::map($this->order->services, 'name'),
+                'content' => Activist::map($this->order->services, 'name')->flatten()[0],
             ],
             'price' => [
                 'title' => __('notification.order.price'),
-                'content' => Activist::map($this->order->services, 'price'),
+                'content' => Activist::map($this->order->services, 'price')->flatten()[0],
             ],
             'city' => [
                 'title' => __('notification.order.city'),
-                'content' => Activist::map($this->order->cities, 'name'),
+                'content' => Activist::map($this->order->cities, 'name')->flatten()[0],
             ],
             'address' => [
                 'title' => __('notification.order.address'),
@@ -70,9 +70,16 @@ class OrderNotification extends Notification
             ],
         ];
 
+        if ($this->comment === true) {
+            $rows['comment'] = [
+                'title' => __('notification.order.comment'),
+                'content' => $this->order->comment,
+            ];
+        }
+
         return (new MailMessage())
             ->line(__('notification.order.gratitude'))
             ->line(__('notification.order.check'))
-            ->markdown('vendor.notifications.order', ['order' => $order]);
+            ->markdown('vendor.notifications.order', ['rows' => $rows]);
     }
 }

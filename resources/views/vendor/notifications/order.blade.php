@@ -18,14 +18,11 @@
 
 {{-- Service --}}
 @component('mail::table')
-|                                    |                                                    |
-| ---------------------------------- | -------------------------------------------------- |
-| @lang($order['name']['title'])     | {!! $order['name']['content'] !!}                  |
-| @lang($order['phone']['title'])    | {!! $order['phone']['content'] !!}                 |
-| @lang($order['service']['title'])  | {!! $order['service']['content']->flatten()[0] !!} |
-| @lang($order['price']['title'])    | {!! $order['price']['content']->flatten()[0] !!}   |
-| @lang($order['city']['title'])     | {!! $order['city']['content']->flatten()[0] !!}    |
-| @lang($order['address']['title'])  | {!! $order['address']['content'] !!}               |
+|                           |                          |
+| ------------------------- | ------------------------ |
+@foreach ($rows as $row)
+| @lang($row['title'])     | {!! $row['content'] !!} |
+@endforeach
 @endcomponent
 
 {{-- Salutation --}}

@@ -196,6 +196,7 @@ img {
     color: #000000;
     font-size: 16px;
     line-height: 18px;
+    vertical-align: top;
 }
 
 .content-cell {

@@ -9,7 +9,7 @@ class Activist
     /**
      * A function that retrieves a field from a collection.
      *
-     * @return string
+     * @return object|Collection
      */
     public static function map(Collection $collection, string $field): object
     {
