@@ -9,12 +9,19 @@ class Activist
     /**
      * A function that retrieves a field from a collection.
      *
-     * @return object|Collection
+     * @param Collection $collection,
+     * @param string $field
+     *
+     * @return Collection
      */
-    public static function map(Collection $collection, string $field): object
-    {
+    public static function map(
+        Collection $collection,
+        string $field,
+    ): object {
         return $collection->map(function (object $object) use ($field) {
-            return collect($object)->only([$field])->all();
+            return collect($object)
+                    ->only([$field])
+                    ->all();
         });
     }
 }

@@ -15,6 +15,7 @@ class OrderController extends Controller
      * Show the form for creating a new resource.
      *
      * @param  int  $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function create($id)
@@ -22,13 +23,17 @@ class OrderController extends Controller
         $cities = City::all();
         $service = Service::find($id);
 
-        return view('web.content.order.create', ['cities' => $cities, 'service' => $service]);
+        return view('web.content.order.create', [
+            'cities' => $cities,
+            'service' => $service,
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -39,12 +44,18 @@ class OrderController extends Controller
 
         $order->fill($data);
         $order->save();
-        $order->cities()->attach(City::find($data['city_id']));
-        $order->services()->attach(Service::find($data['service_id']));
+        $order
+            ->cities()
+            ->attach(City::find($data['city_id']));
+        $order
+            ->services()
+            ->attach(Service::find($data['service_id']));
 
         Notification::route('mail', $order->email)->notify(new OrderNotification($order));
 
-        flash(__('vendor.flash.order'))->success()->important();
+        flash(__('vendor.flash.order'))
+            ->success()
+            ->important();
 
         return redirect()->route('welcome.show');
     }

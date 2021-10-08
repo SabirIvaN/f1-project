@@ -15,10 +15,14 @@ class RedirectIfAuthenticated
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
      * @param  string|null  ...$guards
+     *
      * @return mixed
      */
-    public function handle(Request $request, Closure $next, ...$guards)
-    {
+    public function handle(
+        Request $request,
+        Closure $next,
+        string|null ...$guards,
+    ) {
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {

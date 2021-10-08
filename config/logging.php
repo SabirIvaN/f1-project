@@ -35,6 +35,7 @@ return [
     */
 
     'channels' => [
+
         'stack' => [
             'driver' => 'stack',
             'channels' => ['rollbar','single'],
@@ -107,6 +108,7 @@ return [
             'access_token' => env('ROLLBAR_TOKEN'),
             'level' => 'debug',
         ],
+
     ],
 
 ];

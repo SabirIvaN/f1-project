@@ -28,8 +28,12 @@ class OrderTest extends TestCase
 
         $this->artisan('migrate');
 
-        $this->service = Service::factory()->count(3)->create();
-        $this->city = City::factory()->count(10)->create();
+        $this->service = Service::factory()
+            ->count(3)
+            ->create();
+        $this->city = City::factory()
+            ->count(10)
+            ->create();
 
         $this->order = Order::factory()
             ->make()

@@ -7,6 +7,8 @@ class Checker
     /**
      * Function for checking the link activity.
      *
+     * @param string $url
+     *
      * @return string
      */
     public static function activeLink(string $url): string

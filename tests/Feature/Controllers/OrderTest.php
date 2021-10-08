@@ -29,9 +29,15 @@ class OrderTest extends TestCase
 
         $this->artisan('migrate');
 
-        $this->position = Position::factory()->count(2)->create();
-        $this->service = Service::factory()->count(3)->create();
-        $this->city = City::factory()->count(10)->create();
+        $this->position = Position::factory()
+            ->count(2)
+            ->create();
+        $this->service = Service::factory()
+            ->count(3)
+            ->create();
+        $this->city = City::factory()
+            ->count(10)
+            ->create();
 
         $this->user = User::factory()
             ->for($this->position->random())
@@ -71,7 +77,8 @@ class OrderTest extends TestCase
     {
         $this->withoutMiddleware();
         $this->withoutNotifications();
-        $this->post(route('order.store'), $this->data)
+        $this
+            ->post(route('order.store'), $this->data)
             ->assertSessionHasNoErrors()
             ->assertRedirect();
         $this->assertDatabaseHas('orders', $this->order);

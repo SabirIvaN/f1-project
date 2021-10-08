@@ -33,7 +33,8 @@ class DatabaseSeeder extends Seeder
             ServiceSeeder::class,
             CitySeeder::class,
             UserSeeder::class,
-            OrderSeeder::class
+            OrderSeeder::class,
+            OrderableSeeder::class,
         ]);
     }
 }

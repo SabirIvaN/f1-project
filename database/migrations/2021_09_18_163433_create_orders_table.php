@@ -19,7 +19,9 @@ class CreateOrdersTable extends Migration
             $table->string('phone');
             $table->string('email');
             $table->string('address');
-            $table->text('comment')->nullable();
+            $table
+                ->text('comment')
+                ->nullable();
             $table->timestamps();
         });
     }
