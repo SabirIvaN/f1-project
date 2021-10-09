@@ -59,7 +59,8 @@ class OrderTest extends TestCase
         $this->withoutMiddleware();
         $this
             ->post(route('order.store'), $this->data)
-            ->assertStatus(302);
+            ->assertSessionHasNoErrors()
+            ->assertRedirect();
 
         Notification::assertSentTo(new AnonymousNotifiable(), OrderNotification::class);
     }
