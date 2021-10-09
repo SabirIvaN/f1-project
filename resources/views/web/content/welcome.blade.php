@@ -86,5 +86,5 @@
 @endsection
 
 @push('scripts')
-    <script src="{!! secure_asset('js/pages/welcome.js') !!}"></script>
+    <script src="{!! mix('js/pages/welcome.js') !!}"></script>
 @endpush
