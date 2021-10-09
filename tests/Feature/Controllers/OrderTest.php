@@ -38,12 +38,10 @@ class OrderTest extends TestCase
         $this->city = City::factory()
             ->count(10)
             ->create();
-
         $this->user = User::factory()
             ->for($this->position->random())
             ->count(2)
             ->create();
-
         $this->order = Order::factory()
             ->make()
             ->toArray();
@@ -64,7 +62,8 @@ class OrderTest extends TestCase
      */
     public function testCreate()
     {
-        $this->get(route('order.create', $this->service->random()))
+        $this
+            ->get(route('order.create', $this->service->random()))
             ->assertOk();
     }
 

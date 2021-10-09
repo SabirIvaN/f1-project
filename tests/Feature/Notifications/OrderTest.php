@@ -34,7 +34,6 @@ class OrderTest extends TestCase
         $this->city = City::factory()
             ->count(10)
             ->create();
-
         $this->order = Order::factory()
             ->make()
             ->toArray();
@@ -58,7 +57,9 @@ class OrderTest extends TestCase
         Notification::fake();
 
         $this->withoutMiddleware();
-        $this->post(route('order.store'), $this->data);
+        $this
+            ->post(route('order.store'), $this->data)
+            ->assertStatus(302);
 
         Notification::assertSentTo(new AnonymousNotifiable(), OrderNotification::class);
     }
