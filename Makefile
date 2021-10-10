@@ -22,7 +22,3 @@ run:
 
 logs:
 	tail -f storage/logs/*.log
-
-release:
-	php artisan migrate --force
-	npm run production
