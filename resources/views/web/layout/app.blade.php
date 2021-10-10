@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{!! mix('css/app.css') !!}">
+    <link rel="stylesheet" href="{!! secure_asset('css/app.css') !!}">
 
     <title>{!! __('web.layout.title') !!} — @yield('title')</title>
 </head>
@@ -54,7 +54,7 @@
         @endif
 
         <!-- Scripts -->
-        <script src="{!! mix('js/app.js') !!}"></script>
+        <script src="{!! secure_asset('js/app.js') !!}" defer></script>
         @stack('scripts')
     @endif
 </body>
