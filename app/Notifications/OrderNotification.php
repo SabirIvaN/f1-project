@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Notifications\User;
+namespace App\Notifications;
 
 use App\Helpers\Activist;
 use App\Models\Order;

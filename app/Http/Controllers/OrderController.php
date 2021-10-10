@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\City;
 use App\Models\Order;
 use App\Models\Service;
-use App\Notifications\User\OrderNotification;
+use App\Notifications\OrderNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
 
