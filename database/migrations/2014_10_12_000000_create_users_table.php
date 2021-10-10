@@ -15,7 +15,9 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('position_id');
+            $table
+                ->unsignedBigInteger('position_id')
+                ->nullable();
             $table
                 ->foreign('position_id')
                 ->references('id')
