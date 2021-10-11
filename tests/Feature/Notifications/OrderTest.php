@@ -5,7 +5,7 @@ namespace Tests\Feature\Notifications;
 use App\Models\City;
 use App\Models\Order;
 use App\Models\Service;
-use App\Notifications\User\OrderNotification;
+use App\Notifications\OrderNotification;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Notifications\AnonymousNotifiable;
