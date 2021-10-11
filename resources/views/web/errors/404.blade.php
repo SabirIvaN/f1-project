@@ -1,7 +1,7 @@
 @extends('web.layout.app', [
-    'code' => '404',
-    'description' => __('errors.notFound'),
+    'code' => __('errors.404.code'),
+    'description' => __('errors.404.description'),
     'error' => true,
 ])
 
-@section('title', '404')
+@section('title', __('errors.404.title'))

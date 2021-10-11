@@ -1,7 +1,7 @@
 @extends('web.layout.app', [
-    'code' => '500',
-    'description' => __('errors.serverError'),
+    'code' => __('errors.500.code'),
+    'description' => __('errors.500.description'),
     'error' => true,
 ])
 
-@section('title', '500')
+@section('title', __('errors.500.title'))
