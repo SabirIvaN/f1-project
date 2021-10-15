@@ -16,16 +16,34 @@ class CreateOrchidAttachmentstableTable extends Migration
             $table->text('name');
             $table->text('original_name');
             $table->string('mime');
-            $table->string('extension')->nullable();
-            $table->bigInteger('size')->default(0);
-            $table->integer('sort')->default(0);
+            $table
+                ->string('extension')
+                ->nullable();
+            $table
+                ->bigInteger('size')
+                ->default(0);
+            $table
+                ->integer('sort')
+                ->default(0);
             $table->text('path');
-            $table->text('description')->nullable();
-            $table->text('alt')->nullable();
-            $table->text('hash')->nullable();
-            $table->string('disk')->default('public');
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->string('group')->nullable();
+            $table
+                ->text('description')
+                ->nullable();
+            $table
+                ->text('alt')
+                ->nullable();
+            $table
+                ->text('hash')
+                ->nullable();
+            $table
+                ->string('disk')
+                ->default('public');
+            $table
+                ->unsignedBigInteger('user_id')
+                ->nullable();
+            $table
+                ->string('group')
+                ->nullable();
             $table->timestamps();
         });
 
@@ -37,7 +55,8 @@ class CreateOrchidAttachmentstableTable extends Migration
 
             $table->index(['attachmentable_type', 'attachmentable_id']);
 
-            $table->foreign('attachment_id')
+            $table
+                ->foreign('attachment_id')
                 ->references('id')
                 ->on('attachments')
                 ->onUpdate('cascade')

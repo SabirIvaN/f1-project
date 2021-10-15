@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace App\Orchid\Screens\User;
 
@@ -85,7 +85,12 @@ class UserEditScreen extends Screen
 
             Button::make(__('Remove'))
                 ->icon('trash')
-                ->confirm(__('Once the account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.'))
+                ->confirm(__(
+                    'Once the account is deleted, all of its resources and
+                    data will be permanently deleted. Before deleting your
+                    account, please download any data or information that
+                    you wish to retain.'
+                ))
                 ->method('remove')
                 ->canSee($this->user->exists),
 
@@ -155,8 +160,10 @@ class UserEditScreen extends Screen
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function save(User $user, Request $request)
-    {
+    public function save(
+        User $user,
+        Request $request,
+    ) {
         $request->validate([
             'user.email' => [
                 'required',

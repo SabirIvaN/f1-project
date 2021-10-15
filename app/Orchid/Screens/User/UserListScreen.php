@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace App\Orchid\Screens\User;
 
@@ -97,10 +97,12 @@ class UserListScreen extends Screen
      * @param User    $user
      * @param Request $request
      */
-    public function saveUser(User $user, Request $request): void
-    {
+    public function saveUser(
+        User $user,
+        Request $request,
+    ): void {
         $request->validate([
-            'user.email' => 'required|unique:users,email,'.$user->id,
+            'user.email' => 'required|unique:users,email,' . $user->id,
         ]);
 
         $user->fill($request->input('user'))

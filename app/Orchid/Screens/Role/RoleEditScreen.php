@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace App\Orchid\Screens\Role;
 
@@ -89,7 +89,12 @@ class RoleEditScreen extends Screen
                 RoleEditLayout::class,
             ])
                 ->title('Role')
-                ->description('A role is a collection of privileges (of possibly different services like the Users service, Moderator, and so on) that grants users with that role the ability to perform certain tasks or operations.'),
+                ->description(
+                    'A role is a collection of privileges (of possibly different
+                    services like the Users service, Moderator, and so on) that
+                    grants users with that role the ability to perform certain
+                    tasks or operations.'
+                ),
 
             Layout::block([
                 RolePermissionLayout::class,
@@ -105,8 +110,10 @@ class RoleEditScreen extends Screen
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function save(Role $role, Request $request)
-    {
+    public function save(
+        Role $role,
+        Request $request,
+    ) {
         $request->validate([
             'role.slug' => [
                 'required',

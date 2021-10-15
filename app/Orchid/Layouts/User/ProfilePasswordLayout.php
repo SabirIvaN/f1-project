@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace App\Orchid\Layouts\User;
 
@@ -30,7 +30,10 @@ class ProfilePasswordLayout extends Rows
             Password::make('password_confirmation')
                 ->placeholder(__('Enter the password to be set'))
                 ->title(__('Confirm new password'))
-                ->help('A good password is at least 15 characters or at least 8 characters long, including a number and a lowercase letter.'),
+                ->help(
+                    'A good password is at least 15 characters or at least 8 characters long,
+                    including a number and a lowercase letter.'
+                ),
         ];
     }
 }

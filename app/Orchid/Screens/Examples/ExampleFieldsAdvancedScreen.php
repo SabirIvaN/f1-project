@@ -111,7 +111,10 @@ class ExampleFieldsAdvancedScreen extends Screen
                     Input::make('currency')
                         ->title('Currency dollar:')
                         ->mask(['alias' => 'currency'])
-                        ->help('Some aliases found in the extensions are: email, currency, decimal, integer, date, datetime, dd/mm/yyyy, etc.'),
+                        ->help(
+                            'Some aliases found in the extensions are: email, currency,
+                            decimal, integer, date, datetime, dd/mm/yyyy, etc.'
+                        ),
 
                     Input::make('currency')
                         ->title('Currency euro:')

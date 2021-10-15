@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace App\Orchid\Layouts\Role;
 
@@ -56,8 +56,10 @@ class RolePermissionLayout extends Rows
      *
      * @return Collection
      */
-    private function makeCheckBoxGroup(Collection $permissions, string $title): Collection
-    {
+    private function makeCheckBoxGroup(
+        Collection $permissions,
+        string $title,
+    ): Collection {
         return $permissions
             ->map(function (array $chunks) {
                 return $this->makeCheckBox(collect($chunks));
@@ -83,7 +85,7 @@ class RolePermissionLayout extends Rows
      */
     private function makeCheckBox(Collection $chunks): CheckBox
     {
-        return CheckBox::make('permissions.'.base64_encode($chunks->get('slug')))
+        return CheckBox::make('permissions.' . base64_encode($chunks->get('slug')))
             ->placeholder($chunks->get('description'))
             ->value($chunks->get('active'))
             ->sendTrueOrFalse()
@@ -99,8 +101,10 @@ class RolePermissionLayout extends Rows
      *
      * @return bool
      */
-    private function getIndeterminateStatus($slug, $value): bool
-    {
+    private function getIndeterminateStatus(
+        $slug,
+        $value,
+    ): bool {
         return optional($this->user)->hasAccess($slug) === true && $value === false;
     }
 }

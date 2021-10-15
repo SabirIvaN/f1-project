@@ -26,6 +26,12 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),
+            'permissions' => json_encode([
+                "platform.systems.roles" => true,
+                "platform.systems.users" => true,
+                "platform.systems.attachment" => true,
+                "platform.index" => true,
+            ]),
         ]);
         DB::table('users')->insert([
             'position_id' => Position::all()->random()->id,
@@ -36,6 +42,12 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),
+            'permissions' => json_encode([
+                "platform.systems.roles" => true,
+                "platform.systems.users" => true,
+                "platform.systems.attachment" => true,
+                "platform.index" => true,
+            ]),
         ]);
     }
 }

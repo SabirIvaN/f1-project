@@ -16,18 +16,28 @@ class CitySeeder extends Seeder
     {
         DB::table('cities')->insert([
             'name' => 'Санкт-Петербург',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         DB::table('cities')->insert([
             'name' => 'Гатчина',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         DB::table('cities')->insert([
             'name' => 'Петергоф',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         DB::table('cities')->insert([
             'name' => 'Ломоносов',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         DB::table('cities')->insert([
             'name' => 'Кронштадт',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
     }
 }
