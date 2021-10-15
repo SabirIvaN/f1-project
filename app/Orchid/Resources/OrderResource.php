@@ -58,12 +58,12 @@ class OrderResource extends Resource
             TD::make('comment'),
 
             TD::make('created_at', 'Date of creation')->render(function ($model) {
-                    return $model->created_at->toDateTimeString();
-                }),
+                return $model->created_at->toDateTimeString();
+            }),
 
             TD::make('updated_at', 'Update date')->render(function ($model) {
-                    return $model->updated_at->toDateTimeString();
-                }),
+                return $model->updated_at->toDateTimeString();
+            }),
         ];
     }
 

@@ -52,20 +52,17 @@ class ServiceResource extends Resource
 
             TD::make('name', 'Name'),
 
-            TD::make('price', 'Price')
-                ->render(function($model) {
-                    return (string) $model->price . __('₽');
-                }),
+            TD::make('price', 'Price')->render(function ($model) {
+                return (string) $model->price . __('₽');
+            }),
 
-            TD::make('created_at', 'Date of creation')
-                ->render(function ($model) {
-                    return $model->created_at->toDateTimeString();
-                }),
+            TD::make('created_at', 'Date of creation')->render(function ($model) {
+                return $model->created_at->toDateTimeString();
+            }),
 
-            TD::make('updated_at', 'Update date')
-                ->render(function ($model) {
-                    return $model->updated_at->toDateTimeString();
-                }),
+            TD::make('updated_at', 'Update date')->render(function ($model) {
+                return $model->updated_at->toDateTimeString();
+            }),
         ];
     }
 
