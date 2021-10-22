@@ -129,4 +129,134 @@ class AcceptedOrderResource extends Resource
     {
         return __('Принятые заказы');
     }
+
+    /**
+     * Get the displayable singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel(): string
+    {
+        return __('Принятые заказы');
+    }
+
+    /**
+     * Get the text for the create resource button.
+     *
+     * @return string|null
+     */
+    public static function createButtonLabel(): string
+    {
+        return __('Создать');
+    }
+
+    /**
+     * Get the text for the create resource toast.
+     *
+     * @return string
+     */
+    public static function createToastMessage(): string
+    {
+        return __('Заказ создан!');
+    }
+
+    /**
+     * Get the text for the update resource button.
+     *
+     * @return string
+     */
+    public static function updateButtonLabel(): string
+    {
+        return __('Обновить');
+    }
+
+    /**
+     * Get the text for the update resource toast.
+     *
+     * @return string
+     */
+    public static function updateToastMessage(): string
+    {
+        return __('Заказ обновлен!');
+    }
+
+    /**
+     * Get the text for the delete resource button.
+     *
+     * @return string
+     */
+    public static function deleteButtonLabel(): string
+    {
+        return __('Удалить');
+    }
+
+    /**
+     * Get the text for the delete resource toast.
+     *
+     * @return string
+     */
+    public static function deleteToastMessage(): string
+    {
+        return __('Заказ удален!');
+    }
+
+    /**
+     * Get the text for the save resource button.
+     *
+     * @return string
+     */
+    public static function saveButtonLabel(): string
+    {
+        return __('Сохранить');
+    }
+
+    /**
+     * Get the text for the restore resource button.
+     *
+     * @return string
+     */
+    public static function restoreButtonLabel(): string
+    {
+        return __('Восстановить');
+    }
+
+    /**
+     * Get the text for the restore resource toast.
+     *
+     * @return string
+     */
+    public static function restoreToastMessage(): string
+    {
+        return __('Заказ восстановлен!');
+    }
+
+    /**
+     * Get the text for the create breadcrumbs.
+     *
+     * @return string
+     */
+    public static function createBreadcrumbsMessage(): string
+    {
+        return __('Создать');
+    }
+
+    /**
+     * Get the text for the edit breadcrumbs.
+     *
+     * @return string
+     */
+    public static function editBreadcrumbsMessage(): string
+    {
+        return __('Редактировать');
+    }
+
+    /**
+     * Get the descriptions for the screen.
+     *
+     * @return null|string
+     */
+    public static function description(): ?string
+    {
+        return __('Поступившие заказы, которые необходимо выполнить');
+    }
 }
