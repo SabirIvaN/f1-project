@@ -24,7 +24,7 @@ class UserProfileScreen extends Screen
      *
      * @var string
      */
-    public $name = 'My account';
+    public $name = 'Мой профиль';
 
     /**
      * Display header description.

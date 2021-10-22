@@ -22,6 +22,9 @@ class CreateOrdersTable extends Migration
             $table
                 ->text('comment')
                 ->nullable();
+            $table
+                ->boolean('completed')
+                ->default(false);
             $table->timestamps();
         });
     }

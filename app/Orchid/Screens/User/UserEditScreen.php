@@ -4,15 +4,17 @@ declare(strict_types=1);
 
 namespace App\Orchid\Screens\User;
 
+use App\Models\User;
+use App\Models\Position;
 use App\Orchid\Layouts\Role\RolePermissionLayout;
 use App\Orchid\Layouts\User\UserEditLayout;
 use App\Orchid\Layouts\User\UserPasswordLayout;
+use App\Orchid\Layouts\User\UserPositionLayout;
 use App\Orchid\Layouts\User\UserRoleLayout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Orchid\Access\UserSwitch;
-use Orchid\Platform\Models\User;
 use Orchid\Screen\Action;
 use Orchid\Screen\Actions\Button;
 use Orchid\Screen\Screen;
@@ -27,7 +29,7 @@ class UserEditScreen extends Screen
      *
      * @var string
      */
-    public $name = 'Edit User';
+    public $name = 'Редактировать Сотрудника';
 
     /**
      * Display header description.
@@ -129,6 +131,16 @@ class UserEditScreen extends Screen
                         ->method('save')
                 ),
 
+            Layout::block(UserPositionLayout::class)
+                ->title(__('Позиция'))
+                ->description(__('Позиция определяет функкции выполняемые пользователем во время рабочего процесса.'))
+                ->commands(
+                    Button::make(__('Save'))
+                        ->type(Color::DEFAULT())
+                        ->icon('check')
+                        ->method('save')
+                ),
+
             Layout::block(UserRoleLayout::class)
                 ->title(__('Roles'))
                 ->description(__('A Role defines a set of tasks a user assigned the role is allowed to perform.'))
@@ -190,8 +202,11 @@ class UserEditScreen extends Screen
             ->fill($userData)
             ->fill([
                 'permissions' => $permissions,
-            ])
-            ->save();
+            ]);
+
+        $user->position()->associate(Position::find($userData['position_id']));
+
+        $user->save();
 
         $user->replaceRoles($request->input('user.roles'));
 

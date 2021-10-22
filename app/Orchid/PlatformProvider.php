@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Orchid;
 
+use Illuminate\Support\Facades\URL;
 use Orchid\Platform\Dashboard;
 use Orchid\Platform\ItemPermission;
 use Orchid\Platform\OrchidServiceProvider;
 use Orchid\Screen\Actions\Menu;
-use Orchid\Support\Color;
 
 class PlatformProvider extends OrchidServiceProvider
 {
@@ -18,8 +18,6 @@ class PlatformProvider extends OrchidServiceProvider
     public function boot(Dashboard $dashboard): void
     {
         parent::boot($dashboard);
-
-        // ...
     }
 
     /**
@@ -70,26 +68,26 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.example.cards')
                 ->divider(),
 
-            Menu::make('Documentation')
-                ->title('Docs')
-                ->icon('docs')
-                ->url('https://orchid.software/en/docs'),
+            Menu::make('Города')
+                ->icon('map')
+                ->url(URL::route('platform.index') . '/crud/list/city-resources')
+                ->title(__('Информация об услугах')),
 
-            Menu::make('Changelog')
-                ->icon('shuffle')
-                ->url('https://github.com/orchidsoftware/platform/blob/master/CHANGELOG.md')
-                ->target('_blank')
-                ->badge(function () {
-                    return Dashboard::version();
-                }, Color::DARK()),
+            Menu::make('Услуги')
+                ->icon('briefcase')
+                ->url(URL::route('platform.index') . '/crud/list/service-resources'),
 
-            Menu::make(__('Users'))
+            Menu::make(__('Сотрудники'))
                 ->icon('user')
                 ->route('platform.systems.users')
                 ->permission('platform.systems.users')
-                ->title(__('Access rights')),
+                ->title(__('Информация о сотрудниках')),
 
-            Menu::make(__('Roles'))
+            Menu::make(__('Позиции'))
+                ->icon('eyeglasses')
+                ->url(URL::route('platform.index') . '/crud/list/position-resources'),
+
+            Menu::make(__('Роли'))
                 ->icon('lock')
                 ->route('platform.systems.roles')
                 ->permission('platform.systems.roles'),

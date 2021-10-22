@@ -26,7 +26,7 @@ class UserListLayout extends Table
     public function columns(): array
     {
         return [
-            TD::make('name', __('Name'))
+            TD::make('name', __('Полное имя'))
                 ->sort()
                 ->cantHide()
                 ->filter(TD::FILTER_TEXT)
@@ -34,7 +34,7 @@ class UserListLayout extends Table
                     return new Persona($user->presenter());
                 }),
 
-            TD::make('email', __('Email'))
+            TD::make('email', __('Электронная почта'))
                 ->sort()
                 ->cantHide()
                 ->filter(TD::FILTER_TEXT)

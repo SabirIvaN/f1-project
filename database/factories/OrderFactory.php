@@ -27,6 +27,7 @@ class OrderFactory extends Factory
             'email' => $this->faker->email(),
             'address'  => $this->faker->sentence(),
             'comment' => $this->faker->text(),
+            'completed' => $this->faker->boolean(),
         ];
     }
 }
