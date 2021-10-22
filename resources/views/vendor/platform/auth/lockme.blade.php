@@ -1,5 +1,5 @@
 <div class="mb-3 d-flex align-items-center">
-    <span style="width:125px;" class="small">
+    <span style="width:200px;" class="small">
         <span class="text-ellipsis">{{ $lockUser->presenter()->title() }}</span>
         <span class="text-muted d-block text-ellipsis">{{ $lockUser->presenter()->subTitle() }}</span>
     </span>
