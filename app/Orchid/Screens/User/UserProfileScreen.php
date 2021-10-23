@@ -54,7 +54,9 @@ class UserProfileScreen extends Screen
      */
     public function commandBar(): array
     {
-        return [];
+        return [
+            //
+        ];
     }
 
     /**

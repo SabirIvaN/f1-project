@@ -8,11 +8,6 @@ use Orchid\Filters\Filter;
 class CompletedOrderFilter extends Filter
 {
     /**
-     * @var array
-     */
-    public $parameters = [];
-
-    /**
      * @var bool
      */
     public $display = false;

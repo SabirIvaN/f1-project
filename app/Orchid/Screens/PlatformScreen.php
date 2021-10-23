@@ -31,7 +31,9 @@ class PlatformScreen extends Screen
      */
     public function query(): array
     {
-        return [];
+        return [
+            //
+        ];
     }
 
     /**
