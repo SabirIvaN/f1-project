@@ -2,6 +2,7 @@
 
 namespace App\Orchid\Resources\Order;
 
+use App\Orchid\Actions\Order\CompletionAction;
 use App\Orchid\Filters\Order\AcceptedOrderFilter;
 use Orchid\Crud\Resource;
 use Orchid\Screen\Sight;
@@ -107,6 +108,18 @@ class AcceptedOrderResource extends Resource
     {
         return [
             new AcceptedOrderFilter(),
+        ];
+    }
+
+    /**
+     * Get the actions available for the resource.
+     *
+     * @return array
+     */
+    public function actions(): array
+    {
+        return [
+            new CompletionAction(),
         ];
     }
 

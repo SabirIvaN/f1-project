@@ -26,31 +26,31 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return [
-            Menu::make('Поступившие заказы')
+            Menu::make(__('Поступившие заказы'))
                 ->icon('folder')
                 ->url(URL::route('platform.index') . '/crud/list/accepted-order-resources')
                 ->title(__('Заказы')),
 
-            Menu::make('Завершенные заказы')
+            Menu::make(__('Завершенные заказы'))
                 ->icon('folder-alt')
                 ->url(URL::route('platform.index') . '/crud/list/completed-order-resources'),
 
-            Menu::make('Города')
+            Menu::make(__('Обслуживаемые города'))
                 ->icon('map')
                 ->url(URL::route('platform.index') . '/crud/list/city-resources')
-                ->title(__('Информация об услугах')),
+                ->title(__('Услуги')),
 
-            Menu::make('Услуги')
+            Menu::make(__('Перечень услуг'))
                 ->icon('briefcase')
                 ->url(URL::route('platform.index') . '/crud/list/service-resources'),
 
-            Menu::make(__('Сотрудники'))
+            Menu::make(__('Пользователи'))
                 ->icon('user')
                 ->route('platform.systems.users')
                 ->permission('platform.systems.users')
-                ->title(__('Информация о сотрудниках')),
+                ->title(__('Сотрудники')),
 
-            Menu::make(__('Позиции'))
+            Menu::make(__('Профессии'))
                 ->icon('eyeglasses')
                 ->url(URL::route('platform.index') . '/crud/list/position-resources'),
 

@@ -35,7 +35,13 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/Orchid/Screens/Crud/CreateScreen.php",
+            "app/Orchid/Screens/Crud/EditScreen.php",
+            "app/Orchid/Screens/Crud/ListScreen.php",
+            "app/Orchid/Screens/Crud/ViewScreen.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

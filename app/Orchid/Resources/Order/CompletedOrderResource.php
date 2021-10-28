@@ -2,6 +2,7 @@
 
 namespace App\Orchid\Resources\Order;
 
+use App\Orchid\Actions\Order\RenewingAction;
 use App\Orchid\Filters\Order\CompletedOrderFilter;
 use Orchid\Crud\Resource;
 use Orchid\Screen\Sight;
@@ -107,6 +108,18 @@ class CompletedOrderResource extends Resource
     {
         return [
             new CompletedOrderFilter(),
+        ];
+    }
+
+    /**
+     * Get the actions available for the resource.
+     *
+     * @return array
+     */
+    public function actions(): array
+    {
+        return [
+            new RenewingAction(),
         ];
     }
 
