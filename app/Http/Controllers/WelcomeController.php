@@ -14,12 +14,12 @@ class WelcomeController extends Controller
      */
     public function show()
     {
-        $cities = City::all();
+        $cities   = City::all();
         $services = Service::all();
 
         return view('web.content.welcome', [
             'services' => $services,
-            'cities' => $cities,
+            'cities'   => $cities,
         ]);
     }
 }

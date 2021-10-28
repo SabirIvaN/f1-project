@@ -24,7 +24,7 @@ class OrderNotification extends Notification
         Order $order,
         bool $comment = false,
     ) {
-        $this->order = $order;
+        $this->order   = $order;
         $this->comment = $comment;
     }
 
@@ -47,34 +47,34 @@ class OrderNotification extends Notification
     {
         $rows = [
             'name' => [
-                'title' =>  __('notification.order.name'),
+                'title'   => __('notification.order.name'),
                 'content' => $this->order->name,
             ],
             'phone' => [
-                'title' => __('notification.order.phone'),
+                'title'   => __('notification.order.phone'),
                 'content' => $this->order->phone,
             ],
             'service' => [
-                'title' => __('notification.order.service'),
+                'title'   => __('notification.order.service'),
                 'content' => Activist::map($this->order->services, 'name')->flatten()[0],
             ],
             'price' => [
-                'title' => __('notification.order.price'),
+                'title'   => __('notification.order.price'),
                 'content' => Activist::map($this->order->services, 'price')->flatten()[0],
             ],
             'city' => [
-                'title' => __('notification.order.city'),
+                'title'   => __('notification.order.city'),
                 'content' => Activist::map($this->order->cities, 'name')->flatten()[0],
             ],
             'address' => [
-                'title' => __('notification.order.address'),
+                'title'   => __('notification.order.address'),
                 'content' => $this->order->address,
             ],
         ];
 
         if ($this->comment === true) {
             $rows['comment'] = [
-                'title' => __('notification.order.comment'),
+                'title'   => __('notification.order.comment'),
                 'content' => $this->order->comment,
             ];
         }

@@ -24,7 +24,7 @@ class OrderController extends Controller
         $service = Service::find($id);
 
         return view('web.content.order.create', [
-            'cities' => $cities,
+            'cities'  => $cities,
             'service' => $service,
         ]);
     }

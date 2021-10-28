@@ -31,7 +31,9 @@ class RolePermissionLayout extends Rows
         $this->user = $this->query->get('user');
 
         return $this->generatedPermissionFields(
-            $this->query->getContent('permission')
+            $this
+                ->query
+                ->getContent('permission')
         );
     }
 

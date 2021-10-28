@@ -105,7 +105,8 @@ class UserListScreen extends Screen
             'user.email' => 'required|unique:users,email,' . $user->id,
         ]);
 
-        $user->fill($request->input('user'))
+        $user
+            ->fill($request->input('user'))
             ->save();
 
         Toast::info(__('User was saved.'));

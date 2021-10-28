@@ -32,7 +32,7 @@ class RenewingAction extends Action
             $model->save();
         });
 
-        if($models->count() === 1) {
+        if ($models->count() === 1) {
             Toast::message(__('Заказ возобновлен!'));
         } else {
             Toast::message(__('Заказы возобновлены!'));

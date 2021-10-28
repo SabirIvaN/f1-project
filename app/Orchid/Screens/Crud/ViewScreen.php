@@ -49,7 +49,9 @@ class ViewScreen extends CrudScreen
                 ->canSee($this->can('update'))
                 ->route('platform.resource.edit', [
                     $this->resource::uriKey(),
-                    $this->model->getKey(),
+                    $this
+                        ->model
+                        ->getKey(),
                 ]),
 
             Button::make($this->resource::deleteButtonLabel())

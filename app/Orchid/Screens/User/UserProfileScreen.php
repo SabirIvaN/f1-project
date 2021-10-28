@@ -100,7 +100,8 @@ class UserProfileScreen extends Screen
             ],
         ]);
 
-        $request->user()
+        $request
+            ->user()
             ->fill($request->get('user'))
             ->save();
 

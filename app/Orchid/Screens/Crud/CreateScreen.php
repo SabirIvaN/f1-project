@@ -61,7 +61,9 @@ class CreateScreen extends CrudScreen
     {
         $model = $request->model();
 
-        $request->resource()->onSave($request, $model);
+        $request
+            ->resource()
+            ->onSave($request, $model);
 
         Toast::info($this->resource::createToastMessage());
 

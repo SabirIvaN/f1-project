@@ -32,7 +32,7 @@ class CompletionAction extends Action
             $model->save();
         });
 
-        if($models->count() === 1) {
+        if ($models->count() === 1) {
             Toast::message(__('Заказ завершен!'));
         } else {
             Toast::message(__('Заказы завершены!'));

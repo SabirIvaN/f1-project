@@ -15,109 +15,109 @@ class OrderableSeeder extends Seeder
     public function run()
     {
         DB::table('orderables')->insert([
-            'order_id' => 1,
+            'order_id'       => 1,
             'orderable_type' => \App\Models\City::class,
-            'orderable_id' => 1,
+            'orderable_id'   => 1,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 1,
+            'order_id'       => 1,
             'orderable_type' => \App\Models\Service::class,
-            'orderable_id' => 2,
+            'orderable_id'   => 2,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 2,
+            'order_id'       => 2,
             'orderable_type' => \App\Models\City::class,
-            'orderable_id' => 3,
+            'orderable_id'   => 3,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 2,
+            'order_id'       => 2,
             'orderable_type' => \App\Models\Service::class,
-            'orderable_id' => 2,
+            'orderable_id'   => 2,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 3,
+            'order_id'       => 3,
             'orderable_type' => \App\Models\City::class,
-            'orderable_id' => 3,
+            'orderable_id'   => 3,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 3,
+            'order_id'       => 3,
             'orderable_type' => \App\Models\Service::class,
-            'orderable_id' => 3,
+            'orderable_id'   => 3,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 4,
+            'order_id'       => 4,
             'orderable_type' => \App\Models\City::class,
-            'orderable_id' => 1,
+            'orderable_id'   => 1,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 4,
+            'order_id'       => 4,
             'orderable_type' => \App\Models\Service::class,
-            'orderable_id' => 1,
+            'orderable_id'   => 1,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 5,
+            'order_id'       => 5,
             'orderable_type' => \App\Models\City::class,
-            'orderable_id' => 3,
+            'orderable_id'   => 3,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 5,
+            'order_id'       => 5,
             'orderable_type' => \App\Models\Service::class,
-            'orderable_id' => 1,
+            'orderable_id'   => 1,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 6,
+            'order_id'       => 6,
             'orderable_type' => \App\Models\City::class,
-            'orderable_id' => 1,
+            'orderable_id'   => 1,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 6,
+            'order_id'       => 6,
             'orderable_type' => \App\Models\Service::class,
-            'orderable_id' => 1,
+            'orderable_id'   => 1,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 7,
+            'order_id'       => 7,
             'orderable_type' => \App\Models\City::class,
-            'orderable_id' => 2,
+            'orderable_id'   => 2,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 7,
+            'order_id'       => 7,
             'orderable_type' => \App\Models\City::class,
-            'orderable_id' => 3,
+            'orderable_id'   => 3,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 7,
+            'order_id'       => 7,
             'orderable_type' => \App\Models\Service::class,
-            'orderable_id' => 3,
+            'orderable_id'   => 3,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 8,
+            'order_id'       => 8,
             'orderable_type' => \App\Models\City::class,
-            'orderable_id' => 2,
+            'orderable_id'   => 2,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 8,
+            'order_id'       => 8,
             'orderable_type' => \App\Models\Service::class,
-            'orderable_id' => 2,
+            'orderable_id'   => 2,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 9,
+            'order_id'       => 9,
             'orderable_type' => \App\Models\City::class,
-            'orderable_id' => 2,
+            'orderable_id'   => 2,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 9,
+            'order_id'       => 9,
             'orderable_type' => \App\Models\Service::class,
-            'orderable_id' => 3,
+            'orderable_id'   => 3,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 10,
+            'order_id'       => 10,
             'orderable_type' => \App\Models\City::class,
-            'orderable_id' => 1,
+            'orderable_id'   => 1,
         ]);
         DB::table('orderables')->insert([
-            'order_id' => 10,
+            'order_id'       => 10,
             'orderable_type' => \App\Models\Service::class,
-            'orderable_id' => 1,
+            'orderable_id'   => 1,
         ]);
     }
 }

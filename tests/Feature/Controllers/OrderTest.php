@@ -48,7 +48,7 @@ class OrderTest extends TestCase
 
         $this->data = array_merge(
             [
-                'city_id' => $this->city->random()->id,
+                'city_id'    => $this->city->random()->id,
                 'service_id' => $this->service->random()->id
             ],
             $this->order

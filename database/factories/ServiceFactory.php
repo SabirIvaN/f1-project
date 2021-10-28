@@ -22,9 +22,9 @@ class ServiceFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->sentence(),
-            'price' => $this->faker->randomNumber(),
-            'description'  => $this->faker->text(),
+            'name'        => $this->faker->sentence(),
+            'price'       => $this->faker->randomNumber(),
+            'description' => $this->faker->text(),
         ];
     }
 }
