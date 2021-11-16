@@ -8,14 +8,14 @@
 
 @error('email')
     <span class="d-block invalid-feedback text-danger">
-            {{ $errors->first('email') }}
+        {{ $errors->first('email') }}
     </span>
 @enderror
 
 <div class="mb-3">
     <input type="hidden" name="remember" value="true">
 
-    {!!  \Orchid\Screen\Fields\Password::make('password')
+    {!! \Orchid\Screen\Fields\Password::make('password')
             ->required()
             ->tabindex(1)
             ->autofocus()
@@ -26,12 +26,12 @@
 <div class="row align-items-center">
     <div class="col-md-6 col-xs-12">
         <a href="{{ route('platform.login.lock') }}" class="small">
-            {{__('Sign in with another user.')}}
+            {{ __('Sign in with another user.') }}
         </a>
     </div>
     <div class="col-md-6 col-xs-12">
         <button id="button-login" type="submit" class="btn btn-default btn-block" tabindex="2">
-            <x-orchid-icon path="login" class="small me-2"/> {{__('Login')}}
+            <x-orchid-icon path="login" class="small me-2" /> {{ __('Login') }}
         </button>
     </div>
 </div>

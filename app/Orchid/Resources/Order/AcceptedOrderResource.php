@@ -5,6 +5,9 @@ namespace App\Orchid\Resources\Order;
 use App\Orchid\Actions\Order\CompletionAction;
 use App\Orchid\Filters\Order\AcceptedOrderFilter;
 use Orchid\Crud\Resource;
+use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\Select;
+use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Sight;
 use Orchid\Screen\TD;
 
@@ -24,7 +27,36 @@ class AcceptedOrderResource extends Resource
      */
     public function fields(): array
     {
-        return [];
+        return [
+            Input::make('name')
+                ->title(__('Название'))
+                ->placeholder(__('Название')),
+
+            Input::make('phone')
+                ->title(__('Телефон'))
+                ->mask('+7 (000) 000-00-00')
+                ->placeholder(__('+7 (000) 000-00-00')),
+
+            Input::make('email')
+                ->type('email')
+                ->title(__('E-Mail'))
+                ->placeholder(__('example@mail.com')),
+
+            Input::make('address')
+                ->title(__('Адрес'))
+                ->placeholder(__('Примерово, ул. Примерная, д. 5, кв. 5')),
+
+            TextArea::make('comment')
+                ->title(__('Комментарий'))
+                ->placeholder(__('Такие-то и такие-то пожелания к заказу.')),
+
+            Select::make('completed')
+                ->options([
+                    1 => 'Завершен',
+                    0 => 'Не завершен',
+                ])
+                ->title(__('Завершенность')),
+        ];
     }
 
     /**
@@ -48,15 +80,21 @@ class AcceptedOrderResource extends Resource
             TD::make('name', __('Полное имя')),
 
             TD::make('service', __('Услуга'))->render(function ($order) {
-                return $order->services[0]->name;
+                return $order
+                    ->services[0]
+                    ->name;
             }),
 
             TD::make('price', __('Цена'))->render(function ($order) {
-                return $order->services[0]->price . __('₽');
+                return $order
+                    ->services[0]
+                    ->price . __('₽');
             }),
 
             TD::make('created_at', __('Поступил'))->render(function ($model) {
-                return $model->created_at->format('d.m.Y h:i');
+                return $model
+                    ->created_at
+                    ->format('d.m.Y h:i');
             }),
         ];
     }
@@ -76,25 +114,35 @@ class AcceptedOrderResource extends Resource
             Sight::make('email', __('E-Mail')),
 
             Sight::make('address', __('Адрес'))->render(function ($order) {
-                return $order->cities[0]->name . ', ' . $order->address;
+                return $order
+                    ->cities[0]
+                    ->name . ', ' . $order->address;
             }),
 
             Sight::make('service', __('Услуга'))->render(function ($order) {
-                return $order->services[0]->name;
+                return $order
+                    ->services[0]
+                    ->name;
             }),
 
             Sight::make('price', __('Цена'))->render(function ($order) {
-                return $order->services[0]->price . __('₽');
+                return $order
+                    ->services[0]
+                    ->price . __('₽');
             }),
 
             Sight::make('comment', __('Комментарий')),
 
             Sight::make('completed', __('Завершенность'))->render(function ($order) {
-                return ($order->completed == true) ? __('Завершен') : __('Не завершен');
+                return ($order->completed == true)
+                    ? __('Завершен')
+                    : __('Не завершен');
             }),
 
             Sight::make('created_at', __('Поступил'))->render(function ($model) {
-                return $model->created_at->format('d.m.Y h:i');
+                return $model
+                    ->created_at
+                    ->format('d.m.Y h:i');
             }),
         ];
     }

@@ -27,8 +27,7 @@ class RoleListLayout extends Table
                 ->cantHide()
                 ->filter(TD::FILTER_TEXT)
                 ->render(function (Role $role) {
-                    return Link::make($role->name)
-                        ->route('platform.systems.roles.edit', $role->id);
+                    return Link::make($role->name)->route('platform.systems.roles.edit', $role->id);
                 }),
 
             TD::make('slug', __('Slug'))

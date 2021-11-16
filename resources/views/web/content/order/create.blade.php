@@ -3,5 +3,5 @@
 @section('title', $service->name)
 
 @section('content')
-    @include('web.content.order.subviews.form')
+@include('web.content.order.subviews.form')
 @endsection

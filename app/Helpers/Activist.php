@@ -20,8 +20,8 @@ class Activist
     ): object {
         return $collection->map(function (object $object) use ($field) {
             return collect($object)
-                    ->only([$field])
-                    ->all();
+                ->only([$field])
+                ->all();
         });
     }
 }

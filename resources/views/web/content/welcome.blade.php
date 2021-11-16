@@ -52,7 +52,7 @@
                 {!! __('web.content.welcome.benefit.third.title') !!}
             </h3>
             <p>
-                {!! __('web.content.welcome.benefit.third.description')  !!}
+                {!! __('web.content.welcome.benefit.third.description') !!}
             </p>
         </div>
         <div class="col-md-5 fw-bold text-center py-3">

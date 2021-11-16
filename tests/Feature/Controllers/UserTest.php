@@ -13,7 +13,7 @@ class UserTest extends TestCase
         $this->artisan('migrate');
     }
 
-     /**
+    /**
      * Testing the index function.
      *
      * @return void

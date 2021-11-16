@@ -19,7 +19,7 @@
         }
 
         .border-bottom,
-        .modal-header  {
+        .modal-header {
             border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important;
         }
 
@@ -41,8 +41,7 @@
     }
 }
 
-@-moz-document url-prefix()
-{
+@-moz-document url-prefix() {
     :root {
         background: #000000;
         filter: invert(100%);

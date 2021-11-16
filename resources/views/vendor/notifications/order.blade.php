@@ -21,7 +21,7 @@
 |                           |                          |
 | ------------------------- | ------------------------ |
 @foreach ($rows as $row)
-| @lang($row['title'])     | {!! $row['content'] !!} |
+| @lang($row['title'])      |  {!! $row['content'] !!} |
 @endforeach
 @endcomponent
 
