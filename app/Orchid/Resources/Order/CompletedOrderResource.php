@@ -5,8 +5,8 @@ namespace App\Orchid\Resources\Order;
 use App\Orchid\Actions\Order\RenewingAction;
 use App\Orchid\Filters\Order\CompletedOrderFilter;
 use Orchid\Crud\Resource;
-use Orchid\Screen\Fields\CheckBox;
 use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Sight;
 use Orchid\Screen\TD;
@@ -50,7 +50,11 @@ class CompletedOrderResource extends Resource
                 ->title(__('Комментарий'))
                 ->placeholder(__('Такие-то и такие-то пожелания к заказу.')),
 
-            CheckBox::make('completed')
+            Select::make('completed')
+                ->options([
+                    1 => 'Завершен',
+                    0 => 'Не завершен',
+                ])
                 ->title(__('Завершенность')),
         ];
     }
