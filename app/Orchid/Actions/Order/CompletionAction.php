@@ -17,7 +17,7 @@ class CompletionAction extends Action
      */
     public function button(): Button
     {
-        return Button::make(__('Завершить'))->icon('action-redo');
+        return Button::make(__('orchid.action.button.completion.title'))->icon('action-redo');
     }
 
     /**
@@ -33,9 +33,9 @@ class CompletionAction extends Action
         });
 
         if ($models->count() === 1) {
-            Toast::message(__('Заказ завершен!'));
+            Toast::message(__('orchid.action.order.completion.single.title'));
         } else {
-            Toast::message(__('Заказы завершены!'));
+            Toast::message(__('orchid.action.order.completion.plural.title'));
         }
     }
 }

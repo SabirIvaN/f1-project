@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Notifications;
+namespace App\Notifications\Client;
 
 use App\Helpers\Activist;
 use App\Models\Order;
@@ -35,7 +35,9 @@ class OrderNotification extends Notification
      */
     public function via()
     {
-        return ['mail'];
+        return [
+            'mail'
+        ];
     }
 
     /**

@@ -17,7 +17,7 @@ class RenewingAction extends Action
      */
     public function button(): Button
     {
-        return Button::make(__('Возобновить'))->icon('action-undo');
+        return Button::make(__('orchid.action.button.resumption.title'))->icon('action-undo');
     }
 
     /**
@@ -33,9 +33,9 @@ class RenewingAction extends Action
         });
 
         if ($models->count() === 1) {
-            Toast::message(__('Заказ возобновлен!'));
+            Toast::message(__('orchid.action.order.resumption.single.title'));
         } else {
-            Toast::message(__('Заказы возобновлены!'));
+            Toast::message(__('orchid.action.order.resumption.plural.title'));
         }
     }
 }

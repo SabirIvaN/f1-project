@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\City;
 use App\Models\Order;
 use App\Models\Service;
-use App\Notifications\OrderNotification;
+use App\Models\User;
+use App\Notifications\Client\OrderNotification as ClientNotification;
+use App\Notifications\Dashboard\OrderNotification as DashboardNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
 
@@ -51,7 +53,8 @@ class OrderController extends Controller
             ->services()
             ->attach(Service::find($data['service_id']));
 
-        Notification::route('mail', $order->email)->notify(new OrderNotification($order));
+        Notification::route('mail', $order->email)->notify(new ClientNotification($order));
+        Notification::send(User::all(), new DashboardNotification($order));
 
         flash(__('vendor.flash.order'))
             ->success()
