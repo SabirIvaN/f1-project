@@ -29,33 +29,33 @@ class AcceptedOrderResource extends Resource
     {
         return [
             Input::make('name')
-                ->title(__('Название'))
-                ->placeholder(__('Название')),
+                ->title(__('orchid.resources.order.fields.name.title'))
+                ->placeholder(__('orchid.resources.order.fields.name.placeholder')),
 
             Input::make('phone')
-                ->title(__('Телефон'))
-                ->mask('+7 (000) 000-00-00')
-                ->placeholder(__('+7 (000) 000-00-00')),
+                ->title(__('orchid.resources.order.fields.phone.title'))
+                ->placeholder(__('orchid.resources.order.fields.phone.placeholder'))
+                ->mask('+7 (999) 999-9999'),
 
             Input::make('email')
                 ->type('email')
-                ->title(__('E-Mail'))
-                ->placeholder(__('example@mail.com')),
+                ->title(__('orchid.resources.order.fields.email.title'))
+                ->placeholder(__('orchid.resources.order.fields.email.placeholder')),
 
             Input::make('address')
-                ->title(__('Адрес'))
-                ->placeholder(__('Примерово, ул. Примерная, д. 5, кв. 5')),
+                ->title(__('orchid.resources.order.fields.address.title'))
+                ->placeholder(__('orchid.resources.order.fields.address.placeholder')),
 
             TextArea::make('comment')
-                ->title(__('Комментарий'))
-                ->placeholder(__('Такие-то и такие-то пожелания к заказу.')),
+                ->title(__('orchid.resources.order.fields.comment.title'))
+                ->placeholder(__('orchid.resources.order.fields.comment.placeholder')),
 
             Select::make('completed')
                 ->options([
-                    1 => 'Завершен',
-                    0 => 'Не завершен',
+                    1 => __('orchid.resources.order.fields.completed.options.truth.title'),
+                    0 => __('orchid.resources.order.fields.completed.options.false.title'),
                 ])
-                ->title(__('Завершенность')),
+                ->title(__('orchid.resources.order.fields.completed.title')),
         ];
     }
 
@@ -77,21 +77,21 @@ class AcceptedOrderResource extends Resource
     public function columns(): array
     {
         return [
-            TD::make('name', __('Полное имя')),
+            TD::make('name', __('orchid.resources.order.columns.name.title')),
 
-            TD::make('service', __('Услуга'))->render(function ($order) {
+            TD::make('service', __('orchid.resources.order.columns.service.title'))->render(function ($order) {
                 return $order
                     ->services[0]
                     ->name;
             }),
 
-            TD::make('price', __('Цена'))->render(function ($order) {
+            TD::make('price', __('orchid.resources.order.columns.price.title'))->render(function ($order) {
                 return $order
                     ->services[0]
-                    ->price . __('₽');
+                    ->price . __('orchid.resources.order.columns.price.currency');
             }),
 
-            TD::make('created_at', __('Поступил'))->render(function ($model) {
+            TD::make('created_at', __('orchid.resources.order.columns.created_at.title'))->render(function ($model) {
                 return $model
                     ->created_at
                     ->format('d.m.Y h:i');
@@ -107,39 +107,39 @@ class AcceptedOrderResource extends Resource
     public function legend(): array
     {
         return [
-            Sight::make('name', __('Полное имя')),
+            Sight::make('name', __('orchid.resources.order.legend.name.title')),
 
-            Sight::make('phone', __('Телефон')),
+            Sight::make('phone', __('orchid.resources.order.legend.phone.title')),
 
-            Sight::make('email', __('E-Mail')),
+            Sight::make('email', __('orchid.resources.order.legend.email.title')),
 
-            Sight::make('address', __('Адрес'))->render(function ($order) {
+            Sight::make('address', __('orchid.resources.order.legend.address.title'))->render(function ($order) {
                 return $order
                     ->cities[0]
                     ->name . ', ' . $order->address;
             }),
 
-            Sight::make('service', __('Услуга'))->render(function ($order) {
+            Sight::make('service', __('orchid.resources.order.legend.service.title'))->render(function ($order) {
                 return $order
                     ->services[0]
                     ->name;
             }),
 
-            Sight::make('price', __('Цена'))->render(function ($order) {
+            Sight::make('price', __('orchid.resources.order.legend.price.title'))->render(function ($order) {
                 return $order
                     ->services[0]
-                    ->price . __('₽');
+                    ->price . __('orchid.resources.order.legend.price.currency');
             }),
 
-            Sight::make('comment', __('Комментарий')),
+            Sight::make('comment', __('orchid.resources.order.legend.comment.title')),
 
-            Sight::make('completed', __('Завершенность'))->render(function ($order) {
+            Sight::make('completed', __('orchid.resources.order.legend.completed.title'))->render(function ($order) {
                 return ($order->completed == true)
-                    ? __('Завершен')
-                    : __('Не завершен');
+                    ? __('orchid.resources.order.legend.completed.options.truth.title')
+                    : __('orchid.resources.order.legend.completed.options.false.title');
             }),
 
-            Sight::make('created_at', __('Поступил'))->render(function ($model) {
+            Sight::make('created_at', __('orchid.resources.order.legend.created_at.title'))->render(function ($model) {
                 return $model
                     ->created_at
                     ->format('d.m.Y h:i');
@@ -188,7 +188,7 @@ class AcceptedOrderResource extends Resource
      */
     public static function label(): string
     {
-        return __('Принятые заказы');
+        return __('orchid.resources.order.accepted_order.title');
     }
 
     /**
@@ -198,7 +198,7 @@ class AcceptedOrderResource extends Resource
      */
     public static function singularLabel(): string
     {
-        return __('Принятые заказы');
+        return __('orchid.resources.order.accepted_order.title');
     }
 
     /**
@@ -208,7 +208,7 @@ class AcceptedOrderResource extends Resource
      */
     public static function createButtonLabel(): string
     {
-        return __('Создать');
+        return __('orchid.resources.button.create_button.label.title');
     }
 
     /**
@@ -218,7 +218,7 @@ class AcceptedOrderResource extends Resource
      */
     public static function createToastMessage(): string
     {
-        return __('Заказ создан!');
+        return __('orchid.resources.order.create_toast.message.title');
     }
 
     /**
@@ -228,7 +228,7 @@ class AcceptedOrderResource extends Resource
      */
     public static function updateButtonLabel(): string
     {
-        return __('Обновить');
+        return __('orchid.resources.button.update_button.label.title');
     }
 
     /**
@@ -238,7 +238,7 @@ class AcceptedOrderResource extends Resource
      */
     public static function updateToastMessage(): string
     {
-        return __('Заказ обновлен!');
+        return __('orchid.resources.order.update_toast.message.title');
     }
 
     /**
@@ -248,7 +248,7 @@ class AcceptedOrderResource extends Resource
      */
     public static function deleteButtonLabel(): string
     {
-        return __('Удалить');
+        return __('orchid.resources.button.delete_button.label.title');
     }
 
     /**
@@ -258,7 +258,7 @@ class AcceptedOrderResource extends Resource
      */
     public static function deleteToastMessage(): string
     {
-        return __('Заказ удален!');
+        return __('orchid.resources.order.delete_toast.message.title');
     }
 
     /**
@@ -268,7 +268,7 @@ class AcceptedOrderResource extends Resource
      */
     public static function saveButtonLabel(): string
     {
-        return __('Сохранить');
+        return __('orchid.resources.button.save_button.label.title');
     }
 
     /**
@@ -278,7 +278,7 @@ class AcceptedOrderResource extends Resource
      */
     public static function restoreButtonLabel(): string
     {
-        return __('Восстановить');
+        return __('orchid.resources.button.restore_button.label.title');
     }
 
     /**
@@ -288,7 +288,7 @@ class AcceptedOrderResource extends Resource
      */
     public static function restoreToastMessage(): string
     {
-        return __('Заказ восстановлен!');
+        return __('orchid.resources.order.restore_toast.message.title');
     }
 
     /**
@@ -298,7 +298,7 @@ class AcceptedOrderResource extends Resource
      */
     public static function createBreadcrumbsMessage(): string
     {
-        return __('Создать');
+        return __('orchid.resources.breadcrumbs.create_breadcrumbs.message.title');
     }
 
     /**
@@ -308,7 +308,7 @@ class AcceptedOrderResource extends Resource
      */
     public static function editBreadcrumbsMessage(): string
     {
-        return __('Редактировать');
+        return __('orchid.resources.breadcrumbs.edit_breadcrumbs.message.title');
     }
 
     /**
@@ -318,6 +318,6 @@ class AcceptedOrderResource extends Resource
      */
     public static function description(): ?string
     {
-        return __('Поступившие заказы, которые необходимо выполнить');
+        return __('orchid.resources.order.accepted_order.description');
     }
 }

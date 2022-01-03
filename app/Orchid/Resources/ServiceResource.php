@@ -26,16 +26,16 @@ class ServiceResource extends Resource
         return [
 
             Input::make('name')
-                ->title(__('Название'))
-                ->placeholder(__('Название')),
+                ->title(__('orchid.resources.service.fields.name.title'))
+                ->placeholder(__('orchid.resources.service.fields.name.placeholder')),
 
             Input::make('price')
-                ->title(__('Цена'))
+                ->title(__('orchid.resources.service.fields.price.title'))
                 ->placeholder(__('100')),
 
             Input::make('description')
-                ->title(__('Описание'))
-                ->placeholder(__('Описание')),
+                ->title(__('orchid.resources.service.fields.description.title'))
+                ->placeholder(__('orchid.resources.service.fields.description.placeholder')),
 
         ];
     }
@@ -48,13 +48,13 @@ class ServiceResource extends Resource
     public function columns(): array
     {
         return [
-            TD::make('name', __('Название')),
+            TD::make('name', __('orchid.resources.service.columns.name.title')),
 
-            TD::make('price', __('Цена'))->render(function ($model) {
-                return (string) $model->price . __('₽');
+            TD::make('price', __('orchid.resources.service.columns.price.title'))->render(function ($model) {
+                return (string) $model->price . __('orchid.resources.service.columns.price.currency');
             }),
 
-            TD::make('description', __('Описание')),
+            TD::make('description', __('orchid.resources.service.columns.description.title')),
         ];
     }
 
@@ -76,13 +76,13 @@ class ServiceResource extends Resource
     public function legend(): array
     {
         return [
-            Sight::make('name', __('Название')),
+            Sight::make('name', __('orchid.resources.service.legend.name.title')),
 
-            Sight::make('price', __('Цена'))->render(function ($model) {
-                return (string) $model->price . '₽';
+            Sight::make('price', __('orchid.resources.service.legend.price.title'))->render(function ($model) {
+                return (string) $model->price . __('orchid.resources.service.legend.price.currency');
             }),
 
-            Sight::make('description', __('Описание')),
+            Sight::make('description', __('orchid.resources.service.legend.description.title')),
         ];
     }
 
@@ -113,7 +113,7 @@ class ServiceResource extends Resource
      */
     public static function label(): string
     {
-        return __('Услуги');
+        return __('orchid.resources.service.title');
     }
 
     /**
@@ -123,7 +123,7 @@ class ServiceResource extends Resource
      */
     public static function singularLabel(): string
     {
-        return __('Услуги');
+        return __('orchid.resources.service.title');
     }
 
     /**
@@ -133,7 +133,7 @@ class ServiceResource extends Resource
      */
     public static function createButtonLabel(): string
     {
-        return __('Создать');
+        return __('orchid.resources.button.create_button.label.title');
     }
 
     /**
@@ -143,7 +143,7 @@ class ServiceResource extends Resource
      */
     public static function createToastMessage(): string
     {
-        return __('Услуга создана!');
+        return __('orchid.resources.service.create_toast.message.title');
     }
 
     /**
@@ -153,7 +153,7 @@ class ServiceResource extends Resource
      */
     public static function updateButtonLabel(): string
     {
-        return __('Обновить');
+        return __('orchid.resources.button.update_button.label.title');
     }
 
     /**
@@ -163,7 +163,7 @@ class ServiceResource extends Resource
      */
     public static function updateToastMessage(): string
     {
-        return __('Услуга обновлена!');
+        return __('orchid.resources.service.update_toast.message.title');
     }
 
     /**
@@ -173,7 +173,7 @@ class ServiceResource extends Resource
      */
     public static function deleteButtonLabel(): string
     {
-        return __('Удалить');
+        return __('orchid.resources.button.delete_button.label.title');
     }
 
     /**
@@ -183,7 +183,7 @@ class ServiceResource extends Resource
      */
     public static function deleteToastMessage(): string
     {
-        return __('Услуга удалена!');
+        return __('orchid.resources.service.delete_toast.message.title');
     }
 
     /**
@@ -193,7 +193,7 @@ class ServiceResource extends Resource
      */
     public static function saveButtonLabel(): string
     {
-        return __('Сохранить');
+        return __('orchid.resources.button.save_button.label.title');
     }
 
     /**
@@ -203,7 +203,7 @@ class ServiceResource extends Resource
      */
     public static function restoreButtonLabel(): string
     {
-        return __('Восстановить');
+        return __('orchid.resources.button.restore_button.label.title');
     }
 
     /**
@@ -213,7 +213,7 @@ class ServiceResource extends Resource
      */
     public static function restoreToastMessage(): string
     {
-        return __('Услуга восстановлена!');
+        return __('orchid.resources.service.restore_toast.message.title');
     }
 
     /**
@@ -223,7 +223,7 @@ class ServiceResource extends Resource
      */
     public static function createBreadcrumbsMessage(): string
     {
-        return __('Создать');
+        return __('orchid.resources.breadcrumbs.create_breadcrumbs.message.title');
     }
 
     /**
@@ -233,7 +233,7 @@ class ServiceResource extends Resource
      */
     public static function editBreadcrumbsMessage(): string
     {
-        return __('Редактировать');
+        return __('orchid.resources.breadcrumbs.edit_breadcrumbs.message.title');
     }
 
     /**
@@ -243,6 +243,6 @@ class ServiceResource extends Resource
      */
     public static function description(): ?string
     {
-        return __('Услуги оказываемые компанией');
+        return __('orchid.resources.service.description');
     }
 }

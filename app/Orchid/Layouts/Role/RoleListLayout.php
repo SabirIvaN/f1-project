@@ -22,7 +22,7 @@ class RoleListLayout extends Table
     public function columns(): array
     {
         return [
-            TD::make('name', __('Name'))
+            TD::make('name', __('orchid.layouts.role.list.name.title'))
                 ->sort()
                 ->cantHide()
                 ->filter(TD::FILTER_TEXT)
@@ -30,12 +30,12 @@ class RoleListLayout extends Table
                     return Link::make($role->name)->route('platform.systems.roles.edit', $role->id);
                 }),
 
-            TD::make('slug', __('Slug'))
+            TD::make('slug', __('orchid.layouts.role.list.slug.title'))
                 ->sort()
                 ->cantHide()
                 ->filter(TD::FILTER_TEXT),
 
-            TD::make('created_at', __('Created'))
+            TD::make('created_at', __('orchid.layouts.role.list.created.title'))
                 ->sort()
                 ->render(function (Role $role) {
                     return $role->created_at->toDateTimeString();

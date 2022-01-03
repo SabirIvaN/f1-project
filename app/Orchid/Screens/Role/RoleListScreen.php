@@ -17,14 +17,14 @@ class RoleListScreen extends Screen
      *
      * @var string
      */
-    public $name = 'Manage roles';
+    public $name = 'Управление ролями';
 
     /**
      * Display header description.
      *
      * @var string
      */
-    public $description = 'Access rights';
+    public $description = 'Права доступа';
 
     /**
      * @var string
@@ -39,7 +39,9 @@ class RoleListScreen extends Screen
     public function query(): array
     {
         return [
-            'roles' => Role::filters()->defaultSort('id', 'desc')->paginate(),
+            'roles' => Role::filters()
+                ->defaultSort('id', 'desc')
+                ->paginate(),
         ];
     }
 
@@ -51,7 +53,7 @@ class RoleListScreen extends Screen
     public function commandBar(): array
     {
         return [
-            Link::make(__('Add'))
+            Link::make(__('orchid.screens.role.list.command.add.title'))
                 ->icon('plus')
                 ->href(route('platform.systems.roles.create')),
         ];

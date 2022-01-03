@@ -19,15 +19,18 @@ class UserPasswordLayout extends Rows
     public function fields(): array
     {
         /** @var User $user */
-        $user = $this->query->get('user');
+        $user = $this
+            ->query
+            ->get('user');
+
         $placeholder = $user->exists
-            ? __('Leave empty to keep current password')
-            : __('Enter the password to be set');
+            ? __('orchid.layouts.user.user_password.password.placeholder.current_password')
+            : __('orchid.layouts.user.user_password.password.placeholder.new_password');
 
         return [
             Password::make('user.password')
                 ->placeholder($placeholder)
-                ->title(__('Password')),
+                ->title(__('orchid.layouts.user.user_password.password.title')),
         ];
     }
 }

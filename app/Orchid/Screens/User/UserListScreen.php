@@ -59,7 +59,7 @@ class UserListScreen extends Screen
     public function commandBar(): array
     {
         return [
-            Link::make(__('Создать'))
+            Link::make(__('orchid.screens.user.list.commands.create.title'))
                 ->icon('plus')
                 ->route('platform.systems.users.create'),
         ];
@@ -109,7 +109,7 @@ class UserListScreen extends Screen
             ->fill($request->input('user'))
             ->save();
 
-        Toast::info(__('User was saved.'));
+        Toast::info(__('orchid.screens.user.info.save'));
     }
 
     /**
@@ -120,6 +120,6 @@ class UserListScreen extends Screen
         User::findOrFail($request->get('id'))
             ->delete();
 
-        Toast::info(__('User was removed'));
+        Toast::info(__('orchid.screens.user.info.remove'));
     }
 }

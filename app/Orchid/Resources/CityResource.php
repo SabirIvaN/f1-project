@@ -25,8 +25,8 @@ class CityResource extends Resource
     {
         return [
             Input::make('name')
-                ->title(__('Название'))
-                ->placeholder(__('Название')),
+                ->title(__('orchid.resources.city.fields.name.title'))
+                ->placeholder(__('orchid.resources.city.fields.name.placeholder')),
         ];
     }
 
@@ -38,7 +38,7 @@ class CityResource extends Resource
     public function columns(): array
     {
         return [
-            TD::make('name', __('Название')),
+            TD::make('name', __('orchid.resources.city.columns.name.title')),
         ];
     }
 
@@ -60,7 +60,7 @@ class CityResource extends Resource
     public function legend(): array
     {
         return [
-            Sight::make('name', __('Название')),
+            Sight::make('name', __('orchid.resources.city.legend.name.title')),
         ];
     }
 
@@ -91,7 +91,7 @@ class CityResource extends Resource
      */
     public static function label(): string
     {
-        return __('Города');
+        return __('orchid.resources.city.title');
     }
 
     /**
@@ -101,7 +101,7 @@ class CityResource extends Resource
      */
     public static function singularLabel(): string
     {
-        return __('Города');
+        return __('orchid.resources.city.title');
     }
 
     /**
@@ -111,7 +111,7 @@ class CityResource extends Resource
      */
     public static function createButtonLabel(): string
     {
-        return __('Создать');
+        return __('orchid.resources.button.create_button.label.title');
     }
 
     /**
@@ -121,7 +121,7 @@ class CityResource extends Resource
      */
     public static function createToastMessage(): string
     {
-        return __('Город создан!');
+        return __('orchid.resources.city.create_toast.message.title');
     }
 
     /**
@@ -131,7 +131,7 @@ class CityResource extends Resource
      */
     public static function updateButtonLabel(): string
     {
-        return __('Обновить');
+        return __('orchid.resources.button.update_button.label.title');
     }
 
     /**
@@ -141,7 +141,7 @@ class CityResource extends Resource
      */
     public static function updateToastMessage(): string
     {
-        return __('Город обновлен!');
+        return __('orchid.resources.city.update_toast.message.title');
     }
 
     /**
@@ -151,7 +151,7 @@ class CityResource extends Resource
      */
     public static function deleteButtonLabel(): string
     {
-        return __('Удалить');
+        return __('orchid.resources.button.delete_button.label.title');
     }
 
     /**
@@ -161,7 +161,7 @@ class CityResource extends Resource
      */
     public static function deleteToastMessage(): string
     {
-        return __('Город удален!');
+        return __('orchid.resources.city.delete_toast.message.title');
     }
 
     /**
@@ -171,7 +171,7 @@ class CityResource extends Resource
      */
     public static function saveButtonLabel(): string
     {
-        return __('Сохранить');
+        return __('orchid.resources.button.save_button.label.title');
     }
 
     /**
@@ -181,7 +181,7 @@ class CityResource extends Resource
      */
     public static function restoreButtonLabel(): string
     {
-        return __('Восстановить');
+        return __('orchid.resources.button.restore_button.label.title');
     }
 
     /**
@@ -191,7 +191,7 @@ class CityResource extends Resource
      */
     public static function restoreToastMessage(): string
     {
-        return __('Город восстановлен!');
+        return __('orchid.resources.city.restore_toast.message.title');
     }
 
     /**
@@ -201,7 +201,7 @@ class CityResource extends Resource
      */
     public static function createBreadcrumbsMessage(): string
     {
-        return __('Создать');
+        return __('orchid.resources.breadcrumbs.create_breadcrumbs.message.title');
     }
 
     /**
@@ -211,7 +211,7 @@ class CityResource extends Resource
      */
     public static function editBreadcrumbsMessage(): string
     {
-        return __('Редактировать');
+        return __('orchid.resources.breadcrumbs.edit_breadcrumbs.message.title');
     }
 
     /**
@@ -221,6 +221,6 @@ class CityResource extends Resource
      */
     public static function description(): ?string
     {
-        return __('Города и любые населенные пункты обслуживаемые компанией');
+        return __('orchid.resources.city.description');
     }
 }

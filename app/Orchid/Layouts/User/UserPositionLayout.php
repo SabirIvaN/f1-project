@@ -19,8 +19,8 @@ class UserPositionLayout extends Rows
         return [
             Relation::make('user.position_id')
                 ->fromModel(Position::class, 'name')
-                ->title(__('Название позиции'))
-                ->help('Позиция, которую пользователь занимает в компании'),
+                ->title(__('orchid.layouts.user.position.relation.title'))
+                ->help(__('orchid.layouts.user.position.relation.help')),
         ];
     }
 }

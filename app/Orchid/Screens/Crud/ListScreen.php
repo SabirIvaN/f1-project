@@ -63,7 +63,7 @@ class ListScreen extends CrudScreen
                     ->checked(false);
             }));
 
-        $grid->push(TD::make(__('Actions'))
+        $grid->push(TD::make(__('orchid.screens.crud.list.layout.grid_actions'))
             ->cantHide()
             ->render(function (Model $model) {
                 return $this->getTableActions($model)
@@ -87,7 +87,7 @@ class ListScreen extends CrudScreen
     {
         return Group::make([
 
-            Link::make(__('Подробнее'))
+            Link::make(__('orchid.screens.crud.list.action.detailed'))
                 ->icon('eye')
                 ->canSee($this->can('view'))
                 ->route('platform.resource.view', [
@@ -95,7 +95,7 @@ class ListScreen extends CrudScreen
                     $model->getAttribute($model->getKeyName()),
                 ]),
 
-            Link::make(__('Редактировать'))
+            Link::make(__('orchid.screens.crud.list.action.edit'))
                 ->icon('pencil')
                 ->canSee($this->can('update'))
                 ->route('platform.resource.edit', [

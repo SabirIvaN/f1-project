@@ -26,35 +26,35 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return [
-            Menu::make(__('Поступившие заказы'))
+            Menu::make(__('orchid.platform.main_menu.accepted-order.header'))
                 ->icon('folder')
                 ->url(URL::route('platform.index') . '/crud/list/accepted-order-resources')
-                ->title(__('Заказы')),
+                ->title(__('orchid.platform.main_menu.accepted-order.title')),
 
-            Menu::make(__('Завершенные заказы'))
+            Menu::make(__('orchid.platform.main_menu.completed-order.header'))
                 ->icon('folder-alt')
                 ->url(URL::route('platform.index') . '/crud/list/completed-order-resources'),
 
-            Menu::make(__('Обслуживаемые города'))
+            Menu::make(__('orchid.platform.main_menu.city.header'))
                 ->icon('map')
                 ->url(URL::route('platform.index') . '/crud/list/city-resources')
-                ->title(__('Услуги')),
+                ->title(__('orchid.platform.main_menu.service.title')),
 
-            Menu::make(__('Перечень услуг'))
+            Menu::make(__('orchid.platform.main_menu.service.header'))
                 ->icon('briefcase')
                 ->url(URL::route('platform.index') . '/crud/list/service-resources'),
 
-            Menu::make(__('Пользователи'))
+            Menu::make(__('orchid.platform.main_menu.user.header'))
                 ->icon('user')
                 ->route('platform.systems.users')
                 ->permission('platform.systems.users')
-                ->title(__('Сотрудники')),
+                ->title(__('orchid.platform.main_menu.user.title')),
 
-            Menu::make(__('Профессии'))
+            Menu::make(__('orchid.platform.main_menu.position.header'))
                 ->icon('eyeglasses')
                 ->url(URL::route('platform.index') . '/crud/list/position-resources'),
 
-            Menu::make(__('Роли'))
+            Menu::make(__('orchid.platform.main_menu.role.header'))
                 ->icon('lock')
                 ->route('platform.systems.roles')
                 ->permission('platform.systems.roles'),
@@ -67,7 +67,7 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerProfileMenu(): array
     {
         return [
-            Menu::make('Profile')
+            Menu::make(__('orchid.platform.profile_menu.header'))
                 ->route('platform.profile')
                 ->icon('user'),
         ];
@@ -79,9 +79,9 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerPermissions(): array
     {
         return [
-            ItemPermission::group(__('System'))
-                ->addPermission('platform.systems.roles', __('Roles'))
-                ->addPermission('platform.systems.users', __('Users')),
+            ItemPermission::group(__('orchid.platform.permissions.header'))
+                ->addPermission('platform.systems.roles', __('orchid.platform.permissions.roles.header'))
+                ->addPermission('platform.systems.users', __('orchid.platform.permissions.users.header')),
         ];
     }
 }

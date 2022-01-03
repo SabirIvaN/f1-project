@@ -22,14 +22,14 @@ class UserEditLayout extends Rows
                 ->type('text')
                 ->max(255)
                 ->required()
-                ->title(__('Name'))
-                ->placeholder(__('Name')),
+                ->title(__('orchid.layouts.user.edit.name.title'))
+                ->placeholder(__('orchid.layouts.user.edit.name.placeholder')),
 
             Input::make('user.email')
                 ->type('email')
                 ->required()
-                ->title(__('Email'))
-                ->placeholder(__('Email')),
+                ->title(__('orchid.layouts.user.edit.email.title'))
+                ->placeholder(__('orchid.layouts.user.edit.email.placeholder')),
         ];
     }
 }

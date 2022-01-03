@@ -26,7 +26,7 @@ class UserListLayout extends Table
     public function columns(): array
     {
         return [
-            TD::make('name', __('Полное имя'))
+            TD::make('name', __('orchid.layouts.user.list.name.title'))
                 ->sort()
                 ->cantHide()
                 ->filter(TD::FILTER_TEXT)
@@ -34,7 +34,7 @@ class UserListLayout extends Table
                     return new Persona($user->presenter());
                 }),
 
-            TD::make('email', __('Электронная почта'))
+            TD::make('email', __('orchid.layouts.user.list.email.title'))
                 ->sort()
                 ->cantHide()
                 ->filter(TD::FILTER_TEXT)
@@ -46,29 +46,25 @@ class UserListLayout extends Table
                         ->asyncParameters(['user' => $user->id,]);
                 }),
 
-            TD::make('updated_at', __('Last edit'))
+            TD::make('updated_at', __('orchid.layouts.user.list.updated_at.title'))
                 ->sort()
                 ->render(function (User $user) {
                     return $user->updated_at->toDateTimeString();
                 }),
 
-            TD::make(__('Actions'))
+            TD::make(__('orchid.layouts.user.list.actions.title'))
                 ->align(TD::ALIGN_CENTER)
                 ->width('100px')
                 ->render(function (User $user) {
                     return DropDown::make()
                         ->icon('options-vertical')
                         ->list([
-                            Link::make(__('Edit'))
+                            Link::make(__('orchid.layouts.user.list.actions.edit.title'))
                                 ->route('platform.systems.users.edit', $user->id)
                                 ->icon('pencil'),
-                            Button::make(__('Delete'))
+                            Button::make(__('orchid.layouts.user.list.actions.delete.title'))
                                 ->icon('trash')
-                                ->confirm(__(
-                                    'Once the account is deleted, all of its resources and data
-                                    will be permanently deleted. Before deleting your account,
-                                    please download any data or information that you wish to retain.'
-                                ))
+                                ->confirm(__('orchid.layouts.user.list.actions.delete.confirm'))
                                 ->method('remove', ['id' => $user->id]),
                         ]);
                 }),

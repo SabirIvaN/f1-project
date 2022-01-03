@@ -26,13 +26,13 @@ class PositionResource extends Resource
     {
         return [
             Input::make('name')
-                ->title(__('Название'))
-                ->placeholder(__('Название')),
+                ->title(__('orchid.resources.position.fields.name.title'))
+                ->placeholder(__('orchid.resources.position.fields.name.placeholder')),
 
             TextArea::make('description')
                 ->rows(5)
-                ->title(__('Описание'))
-                ->placeholder(__('Описание')),
+                ->title(__('orchid.resources.position.fields.description.title'))
+                ->placeholder(__('orchid.resources.position.fields.description.placeholder')),
         ];
     }
 
@@ -44,9 +44,9 @@ class PositionResource extends Resource
     public function columns(): array
     {
         return [
-            TD::make('name', __('Название')),
+            TD::make('name', __('orchid.resources.position.columns.name.title')),
 
-            TD::make('description', __('Описание')),
+            TD::make('description', __('orchid.resources.position.columns.description.title')),
         ];
     }
 
@@ -68,9 +68,9 @@ class PositionResource extends Resource
     public function legend(): array
     {
         return [
-            Sight::make('name', __('Название')),
+            Sight::make('name', __('orchid.resources.position.legend.name.title')),
 
-            Sight::make('description', __('Описание')),
+            Sight::make('description', __('orchid.resources.position.legend.description.title')),
         ];
     }
 
@@ -101,7 +101,7 @@ class PositionResource extends Resource
      */
     public static function label(): string
     {
-        return __('Позиции');
+        return __('orchid.resources.position.title');
     }
 
     /**
@@ -111,7 +111,7 @@ class PositionResource extends Resource
      */
     public static function singularLabel(): string
     {
-        return __('Позиции');
+        return __('orchid.resources.position.title');
     }
 
     /**
@@ -121,7 +121,7 @@ class PositionResource extends Resource
      */
     public static function createButtonLabel(): string
     {
-        return __('Создать');
+        return __('orchid.resources.button.create_button.label.title');
     }
 
     /**
@@ -131,7 +131,7 @@ class PositionResource extends Resource
      */
     public static function createToastMessage(): string
     {
-        return __('Позиция создана!');
+        return __('orchid.resources.position.create_toast.message.title');
     }
 
     /**
@@ -141,7 +141,7 @@ class PositionResource extends Resource
      */
     public static function updateButtonLabel(): string
     {
-        return __('Обновить');
+        return __('orchid.resources.button.update_button.label.title');
     }
 
     /**
@@ -151,7 +151,7 @@ class PositionResource extends Resource
      */
     public static function updateToastMessage(): string
     {
-        return __('Позиция обновлена!');
+        return __('orchid.resources.position.update_toast.message.title');
     }
 
     /**
@@ -161,7 +161,7 @@ class PositionResource extends Resource
      */
     public static function deleteButtonLabel(): string
     {
-        return __('Удалить');
+        return __('orchid.resources.button.delete_button.label.title');
     }
 
     /**
@@ -171,7 +171,7 @@ class PositionResource extends Resource
      */
     public static function deleteToastMessage(): string
     {
-        return __('Позиция удалена!');
+        return __('orchid.resources.position.delete_toast.message.title');
     }
 
     /**
@@ -181,7 +181,7 @@ class PositionResource extends Resource
      */
     public static function saveButtonLabel(): string
     {
-        return __('Сохранить');
+        return __('orchid.resources.button.save_button.label.title');
     }
 
     /**
@@ -191,7 +191,7 @@ class PositionResource extends Resource
      */
     public static function restoreButtonLabel(): string
     {
-        return __('Восстановить');
+        return __('orchid.resources.button.restore_button.label.title');
     }
 
     /**
@@ -201,7 +201,7 @@ class PositionResource extends Resource
      */
     public static function restoreToastMessage(): string
     {
-        return __('Позиция восстановлена!');
+        return __('orchid.resources.position.restore_toast.message.title');
     }
 
     /**
@@ -211,7 +211,7 @@ class PositionResource extends Resource
      */
     public static function createBreadcrumbsMessage(): string
     {
-        return __('Создать');
+        return __('orchid.resources.breadcrumbs.create_breadcrumbs.message.title');
     }
 
     /**
@@ -221,7 +221,7 @@ class PositionResource extends Resource
      */
     public static function editBreadcrumbsMessage(): string
     {
-        return __('Редактировать');
+        return __('orchid.resources.breadcrumbs.edit_breadcrumbs.message.title');
     }
 
     /**
@@ -231,6 +231,6 @@ class PositionResource extends Resource
      */
     public static function description(): ?string
     {
-        return __('Позиции персонала компании');
+        return __('orchid.resources.position.description');
     }
 }

@@ -50,21 +50,21 @@ class EditScreen extends CrudScreen
 
             Button::make($this->resource::deleteButtonLabel())
                 ->novalidate()
-                ->confirm(__('Are you sure you want to delete this resource?'))
+                ->confirm(__('orchid.screens.crud.delete_button.confirm'))
                 ->canSee(!$this->isSoftDeleted() && $this->can('delete'))
                 ->method('delete')
                 ->icon('trash'),
 
             Button::make($this->resource::deleteButtonLabel())
                 ->novalidate()
-                ->confirm(__('Are you sure you want to force delete this resource?'))
+                ->confirm(__('orchid.screens.crud.force-delete_button.confirm'))
                 ->canSee($this->isSoftDeleted() && $this->can('forceDelete'))
                 ->method('forceDelete')
                 ->icon('trash'),
 
             Button::make($this->resource::restoreButtonLabel())
                 ->novalidate()
-                ->confirm(__('Are you sure you want to restore this resource?'))
+                ->confirm(__('orchid.screens.crud.restore_button.confirm'))
                 ->canSee($this->isSoftDeleted() && $this->can('restore'))
                 ->method('restore')
                 ->icon('reload'),

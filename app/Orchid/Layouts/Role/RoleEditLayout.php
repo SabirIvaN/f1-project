@@ -22,17 +22,17 @@ class RoleEditLayout extends Rows
                 ->type('text')
                 ->max(255)
                 ->required()
-                ->title(__('Name'))
-                ->placeholder(__('Name'))
-                ->help(__('Role display name')),
+                ->title(__('orchid.layouts.role.edit.name.title'))
+                ->placeholder(__('orchid.layouts.role.edit.name.placeholder'))
+                ->help(__('orchid.layouts.role.edit.name.help')),
 
             Input::make('role.slug')
                 ->type('text')
                 ->max(255)
                 ->required()
-                ->title(__('Slug'))
-                ->placeholder(__('Slug'))
-                ->help(__('Actual name in the system')),
+                ->title(__('orchid.layouts.role.edit.slug.title'))
+                ->placeholder(__('orchid.layouts.role.edit.slug.placeholder'))
+                ->help(__('orchid.layouts.role.edit.slug.help')),
         ];
     }
 }

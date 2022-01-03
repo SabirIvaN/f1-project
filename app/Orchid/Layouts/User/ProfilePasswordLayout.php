@@ -19,21 +19,18 @@ class ProfilePasswordLayout extends Rows
     {
         return [
             Password::make('old_password')
-                ->placeholder(__('Enter the current password'))
-                ->title(__('Current password'))
-                ->help('This is your password set at the moment.'),
+                ->title(__('orchid.layouts.user.profile_password.old_password.title'))
+                ->placeholder(__('orchid.layouts.user.profile_password.old_password.placeholder'))
+                ->help(__('orchid.layouts.user.profile_password.old_password.help')),
 
             Password::make('password')
-                ->placeholder(__('Enter the password to be set'))
-                ->title(__('New password')),
+                ->placeholder(__('orchid.layouts.user.profile_password.new_password.placeholder'))
+                ->title(__('orchid.layouts.user.profile_password.new_password.title')),
 
             Password::make('password_confirmation')
-                ->placeholder(__('Enter the password to be set'))
-                ->title(__('Confirm new password'))
-                ->help(
-                    'A good password is at least 15 characters or at least 8 characters long,
-                    including a number and a lowercase letter.'
-                ),
+                ->placeholder(__('orchid.layouts.user.profile_password.password_confirmation.placeholder'))
+                ->title(__('orchid.layouts.user.profile_password.password_confirmation.title'))
+                ->help(__('orchid.layouts.user.profile_password.password_confirmation.help')),
         ];
     }
 }

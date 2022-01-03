@@ -22,14 +22,14 @@ class RoleEditScreen extends Screen
      *
      * @var string
      */
-    public $name = 'Manage roles';
+    public $name = 'Управление ролями';
 
     /**
      * Display header description.
      *
      * @var string
      */
-    public $description = 'Access rights';
+    public $description = 'Права доступа';
 
     /**
      * @var string
@@ -66,11 +66,11 @@ class RoleEditScreen extends Screen
     public function commandBar(): array
     {
         return [
-            Button::make(__('Save'))
+            Button::make(__('orchid.screens.role.edit.command.save.title'))
                 ->icon('check')
                 ->method('save'),
 
-            Button::make(__('Remove'))
+            Button::make(__('orchid.screens.role.edit.command.remove.title'))
                 ->icon('trash')
                 ->method('remove')
                 ->canSee($this->exist),
@@ -88,19 +88,14 @@ class RoleEditScreen extends Screen
             Layout::block([
                 RoleEditLayout::class,
             ])
-                ->title('Role')
-                ->description(
-                    'A role is a collection of privileges (of possibly different
-                    services like the Users service, Moderator, and so on) that
-                    grants users with that role the ability to perform certain
-                    tasks or operations.'
-                ),
+                ->title(__('orchid.screens.role.edit.layout.role_edit.title'))
+                ->description(__('orchid.screens.role.edit.layout.role_edit.description')),
 
             Layout::block([
                 RolePermissionLayout::class,
             ])
-                ->title('Permission/Privilege')
-                ->description('A privilege is necessary to perform certain tasks and operations in an area.'),
+                ->title(__('orchid.screens.role.edit.layout.role_permission.title'))
+                ->description(__('orchid.screens.role.edit.layout.role_permission.description')),
         ];
     }
 
@@ -132,7 +127,7 @@ class RoleEditScreen extends Screen
 
         $role->save();
 
-        Toast::info(__('Role was saved'));
+        Toast::info(__('orchid.screens.role.edit.info.save'));
 
         return redirect()->route('platform.systems.roles');
     }
@@ -148,7 +143,7 @@ class RoleEditScreen extends Screen
     {
         $role->delete();
 
-        Toast::info(__('Role was removed'));
+        Toast::info(__('orchid.screens.role.edit.info.remove'));
 
         return redirect()->route('platform.systems.roles');
     }

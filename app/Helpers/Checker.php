@@ -13,7 +13,7 @@ class Checker
      */
     public static function activeLink(string $url): string
     {
-        if (request()->is($url) || request()->is("{$url}/*")) {
+        if (request()->is($url) || request()->is('{$url}/*')) {
             return 'active';
         }
         return '';

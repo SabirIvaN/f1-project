@@ -44,7 +44,7 @@ class PlatformScreen extends Screen
     public function commandBar(): array
     {
         return [
-            Link::make(__('Веб-сайт'))
+            Link::make(__('orchid.screens.platform.command.welcome'))
                 ->route('welcome.show')
                 ->icon('globe-alt'),
         ];
