@@ -56,7 +56,7 @@ class OrderController extends Controller
         Notification::route('mail', $order->email)->notify(new ClientNotification($order));
         Notification::send(User::all(), new DashboardNotification($order));
 
-        flash(__('vendor.flash.order'))
+        flash(__('app.http.controllers.order_controller.store.flash'))
             ->success()
             ->important();
 

@@ -22,8 +22,8 @@ class UserRoleLayout extends Rows
             Select::make('user.roles.')
                 ->fromModel(Role::class, 'name')
                 ->multiple()
-                ->title(__('orchid.layouts.user.role.select.title'))
-                ->help(__('orchid.layouts.role.edit.name.help')),
+                ->title(__('app.orchid.layouts.user.user_role_layout.fields.roles.title'))
+                ->help(__('app.orchid.layouts.user.user_role_layout.fields.roles.help')),
         ];
     }
 }

@@ -25,8 +25,8 @@ class CityResource extends Resource
     {
         return [
             Input::make('name')
-                ->title(__('orchid.resources.city.fields.name.title'))
-                ->placeholder(__('orchid.resources.city.fields.name.placeholder')),
+                ->title(__('app.orchid.resources.city_resource.fields.name.title'))
+                ->placeholder(__('app.orchid.resources.city_resource.fields.name.placeholder')),
         ];
     }
 
@@ -38,7 +38,7 @@ class CityResource extends Resource
     public function columns(): array
     {
         return [
-            TD::make('name', __('orchid.resources.city.columns.name.title')),
+            TD::make('name', __('app.orchid.resources.city_resource.columnds.name.header')),
         ];
     }
 

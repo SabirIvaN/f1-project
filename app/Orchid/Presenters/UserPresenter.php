@@ -16,7 +16,7 @@ class UserPresenter extends Presenter implements Searchable, Personable
      */
     public function label(): string
     {
-        return __('orchid.presenters.user.label.title');
+        return __('app.orchid.presenters.user_presenter.label');
     }
 
     /**
@@ -41,7 +41,7 @@ class UserPresenter extends Presenter implements Searchable, Personable
             ->implode(' / ');
 
         return empty($roles)
-            ? __('orchid.presenters.user.sub_title.title')
+            ? __('app.orchid.presenters.user_presenter.subtitle')
             : $roles;
     }
 

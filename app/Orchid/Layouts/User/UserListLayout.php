@@ -26,7 +26,7 @@ class UserListLayout extends Table
     public function columns(): array
     {
         return [
-            TD::make('name', __('orchid.layouts.user.list.name.title'))
+            TD::make('name', __('app.orchid.layouts.user.user_list_layout.columns.name.header'))
                 ->sort()
                 ->cantHide()
                 ->filter(TD::FILTER_TEXT)
@@ -34,7 +34,7 @@ class UserListLayout extends Table
                     return new Persona($user->presenter());
                 }),
 
-            TD::make('email', __('orchid.layouts.user.list.email.title'))
+            TD::make('email', __('app.orchid.layouts.user.user_list_layout.columns.email.header'))
                 ->sort()
                 ->cantHide()
                 ->filter(TD::FILTER_TEXT)
@@ -46,25 +46,25 @@ class UserListLayout extends Table
                         ->asyncParameters(['user' => $user->id,]);
                 }),
 
-            TD::make('updated_at', __('orchid.layouts.user.list.updated_at.title'))
+            TD::make('updated_at', __('app.orchid.layouts.user.user_list_layout.columns.updated_at.header'))
                 ->sort()
                 ->render(function (User $user) {
                     return $user->updated_at->toDateTimeString();
                 }),
 
-            TD::make(__('orchid.layouts.user.list.actions.title'))
+            TD::make(__('app.orchid.layouts.user.user_list_layout.columns.actions.header'))
                 ->align(TD::ALIGN_CENTER)
                 ->width('100px')
                 ->render(function (User $user) {
                     return DropDown::make()
                         ->icon('options-vertical')
                         ->list([
-                            Link::make(__('orchid.layouts.user.list.actions.edit.title'))
+                            Link::make(__('app.orchid.layouts.user.user_list_layout.columns.actions.list.edit.header'))
                                 ->route('platform.systems.users.edit', $user->id)
                                 ->icon('pencil'),
-                            Button::make(__('orchid.layouts.user.list.actions.delete.title'))
+                            Button::make(__('app.orchid.layouts.user.user_list_layout.columns.actions.list.delete.header'))
                                 ->icon('trash')
-                                ->confirm(__('orchid.layouts.user.list.actions.delete.confirm'))
+                                ->confirm(__('app.orchid.layouts.user.user_list_layout.columns.actions.list.delete.confirm'))
                                 ->method('remove', ['id' => $user->id]),
                         ]);
                 }),

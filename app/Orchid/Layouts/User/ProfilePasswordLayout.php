@@ -19,18 +19,18 @@ class ProfilePasswordLayout extends Rows
     {
         return [
             Password::make('old_password')
-                ->title(__('orchid.layouts.user.profile_password.old_password.title'))
-                ->placeholder(__('orchid.layouts.user.profile_password.old_password.placeholder'))
-                ->help(__('orchid.layouts.user.profile_password.old_password.help')),
+                ->title(__('app.orchid.layouts.user.profile_password_layout.fields.old_password.title'))
+                ->placeholder(__('app.orchid.layouts.user.profile_password_layout.fields.old_password.placeholder'))
+                ->help(__('app.orchid.layouts.user.profile_password_layout.fields.old_password.help')),
 
             Password::make('password')
-                ->placeholder(__('orchid.layouts.user.profile_password.new_password.placeholder'))
-                ->title(__('orchid.layouts.user.profile_password.new_password.title')),
+                ->placeholder(__('app.orchid.layouts.user.profile_password_layout.fields.password.placeholder'))
+                ->title(__('app.orchid.layouts.user.profile_password_layout.fields.password.title')),
 
             Password::make('password_confirmation')
-                ->placeholder(__('orchid.layouts.user.profile_password.password_confirmation.placeholder'))
-                ->title(__('orchid.layouts.user.profile_password.password_confirmation.title'))
-                ->help(__('orchid.layouts.user.profile_password.password_confirmation.help')),
+                ->placeholder(__('app.orchid.layouts.user.profile_password_layout.fields.password_confirmation.placeholder'))
+                ->title(__('app.orchid.layouts.user.profile_password_layout.fields.password_confirmation.title'))
+                ->help(__('app.orchid.layouts.user.profile_password_layout.fields.password_confirmation.help')),
         ];
     }
 }

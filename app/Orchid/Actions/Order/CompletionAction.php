@@ -17,7 +17,7 @@ class CompletionAction extends Action
      */
     public function button(): Button
     {
-        return Button::make(__('orchid.action.button.completion.title'))->icon('action-redo');
+        return Button::make(__('app.orchid.actions.order.completion_action.button.header'))->icon('action-redo');
     }
 
     /**
@@ -33,9 +33,9 @@ class CompletionAction extends Action
         });
 
         if ($models->count() === 1) {
-            Toast::message(__('orchid.action.order.completion.single.title'));
+            Toast::message(__('app.orchid.actions.order.completion_action.handle.toast.single.header'));
         } else {
-            Toast::message(__('orchid.action.order.completion.plural.title'));
+            Toast::message(__('app.orchid.actions.order.completion_action.handle.toast.plural.header'));
         }
     }
 }

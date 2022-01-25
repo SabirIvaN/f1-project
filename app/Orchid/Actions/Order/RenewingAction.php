@@ -17,7 +17,7 @@ class RenewingAction extends Action
      */
     public function button(): Button
     {
-        return Button::make(__('orchid.action.button.resumption.title'))->icon('action-undo');
+        return Button::make(__('app.orchid.actions.order.renewing_action.button.header'))->icon('action-undo');
     }
 
     /**
@@ -33,9 +33,9 @@ class RenewingAction extends Action
         });
 
         if ($models->count() === 1) {
-            Toast::message(__('orchid.action.order.resumption.single.title'));
+            Toast::message(__('app.orchid.actions.order.renewing_action.handle.toast.single.header'));
         } else {
-            Toast::message(__('orchid.action.order.resumption.plural.title'));
+            Toast::message(__('app.orchid.actions.order.renewing_action.handle.toast.plural.header'));
         }
     }
 }

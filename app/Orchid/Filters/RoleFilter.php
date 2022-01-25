@@ -24,7 +24,7 @@ class RoleFilter extends Filter
      */
     public function name(): string
     {
-        return __('orchid.filters.order.name.title');
+        return __('app.orchid.filters.role_filter.name.header');
     }
 
     /**
@@ -49,7 +49,7 @@ class RoleFilter extends Filter
                 ->fromModel(Role::class, 'name', 'slug')
                 ->empty()
                 ->value($this->request->get('role'))
-                ->title(__('orchid.filters.order.name.title')),
+                ->title(__('app.orchid.filters.role_filter.display.header')),
         ];
     }
 

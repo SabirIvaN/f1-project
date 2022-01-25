@@ -24,13 +24,13 @@ class UserPasswordLayout extends Rows
             ->get('user');
 
         $placeholder = $user->exists
-            ? __('orchid.layouts.user.user_password.password.placeholder.current_password')
-            : __('orchid.layouts.user.user_password.password.placeholder.new_password');
+            ? __('app.orchid.layouts.user.user_password_layout.fields.placeholder.current_password')
+            : __('app.orchid.layouts.user.user_password_layout.fields.placeholder.new_password');
 
         return [
             Password::make('user.password')
                 ->placeholder($placeholder)
-                ->title(__('orchid.layouts.user.user_password.password.title')),
+                ->title(__('app.orchid.layouts.user.user_password_layout.fields.title')),
         ];
     }
 }

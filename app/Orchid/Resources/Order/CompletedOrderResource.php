@@ -29,26 +29,26 @@ class CompletedOrderResource extends Resource
     {
         return [
             Input::make('name')
-                ->title(__('orchid.resources.order.fields.name.title'))
-                ->placeholder(__('orchid.resources.order.fields.name.placeholder')),
+                ->title(__('app.orchid.resources.order.fields.name.title'))
+                ->placeholder(__('app.orchid.resources.order.fields.name.placeholder')),
 
             Input::make('phone')
-                ->title(__('orchid.resources.order.fields.phone.title'))
-                ->placeholder(__('orchid.resources.order.fields.phone.placeholder'))
+                ->title(__('app.orchid.resources.order.fields.phone.title'))
+                ->placeholder(__('app.orchid.resources.order.fields.phone.placeholder'))
                 ->mask('+7 (999) 999-9999'),
 
             Input::make('email')
                 ->type('email')
-                ->title(__('orchid.resources.order.fields.email.title'))
-                ->placeholder(__('orchid.resources.order.fields.email.placeholder')),
+                ->title(__('app.orchid.resources.order.fields.email.title'))
+                ->placeholder(__('app.orchid.resources.order.fields.email.placeholder')),
 
             Input::make('address')
-                ->title(__('orchid.resources.order.fields.address.title'))
-                ->placeholder(__('orchid.resources.order.fields.address.placeholder')),
+                ->title(__('app.orchid.resources.order.fields.address.title'))
+                ->placeholder(__('app.orchid.resources.order.fields.address.placeholder')),
 
             TextArea::make('comment')
-                ->title(__('orchid.resources.order.fields.comment.title'))
-                ->placeholder(__('orchid.resources.order.fields.comment.placeholder')),
+                ->title(__('app.orchid.resources.order.fields.comment.title'))
+                ->placeholder(__('app.orchid.resources.order.fields.comment.placeholder')),
 
             Select::make('completed')
                 ->options([
@@ -77,21 +77,21 @@ class CompletedOrderResource extends Resource
     public function columns(): array
     {
         return [
-            TD::make('name', __('orchid.resources.order.columns.name.title')),
+            TD::make('name', __('app.orchid.resources.order.columns.name.header')),
 
-            TD::make('service', __('orchid.resources.order.columns.service.title'))->render(function ($order) {
+            TD::make('service', __('app.orchid.resources.order.columns.service.header'))->render(function ($order) {
                 return $order
                     ->services[0]
                     ->name;
             }),
 
-            TD::make('price', __('orchid.resources.order.columns.price.title'))->render(function ($order) {
+            TD::make('price', __('app.orchid.resources.order.columns.price.header'))->render(function ($order) {
                 return $order
                     ->services[0]
-                    ->price . __('orchid.resources.order.columns.price.currency');
+                    ->price . __('app.orchid.resources.order.columns.price.currency');
             }),
 
-            TD::make('created_at', __('orchid.resources.order.columns.created_at.title'))->render(function ($model) {
+            TD::make('created_at', __('app.orchid.resources.order.columns.created_at.header'))->render(function ($model) {
                 return $model
                     ->created_at
                     ->format('d.m.Y h:i');
@@ -107,31 +107,31 @@ class CompletedOrderResource extends Resource
     public function legend(): array
     {
         return [
-            Sight::make('name', __('orchid.resources.order.legend.name.title')),
+            Sight::make('name', __('app.orchid.resources.order.legend.name.header')),
 
-            Sight::make('phone', __('orchid.resources.order.legend.phone.title')),
+            Sight::make('phone', __('app.orchid.resources.order.legend.phone.header')),
 
-            Sight::make('email', __('orchid.resources.order.legend.email.title')),
+            Sight::make('email', __('app.orchid.resources.order.legend.email.header')),
 
-            Sight::make('address', __('orchid.resources.order.legend.address.title'))->render(function ($order) {
+            Sight::make('address', __('app.orchid.resources.order.legend.address.header'))->render(function ($order) {
                 return $order
                     ->cities[0]
                     ->name . ', ' . $order->address;
             }),
 
-            Sight::make('service', __('orchid.resources.order.legend.service.title'))->render(function ($order) {
+            Sight::make('service', __('app.orchid.resources.order.legend.service.header'))->render(function ($order) {
                 return $order
                     ->services[0]
                     ->name;
             }),
 
-            Sight::make('price', __('orchid.resources.order.legend.price.title'))->render(function ($order) {
+            Sight::make('price', __('app.orchid.resources.order.legend.price.header'))->render(function ($order) {
                 return $order
                     ->services[0]
-                    ->price . __('orchid.resources.order.legend.price.currency');
+                    ->price . __('app.orchid.resources.service_resource.legend.price.currency');
             }),
 
-            Sight::make('comment', __('orchid.resources.order.legend.comment.title')),
+            Sight::make('comment', __('app.orchid.resources.order.legend.comment.header')),
 
             Sight::make('completed', __('orchid.resources.order.legend.completed.title'))->render(function ($order) {
                 return ($order->completed == true)
@@ -139,7 +139,7 @@ class CompletedOrderResource extends Resource
                     : __('orchid.resources.order.legend.completed.options.false.title');
             }),
 
-            Sight::make('created_at', _('orchid.resources.order.legend.created_at.title'))->render(function ($model) {
+            Sight::make('created_at', __('app.orchid.resources.order.legend.created_at.header'))->render(function ($model) {
                 return $model
                     ->created_at
                     ->format('d.m.Y h:i');
@@ -188,7 +188,7 @@ class CompletedOrderResource extends Resource
      */
     public static function label(): string
     {
-        return __('orchid.resources.order.completed_order.title');
+        return __('app.orchid.resources.order.completed_order_resource.label');
     }
 
     /**
@@ -198,7 +198,7 @@ class CompletedOrderResource extends Resource
      */
     public static function singularLabel(): string
     {
-        return __('orchid.resources.order.completed_order.title');
+        return __('app.orchid.resources.order.completed_order_resource.label');
     }
 
     /**
@@ -208,7 +208,7 @@ class CompletedOrderResource extends Resource
      */
     public static function createButtonLabel(): string
     {
-        return __('orchid.resources.button.create_button.label.title');
+        return __('app.orchid.resources.order.create_button_label');
     }
 
     /**
@@ -218,7 +218,7 @@ class CompletedOrderResource extends Resource
      */
     public static function createToastMessage(): string
     {
-        return __('orchid.resources.order.create_toast.message.title');
+        return __('app.orchid.resources.order.create_toast_message');
     }
 
     /**
@@ -228,7 +228,7 @@ class CompletedOrderResource extends Resource
      */
     public static function updateButtonLabel(): string
     {
-        return __('orchid.resources.button.update_button.label.title');
+        return __('app.orchid.resources.order.update_button_label');
     }
 
     /**
@@ -238,7 +238,7 @@ class CompletedOrderResource extends Resource
      */
     public static function updateToastMessage(): string
     {
-        return __('orchid.resources.order.update_toast.message.title');
+        return __('app.orchid.resources.order.update_toast_message');
     }
 
     /**
@@ -248,7 +248,7 @@ class CompletedOrderResource extends Resource
      */
     public static function deleteButtonLabel(): string
     {
-        return __('orchid.resources.button.delete_button.label.title');
+        return __('app.orchid.resources.order.delete_button_label');
     }
 
     /**
@@ -258,7 +258,7 @@ class CompletedOrderResource extends Resource
      */
     public static function deleteToastMessage(): string
     {
-        return __('orchid.resources.order.delete_toast.message.title');
+        return __('app.orchid.resources.order.delete_toast_message');
     }
 
     /**
@@ -268,7 +268,7 @@ class CompletedOrderResource extends Resource
      */
     public static function saveButtonLabel(): string
     {
-        return __('orchid.resources.button.save_button.label.title');
+        return __('app.orchid.resources.order.save_button_label');
     }
 
     /**
@@ -278,7 +278,7 @@ class CompletedOrderResource extends Resource
      */
     public static function restoreButtonLabel(): string
     {
-        return __('orchid.resources.button.restore_button.label.title');
+        return __('app.orchid.resources.order.restore_button_label');
     }
 
     /**
@@ -288,7 +288,7 @@ class CompletedOrderResource extends Resource
      */
     public static function restoreToastMessage(): string
     {
-        return __('orchid.resources.order.restore_toast.message.title');
+        return __('app.orchid.resources.order.restore_toast_message');
     }
 
     /**
@@ -298,7 +298,7 @@ class CompletedOrderResource extends Resource
      */
     public static function createBreadcrumbsMessage(): string
     {
-        return __('orchid.resources.breadcrumbs.create_breadcrumbs.message.title');
+        return __('app.orchid.resources.order.create_breadcrumbs_message');
     }
 
     /**
@@ -308,7 +308,7 @@ class CompletedOrderResource extends Resource
      */
     public static function editBreadcrumbsMessage(): string
     {
-        return __('orchid.resources.breadcrumbs.edit_breadcrumbs.message.title');
+        return __('app.orchid.resources.order.edit_breadcrumbs_message');
     }
 
     /**
@@ -318,6 +318,6 @@ class CompletedOrderResource extends Resource
      */
     public static function description(): ?string
     {
-        return _('orchid.resources.order.completed_order.description');
+        return __('app.orchid.resources.order.completed_order_resource.description');
     }
 }

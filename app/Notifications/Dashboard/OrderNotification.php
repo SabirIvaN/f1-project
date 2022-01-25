@@ -49,8 +49,8 @@ class OrderNotification extends Notification
     public function toDashboard()
     {
         return (new DashboardMessage())
-            ->title(__('orchid.notification.order.new.title'))
-            ->message(__('orchid.notification.order.new.description'))
+            ->title(__('app.notifications.dashboard.order_notification.title'))
+            ->message(__('app.notifications.dashboard.order_notification.message'))
             ->action(URL::route('platform.index') . '/crud/view/accepted-order-resources/' . $this->order->id);
     }
 }
