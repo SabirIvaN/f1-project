@@ -231,11 +231,9 @@ return [
                     'price'     => ['header' => 'Цена'],
                     'comment'   => ['header' => 'Комментарий'],
                     'completed' => [
-                        'truth' => ['header' => 'Завершен',],
-                        'false' => [
-                            'header' => 'Не завершен',
-                        ],
                         'header' => 'Завершенность',
+                        'truth'  => ['header' => 'Завершен'],
+                        'false'  => ['header' => 'Не завершен'],
                     ],
                     'created_at' => ['header' => 'Поступил'],
                 ],
@@ -251,7 +249,7 @@ return [
                 'create_breadcrumbs_message' => 'Создать',
                 'edit_breadcrumbs_message'   => 'Изменить',
                 'accepted_order_resource'    => [
-                    'label'       => 'Принятые заказы',
+                    'label'       => 'Поступившие заказы',
                     'description' => 'Поступившие заказы, которые необходимо выполнить',
                 ],
                 'completed_order_resource' => [

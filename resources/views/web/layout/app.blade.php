@@ -10,7 +10,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{!! mix('css/app.css') !!}">
 
-    <title>{!! __('web.layout.title') !!} — @yield('title')</title>
+    <title>{!! config('app.name') !!} — @yield('title')</title>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
                         <div class="alert alert-danger my-5 py-5" role="alert">
                             {!! $error !!}
 
-                            {!! Form::button(__('web.layout.button.close.title'), ['class' => 'btn-close', 'data-bs-dismiss' => 'alert', 'aria-label' => 'Close']) !!}
+                            {!! Form::button(__('views.web.layout.app.close_button'), ['class' => 'btn-close', 'data-bs-dismiss' => 'alert', 'aria-label' => 'Close']) !!}
                         </div>
                     @endforeach
                 @endif

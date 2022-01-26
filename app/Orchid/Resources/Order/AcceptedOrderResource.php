@@ -49,13 +49,6 @@ class AcceptedOrderResource extends Resource
             TextArea::make('comment')
                 ->title(__('app.orchid.resources.order.fields.comment.title'))
                 ->placeholder(__('app.orchid.resources.order.fields.comment.placeholder')),
-
-            Select::make('completed')
-                ->options([
-                    1 => __('orchid.resources.order.fields.completed.options.truth.title'),
-                    0 => __('orchid.resources.order.fields.completed.options.false.title'),
-                ])
-                ->title(__('orchid.resources.order.fields.completed.title')),
         ];
     }
 
@@ -133,10 +126,8 @@ class AcceptedOrderResource extends Resource
 
             Sight::make('comment', __('app.orchid.resources.order.legend.comment.header')),
 
-            Sight::make('completed', __('orchid.resources.order.legend.completed.title'))->render(function ($order) {
-                return ($order->completed == true)
-                    ? __('orchid.resources.order.legend.completed.options.truth.title')
-                    : __('orchid.resources.order.legend.completed.options.false.title');
+            Sight::make('completed', __('app.orchid.resources.order.legend.completed.header'))->render(function () {
+                return __('app.orchid.resources.order.legend.completed.false.header');
             }),
 
             Sight::make('created_at', __('app.orchid.resources.order.legend.created_at.header'))->render(function ($model) {

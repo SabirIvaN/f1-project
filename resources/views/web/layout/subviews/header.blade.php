@@ -2,7 +2,7 @@
     <div class="container my-2">
         <h1>
             <a class="navbar-brand fs-1 fw-bold" href="#">
-                {!! __('web.layout.title') !!}
+                {!! config('app.name') !!}
             </a>
         </h1>
         <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,19 +12,19 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link {!! Checker::activeLink('/') !!}" href="{!! route('welcome.show') !!}">
-                        {!! __('web.layout.subviews.header.welcome.title') !!}
+                        {!! __('views.web.layout.subviews.header.welcome') !!}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {!! Checker::activeLink('contacts') !!}" href="{!! route('user.index') !!}">
-                        {!! __('web.layout.subviews.header.user.title') !!}
+                        {!! __('views.web.layout.subviews.header.user') !!}
                     </a>
                 </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{!! route('platform.index') !!}">
-                        {!! __('web.layout.subviews.header.admin.title') !!}
+                        {!! __('views.web.layout.subviews.header.admin') !!}
                     </a>
                 </li>
             </ul>

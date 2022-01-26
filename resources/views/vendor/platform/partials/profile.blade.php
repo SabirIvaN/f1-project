@@ -17,7 +17,7 @@
                 <a href="#" class="dropdown-item" data-controller="form" data-action="form#submitByForm"
                     data-form-id="return-original-user">
                     <x-orchid-icon path="people" class="me-2" />
-                    <span>{{ __('Back to my account') }}</span>
+                    <span>{{ __('views.vendor.platform.partials.profile.back') }}</span>
                 </a>
                 <form id="return-original-user" class="hidden" data-controller="form" data-action="form#submit"
                     action="{{ route('platform.switch.logout') }}" method="POST">
@@ -28,7 +28,7 @@
             <a href="{{ route('platform.logout') }}" class="dropdown-item" data-controller="form" data-action="form#submitByForm" data-form-id="logout-form" dusk="logout-button">
                 <x-orchid-icon path="logout" class="me-2" />
 
-                <span>{{ __('Sign out') }}</span>
+                <span>{{ __('views.vendor.platform.partials.profile.sign_out') }}</span>
             </a>
             <form id="logout-form" class="hidden" action="{{ route('platform.logout') }}" method="POST" data-controller="form" data-action="form#submit">
                 @csrf

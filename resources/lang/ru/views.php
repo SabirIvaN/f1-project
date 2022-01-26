@@ -9,10 +9,11 @@ return [
         ],
 
         'mail' => [
+            'html' => [
+                'message' => ['rights' => 'Все права защищены.'],
+            ],
             'text' => [
-                'message' => [
-                    'rights' => 'Все права защищены.'
-                ],
+                'message' => ['rights' => 'Все права защищены.'],
             ],
         ],
 
@@ -28,7 +29,8 @@ return [
             'auth'    => [
                 'lockme' => [
                     'password' => 'Введите Ваш пароль',
-                    'sign_in'  => 'Сменить пользователя.',
+                    'sign_in'  => 'Сменить пользователя',
+                    'login'    => 'Войти',
                 ],
             ],
             'partials' => [
@@ -94,7 +96,8 @@ return [
             ],
 
             'welcome' => [
-                'banners' => [
+                'title'  => 'Главная страница',
+                'banner' => [
                     'starting_banner' => [
                         'ru' => 'Привет, Питер!',
                         'en' => 'Hello, Peter!',
@@ -176,9 +179,7 @@ return [
                     'admin'   => 'Вы администратор?',
                 ],
             ],
-            'app'      => [
-                'close_button' => 'Закрыть',
-            ],
+            'app' => ['close_button' => 'Закрыть'],
         ],
 
     ],
