@@ -201,8 +201,8 @@ return [
                         'placeholder' => '+7 (000) 000-00-00',
                     ],
                     'email' => [
-                        'title'       => 'example@mail.com',
-                        'placeholder' => 'E-Mail',
+                        'title'       => 'E-Mail',
+                        'placeholder' => 'example@mail.com',
                     ],
                     'address' => [
                         'title'       => 'Адрес',
