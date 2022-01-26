@@ -26,16 +26,16 @@ class ServiceResource extends Resource
         return [
 
             Input::make('name')
-                ->title(__('orchid.resources.service.fields.name.title'))
-                ->placeholder(__('orchid.resources.service.fields.name.placeholder')),
+                ->title(__('app.orchid.resources.service_resource.fields.name.title'))
+                ->placeholder(__('app.orchid.resources.service_resource.fields.name.placeholder')),
 
             Input::make('price')
-                ->title(__('orchid.resources.service.fields.price.title'))
-                ->placeholder(__('100')),
+                ->title(__('app.orchid.resources.service_resource.fields.price.title'))
+                ->placeholder(__('app.orchid.resources.service_resource.fields.price.placeholder')),
 
             Input::make('description')
-                ->title(__('orchid.resources.service.fields.description.title'))
-                ->placeholder(__('orchid.resources.service.fields.description.placeholder')),
+                ->title(__('app.orchid.resources.service_resource.fields.description.title'))
+                ->placeholder(__('app.orchid.resources.service_resource.fields.description.placeholder')),
 
         ];
     }
@@ -48,13 +48,15 @@ class ServiceResource extends Resource
     public function columns(): array
     {
         return [
-            TD::make('name', __('orchid.resources.service.columns.name.title')),
 
-            TD::make('price', __('orchid.resources.service.columns.price.title'))->render(function ($model) {
-                return (string) $model->price . __('orchid.resources.service.columns.price.currency');
+            TD::make('name', __('app.orchid.resources.service_resource.columns.name.header')),
+
+            TD::make('price', __('app.orchid.resources.service_resource.columns.price.header'))->render(function ($model) {
+                return (string) $model->price . __('app.orchid.resources.service_resource.columns.price.currency');
             }),
 
-            TD::make('description', __('orchid.resources.service.columns.description.title')),
+            TD::make('description', __('app.orchid.resources.service_resource.columns.description.header')),
+
         ];
     }
 
@@ -76,13 +78,15 @@ class ServiceResource extends Resource
     public function legend(): array
     {
         return [
-            Sight::make('name', __('orchid.resources.service.legend.name.title')),
 
-            Sight::make('price', __('orchid.resources.service.legend.price.title'))->render(function ($model) {
-                return (string) $model->price . __('orchid.resources.service.legend.price.currency');
+            Sight::make('name', __('app.orchid.resources.service_resource.legend.name.header')),
+
+            Sight::make('price', __('app.orchid.resources.service_resource.legend.price.header'))->render(function ($model) {
+                return (string) $model->price . __('app.orchid.resources.service_resource.legend.price.currency');
             }),
 
-            Sight::make('description', __('orchid.resources.service.legend.description.title')),
+            Sight::make('description', __('app.orchid.resources.service_resource.legend.description.header')),
+
         ];
     }
 
@@ -113,7 +117,7 @@ class ServiceResource extends Resource
      */
     public static function label(): string
     {
-        return __('orchid.resources.service.title');
+        return __('app.orchid.resources.service_resource.label');
     }
 
     /**
@@ -123,7 +127,7 @@ class ServiceResource extends Resource
      */
     public static function singularLabel(): string
     {
-        return __('orchid.resources.service.title');
+        return __('app.orchid.resources.service_resource.label');
     }
 
     /**
@@ -133,7 +137,7 @@ class ServiceResource extends Resource
      */
     public static function createButtonLabel(): string
     {
-        return __('orchid.resources.button.create_button.label.title');
+        return __('app.orchid.resources.service_resource.create_button_label');
     }
 
     /**
@@ -143,7 +147,7 @@ class ServiceResource extends Resource
      */
     public static function createToastMessage(): string
     {
-        return __('orchid.resources.service.create_toast.message.title');
+        return __('app.orchid.resources.service_resource.create_toast_message');
     }
 
     /**
@@ -153,7 +157,7 @@ class ServiceResource extends Resource
      */
     public static function updateButtonLabel(): string
     {
-        return __('orchid.resources.button.update_button.label.title');
+        return __('app.orchid.resources.service_resource.update_button_label');
     }
 
     /**
@@ -163,7 +167,7 @@ class ServiceResource extends Resource
      */
     public static function updateToastMessage(): string
     {
-        return __('orchid.resources.service.update_toast.message.title');
+        return __('app.orchid.resources.service_resource.update_toast_message');
     }
 
     /**
@@ -173,7 +177,7 @@ class ServiceResource extends Resource
      */
     public static function deleteButtonLabel(): string
     {
-        return __('orchid.resources.button.delete_button.label.title');
+        return __('app.orchid.resources.service_resource.delete_button_label');
     }
 
     /**
@@ -183,7 +187,7 @@ class ServiceResource extends Resource
      */
     public static function deleteToastMessage(): string
     {
-        return __('orchid.resources.service.delete_toast.message.title');
+        return __('app.orchid.resources.service_resource.delete_toast_message');
     }
 
     /**
@@ -193,7 +197,7 @@ class ServiceResource extends Resource
      */
     public static function saveButtonLabel(): string
     {
-        return __('orchid.resources.button.save_button.label.title');
+        return __('app.orchid.resources.service_resource.save_button_label');
     }
 
     /**
@@ -203,7 +207,7 @@ class ServiceResource extends Resource
      */
     public static function restoreButtonLabel(): string
     {
-        return __('orchid.resources.button.restore_button.label.title');
+        return __('app.orchid.resources.service_resource.restore_button_label');
     }
 
     /**
@@ -213,7 +217,7 @@ class ServiceResource extends Resource
      */
     public static function restoreToastMessage(): string
     {
-        return __('orchid.resources.service.restore_toast.message.title');
+        return __('app.orchid.resources.service_resource.restore_toast_message');
     }
 
     /**
@@ -223,7 +227,7 @@ class ServiceResource extends Resource
      */
     public static function createBreadcrumbsMessage(): string
     {
-        return __('orchid.resources.breadcrumbs.create_breadcrumbs.message.title');
+        return __('app.orchid.resources.service_resource.create_breadcrumbs_message');
     }
 
     /**
@@ -233,7 +237,7 @@ class ServiceResource extends Resource
      */
     public static function editBreadcrumbsMessage(): string
     {
-        return __('orchid.resources.breadcrumbs.edit_breadcrumbs.message.title');
+        return __('app.orchid.resources.service_resource.edit_breadcrumbs_message');
     }
 
     /**
@@ -243,6 +247,6 @@ class ServiceResource extends Resource
      */
     public static function description(): ?string
     {
-        return __('orchid.resources.service.description');
+        return __('app.orchid.resources.service_resource.description');
     }
 }

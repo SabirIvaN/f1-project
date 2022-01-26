@@ -44,7 +44,7 @@ class ViewScreen extends CrudScreen
         return [
             $this->actionsButtons(),
 
-            Link::make(__('Edit'))
+            Link::make(__('app.orchid.screens.crud.view_screen.command_bar.edit.header'))
                 ->icon('pencil')
                 ->canSee($this->can('update'))
                 ->route('platform.resource.edit', [
@@ -56,21 +56,21 @@ class ViewScreen extends CrudScreen
 
             Button::make($this->resource::deleteButtonLabel())
                 ->novalidate()
-                ->confirm(__('orchid.screens.crud.delete_button.confirm'))
+                ->confirm(__('app.orchid.screens.crud.view_screen.command_bar.delete.confirm'))
                 ->canSee(!$this->isSoftDeleted() && $this->can('delete'))
                 ->method('delete')
                 ->icon('trash'),
 
             Button::make($this->resource::deleteButtonLabel())
                 ->novalidate()
-                ->confirm(__('orchid.screens.crud.force-delete_button.confirm'))
+                ->confirm(__('app.orchid.screens.crud.view_screen.command_bar.force_delete.confirm'))
                 ->canSee($this->isSoftDeleted() && $this->can('forceDelete'))
                 ->method('forceDelete')
                 ->icon('trash'),
 
             Button::make($this->resource::restoreButtonLabel())
                 ->novalidate()
-                ->confirm(__('orchid.screens.crud.restore_button.confirm'))
+                ->confirm(__('app.orchid.screens.crud.view_screen.command_bar.restore.confirm'))
                 ->canSee($this->isSoftDeleted() && $this->can('restore'))
                 ->method('restore')
                 ->icon('reload'),

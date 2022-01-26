@@ -79,19 +79,19 @@ class UserEditScreen extends Screen
     public function commandBar(): array
     {
         return [
-            Button::make(__('orchid.screens.user.edit.command.login_as.title'))
+            Button::make(__('app.orchid.screens.user.user_edit_screen.command_bar.login.header'))
                 ->icon('login')
-                ->confirm(__('orchid.screens.user.edit.command.login_as.confirm'))
+                ->confirm(__('app.orchid.screens.user.user_edit_screen.command_bar.login.confirm'))
                 ->method('loginAs')
                 ->canSee($this->user->exists && \request()->user()->id !== $this->user->id),
 
-            Button::make(__('orchid.screens.user.edit.command.remove.title'))
+            Button::make(__('app.orchid.screens.user.user_edit_screen.command_bar.remove.header'))
                 ->icon('trash')
-                ->confirm(__('orchid.screens.user.edit.command.remove.confirm'))
+                ->confirm(__('app.orchid.screens.user.user_edit_screen.command_bar.remove.confirm'))
                 ->method('remove')
                 ->canSee($this->user->exists),
 
-            Button::make(__('orchid.screens.user.edit.command.save.title'))
+            Button::make(__('app.orchid.screens.user.user_edit_screen.command_bar.save.header'))
                 ->icon('check')
                 ->method('save'),
         ];
@@ -105,10 +105,10 @@ class UserEditScreen extends Screen
         return [
 
             Layout::block(UserEditLayout::class)
-                ->title(__('orchid.screens.user.edit.layout.user_edit.title'))
-                ->description(__('orchid.screens.user.edit.layout.user_edit.description'))
+                ->title(__('app.orchid.screens.user.user_edit_screen.layout.user_edit_layout.title'))
+                ->description(__('app.orchid.screens.user.user_edit_screen.layout.user_edit_layout.description'))
                 ->commands(
-                    Button::make(__('orchid.screens.user.command.save.title'))
+                    Button::make(__('app.orchid.screens.user.user_edit_screen.layout.user_edit_layout.commands.save.header'))
                         ->type(Color::DEFAULT())
                         ->icon('check')
                         ->canSee($this->user->exists)
@@ -116,10 +116,10 @@ class UserEditScreen extends Screen
                 ),
 
             Layout::block(UserPasswordLayout::class)
-                ->title(__('orchid.screens.user.edit.layout.user_password.title'))
-                ->description(__('orchid.screens.user.edit.layout.user_password.description'))
+                ->title(__('app.orchid.screens.user.user_edit_screen.layout.user_password_layout.title'))
+                ->description(__('app.orchid.screens.user.user_edit_screen.layout.user_password_layout.description'))
                 ->commands(
-                    Button::make(__('orchid.screens.user.command.save.title'))
+                    Button::make(__('app.orchid.screens.user.user_edit_screen.layout.user_password_layout.commands.save.header'))
                         ->type(Color::DEFAULT())
                         ->icon('check')
                         ->canSee($this->user->exists)
@@ -127,20 +127,20 @@ class UserEditScreen extends Screen
                 ),
 
             Layout::block(UserPositionLayout::class)
-                ->title(__('orchid.screens.user.edit.layout.user_position.title'))
-                ->description(__('orchid.screens.user.edit.layout.user_position.description'))
+                ->title(__('app.orchid.screens.user.user_edit_screen.layout.user_position_layout.title'))
+                ->description(__('app.orchid.screens.user.user_edit_screen.layout.user_position_layout.description'))
                 ->commands(
-                    Button::make(__('orchid.screens.user.command.save.title'))
+                    Button::make(__('app.orchid.screens.user.user_edit_screen.layout.user_position_layout.commands.save.header'))
                         ->type(Color::DEFAULT())
                         ->icon('check')
                         ->method('save')
                 ),
 
             Layout::block(UserRoleLayout::class)
-                ->title(__('orchid.screens.user.edit.layout.user_role.title'))
-                ->description(__('orchid.screens.user.edit.layout.user_role.description'))
+                ->title(__('app.orchid.screens.user.user_edit_screen.layout.user_role_layout.title'))
+                ->description(__('app.orchid.screens.user.user_edit_screen.layout.user_role_layout.description'))
                 ->commands(
-                    Button::make(__('orchid.screens.user.command.save.title'))
+                    Button::make(__('app.orchid.screens.user.user_edit_screen.layout.user_role_layout.commands.save.header'))
                         ->type(Color::DEFAULT())
                         ->icon('check')
                         ->canSee($this->user->exists)
@@ -148,10 +148,10 @@ class UserEditScreen extends Screen
                 ),
 
             Layout::block(RolePermissionLayout::class)
-                ->title(__('orchid.screens.role.edit.layout.role_permission.title'))
-                ->description(__('orchid.screens.role.edit.layout.role_permission.description'))
+                ->title(__('app.orchid.screens.user.user_edit_screen.layout.role_permission_layout.title'))
+                ->description(__('app.orchid.screens.user.user_edit_screen.layout.role_permission_layout.description'))
                 ->commands(
-                    Button::make(__('orchid.screens.user.command.save.title'))
+                    Button::make(__('app.orchid.screens.user.user_edit_screen.layout.role_permission_layout.commands.save.header'))
                         ->type(Color::DEFAULT())
                         ->icon('check')
                         ->canSee($this->user->exists)
@@ -208,7 +208,7 @@ class UserEditScreen extends Screen
 
         $user->replaceRoles($request->input('user.roles'));
 
-        Toast::info(__('orchid.screens.user.edit.command.info.save'));
+        Toast::info(__('app.orchid.screens.user.user_edit_screen.save.toast'));
 
         return redirect()->route('platform.systems.users');
     }
@@ -224,7 +224,7 @@ class UserEditScreen extends Screen
     {
         $user->delete();
 
-        Toast::info(__('orchid.screens.user.edit.command.info.remove'));
+        Toast::info(__('app.orchid.screens.user.user_edit_screen.remove.toast'));
 
         return redirect()->route('platform.systems.users');
     }
@@ -238,7 +238,7 @@ class UserEditScreen extends Screen
     {
         UserSwitch::loginAs($user);
 
-        Toast::info(__('orchid.screens.user.edit.command.info.login_as'));
+        Toast::info(__('app.orchid.screens.user.user_edit_screen.login_as.toast'));
 
         return redirect()->route(config('platform.index'));
     }

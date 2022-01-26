@@ -26,35 +26,35 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return [
-            Menu::make(__('orchid.platform.main_menu.accepted-order.header'))
+            Menu::make(__('app.orchid.platform_provider.register_main_menu.accepted_order.header'))
                 ->icon('folder')
                 ->url(URL::route('platform.index') . '/crud/list/accepted-order-resources')
-                ->title(__('orchid.platform.main_menu.accepted-order.title')),
+                ->title(__('app.orchid.platform_provider.register_main_menu.accepted_order.title')),
 
-            Menu::make(__('orchid.platform.main_menu.completed-order.header'))
+            Menu::make(__('app.orchid.platform_provider.register_main_menu.completed_order.header'))
                 ->icon('folder-alt')
                 ->url(URL::route('platform.index') . '/crud/list/completed-order-resources'),
 
-            Menu::make(__('orchid.platform.main_menu.city.header'))
+            Menu::make(__('app.orchid.platform_provider.register_main_menu.city.header'))
                 ->icon('map')
                 ->url(URL::route('platform.index') . '/crud/list/city-resources')
-                ->title(__('orchid.platform.main_menu.service.title')),
+                ->title(__('app.orchid.platform_provider.register_main_menu.city.title')),
 
-            Menu::make(__('orchid.platform.main_menu.service.header'))
+            Menu::make(__('app.orchid.platform_provider.register_main_menu.service.header'))
                 ->icon('briefcase')
                 ->url(URL::route('platform.index') . '/crud/list/service-resources'),
 
-            Menu::make(__('orchid.platform.main_menu.user.header'))
+            Menu::make(__('app.orchid.platform_provider.register_main_menu.user.header'))
                 ->icon('user')
                 ->route('platform.systems.users')
                 ->permission('platform.systems.users')
-                ->title(__('orchid.platform.main_menu.user.title')),
+                ->title(__('app.orchid.platform_provider.register_main_menu.user.title')),
 
-            Menu::make(__('orchid.platform.main_menu.position.header'))
+            Menu::make(__('app.orchid.platform_provider.register_main_menu.position.header'))
                 ->icon('eyeglasses')
                 ->url(URL::route('platform.index') . '/crud/list/position-resources'),
 
-            Menu::make(__('orchid.platform.main_menu.role.header'))
+            Menu::make(__('app.orchid.platform_provider.register_main_menu.roles.header'))
                 ->icon('lock')
                 ->route('platform.systems.roles')
                 ->permission('platform.systems.roles'),
@@ -67,7 +67,7 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerProfileMenu(): array
     {
         return [
-            Menu::make(__('orchid.platform.profile_menu.header'))
+            Menu::make(__('app.orchid.platform_provider.register_profile_menu.profile_menu.header'))
                 ->route('platform.profile')
                 ->icon('user'),
         ];
@@ -79,9 +79,9 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerPermissions(): array
     {
         return [
-            ItemPermission::group(__('orchid.platform.permissions.header'))
-                ->addPermission('platform.systems.roles', __('orchid.platform.permissions.roles.header'))
-                ->addPermission('platform.systems.users', __('orchid.platform.permissions.users.header')),
+            ItemPermission::group(__('app.orchid.platform_provider.register_permissions.permissions.header'))
+                ->addPermission('platform.systems.roles', __('app.orchid.platform_provider.register_permissions.permissions.roles.header'))
+                ->addPermission('platform.systems.users', __('app.orchid.platform_provider.register_permissions.permissions.users.header')),
         ];
     }
 }

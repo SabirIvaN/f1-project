@@ -66,20 +66,20 @@ class UserProfileScreen extends Screen
     {
         return [
             Layout::block(UserEditLayout::class)
-                ->title(__('orchid.screens.user.profile.user_edit.title'))
-                ->description(__('orchid.screens.user.profile.user_edit.description'))
+                ->title(__('app.orchid.screens.user.user_profile_screen.layout.user_edit_layout.title'))
+                ->description(__('app.orchid.screens.user.user_profile_screen.layout.user_edit_layout.description'))
                 ->commands(
-                    Button::make(__('orchid.screens.user.profile.layout.user_edit.commands.title'))
+                    Button::make(__('app.orchid.screens.user.user_profile_screen.layout.user_edit_layout.commands.header'))
                         ->type(Color::DEFAULT())
                         ->icon('check')
                         ->method('save')
                 ),
 
             Layout::block(ProfilePasswordLayout::class)
-                ->title(__('orchid.screens.user.profile.profile_password.title'))
-                ->description(__('orchid.screens.user.profile.profile_password.description'))
+                ->title(__('app.orchid.screens.user.user_profile_screen.layout.profile_password_layout.commands.header'))
+                ->description(__('app.orchid.screens.user.user_profile_screen.layout.profile_password_layout.description'))
                 ->commands(
-                    Button::make(__('orchid.screens.user.profile.layout.profile_password.commands.title'))
+                    Button::make(__('app.orchid.screens.user.user_profile_screen.layout.profile_password_layout.commands.header'))
                         ->type(Color::DEFAULT())
                         ->icon('check')
                         ->method('changePassword')
@@ -105,7 +105,7 @@ class UserProfileScreen extends Screen
             ->fill($request->get('user'))
             ->save();
 
-        Toast::info(__('orchid.screens.user.profile.info.save'));
+        Toast::info(__('app.orchid.screens.user.user_profile_screen.save.toast'));
     }
 
     /**
@@ -122,6 +122,6 @@ class UserProfileScreen extends Screen
             $user->password = Hash::make($request->get('password'));
         })->save();
 
-        Toast::info(__('orchid.screens.user.profile.info.change_password'));
+        Toast::info(__('app.orchid.screens.user.user_profile_screen.change_password.toast'));
     }
 }

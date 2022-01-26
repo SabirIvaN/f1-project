@@ -60,7 +60,7 @@ class CityResource extends Resource
     public function legend(): array
     {
         return [
-            Sight::make('name', __('orchid.resources.city.legend.name.title')),
+            Sight::make('name', __('app.orchid.resources.city_resource.legend.name.header')),
         ];
     }
 
@@ -91,7 +91,7 @@ class CityResource extends Resource
      */
     public static function label(): string
     {
-        return __('orchid.resources.city.title');
+        return __('app.orchid.resources.city_resource.label');
     }
 
     /**
@@ -101,7 +101,7 @@ class CityResource extends Resource
      */
     public static function singularLabel(): string
     {
-        return __('orchid.resources.city.title');
+        return __('app.orchid.resources.city_resource.label');
     }
 
     /**
@@ -111,7 +111,7 @@ class CityResource extends Resource
      */
     public static function createButtonLabel(): string
     {
-        return __('orchid.resources.button.create_button.label.title');
+        return __('app.orchid.resources.city_resource.create_button_label');
     }
 
     /**
@@ -121,7 +121,7 @@ class CityResource extends Resource
      */
     public static function createToastMessage(): string
     {
-        return __('orchid.resources.city.create_toast.message.title');
+        return __('app.orchid.resources.city_resource.create_toast_message');
     }
 
     /**
@@ -131,7 +131,7 @@ class CityResource extends Resource
      */
     public static function updateButtonLabel(): string
     {
-        return __('orchid.resources.button.update_button.label.title');
+        return __('app.orchid.resources.city_resource.update_button_label');
     }
 
     /**
@@ -141,7 +141,7 @@ class CityResource extends Resource
      */
     public static function updateToastMessage(): string
     {
-        return __('orchid.resources.city.update_toast.message.title');
+        return __('app.orchid.resources.city_resource.update_toast_message');
     }
 
     /**
@@ -151,7 +151,7 @@ class CityResource extends Resource
      */
     public static function deleteButtonLabel(): string
     {
-        return __('orchid.resources.button.delete_button.label.title');
+        return __('app.orchid.resources.city_resource.delete_button_label');
     }
 
     /**
@@ -161,7 +161,7 @@ class CityResource extends Resource
      */
     public static function deleteToastMessage(): string
     {
-        return __('orchid.resources.city.delete_toast.message.title');
+        return __('app.orchid.resources.city_resource.delete_toast_message');
     }
 
     /**
@@ -171,7 +171,7 @@ class CityResource extends Resource
      */
     public static function saveButtonLabel(): string
     {
-        return __('orchid.resources.button.save_button.label.title');
+        return __('app.orchid.resources.city_resource.save_button_label');
     }
 
     /**
@@ -181,7 +181,7 @@ class CityResource extends Resource
      */
     public static function restoreButtonLabel(): string
     {
-        return __('orchid.resources.button.restore_button.label.title');
+        return __('app.orchid.resources.city_resource.restore_button_label');
     }
 
     /**
@@ -191,7 +191,7 @@ class CityResource extends Resource
      */
     public static function restoreToastMessage(): string
     {
-        return __('orchid.resources.city.restore_toast.message.title');
+        return __('app.orchid.resources.city_resource.restore_toast_message');
     }
 
     /**
@@ -201,7 +201,7 @@ class CityResource extends Resource
      */
     public static function createBreadcrumbsMessage(): string
     {
-        return __('orchid.resources.breadcrumbs.create_breadcrumbs.message.title');
+        return __('app.orchid.resources.city_resource.create_breadcrumbs_message');
     }
 
     /**
@@ -211,7 +211,7 @@ class CityResource extends Resource
      */
     public static function editBreadcrumbsMessage(): string
     {
-        return __('orchid.resources.breadcrumbs.edit_breadcrumbs.message.title');
+        return __('app.orchid.resources.city_resource.edit_breadcrumbs_message');
     }
 
     /**
@@ -221,6 +221,6 @@ class CityResource extends Resource
      */
     public static function description(): ?string
     {
-        return __('orchid.resources.city.description');
+        return __('app.orchid.resources.city_resource.description');
     }
 }

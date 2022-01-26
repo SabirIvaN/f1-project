@@ -26,13 +26,13 @@ class PositionResource extends Resource
     {
         return [
             Input::make('name')
-                ->title(__('orchid.resources.position.fields.name.title'))
-                ->placeholder(__('orchid.resources.position.fields.name.placeholder')),
+                ->title(__('app.orchid.resources.position_resource.fields.name.title'))
+                ->placeholder(__('app.orchid.resources.position_resource.fields.name.placeholder')),
 
             TextArea::make('description')
                 ->rows(5)
-                ->title(__('orchid.resources.position.fields.description.title'))
-                ->placeholder(__('orchid.resources.position.fields.description.placeholder')),
+                ->title(__('app.orchid.resources.position_resource.fields.description.title'))
+                ->placeholder(__('app.orchid.resources.position_resource.fields.description.placeholder')),
         ];
     }
 
@@ -44,9 +44,9 @@ class PositionResource extends Resource
     public function columns(): array
     {
         return [
-            TD::make('name', __('orchid.resources.position.columns.name.title')),
+            TD::make('name', __('app.orchid.resources.position_resource.columns.name.header')),
 
-            TD::make('description', __('orchid.resources.position.columns.description.title')),
+            TD::make('description', __('app.orchid.resources.position_resource.columns.description.header')),
         ];
     }
 
@@ -68,9 +68,9 @@ class PositionResource extends Resource
     public function legend(): array
     {
         return [
-            Sight::make('name', __('orchid.resources.position.legend.name.title')),
+            Sight::make('name', __('app.orchid.resources.position_resource.legend.name.header')),
 
-            Sight::make('description', __('orchid.resources.position.legend.description.title')),
+            Sight::make('description', __('app.orchid.resources.position_resource.legend.description.header')),
         ];
     }
 
@@ -101,7 +101,7 @@ class PositionResource extends Resource
      */
     public static function label(): string
     {
-        return __('orchid.resources.position.title');
+        return __('app.orchid.resources.position_resource.label');
     }
 
     /**
@@ -111,7 +111,7 @@ class PositionResource extends Resource
      */
     public static function singularLabel(): string
     {
-        return __('orchid.resources.position.title');
+        return __('app.orchid.resources.position_resource.label');
     }
 
     /**
@@ -121,7 +121,7 @@ class PositionResource extends Resource
      */
     public static function createButtonLabel(): string
     {
-        return __('orchid.resources.button.create_button.label.title');
+        return __('app.orchid.resources.position_resource.create_button_label');
     }
 
     /**
@@ -131,7 +131,7 @@ class PositionResource extends Resource
      */
     public static function createToastMessage(): string
     {
-        return __('orchid.resources.position.create_toast.message.title');
+        return __('app.orchid.resources.position_resource.create_toast_message');
     }
 
     /**
@@ -141,7 +141,7 @@ class PositionResource extends Resource
      */
     public static function updateButtonLabel(): string
     {
-        return __('orchid.resources.button.update_button.label.title');
+        return __('app.orchid.resources.position_resource.update_button_label');
     }
 
     /**
@@ -151,7 +151,7 @@ class PositionResource extends Resource
      */
     public static function updateToastMessage(): string
     {
-        return __('orchid.resources.position.update_toast.message.title');
+        return __('app.orchid.resources.position_resource.update_toast_message');
     }
 
     /**
@@ -161,7 +161,7 @@ class PositionResource extends Resource
      */
     public static function deleteButtonLabel(): string
     {
-        return __('orchid.resources.button.delete_button.label.title');
+        return __('app.orchid.resources.position_resource.delete_button_label');
     }
 
     /**
@@ -171,7 +171,7 @@ class PositionResource extends Resource
      */
     public static function deleteToastMessage(): string
     {
-        return __('orchid.resources.position.delete_toast.message.title');
+        return __('app.orchid.resources.position_resource.delete_toast_message');
     }
 
     /**
@@ -181,7 +181,7 @@ class PositionResource extends Resource
      */
     public static function saveButtonLabel(): string
     {
-        return __('orchid.resources.button.save_button.label.title');
+        return __('app.orchid.resources.position_resource.save_button_label');
     }
 
     /**
@@ -191,7 +191,7 @@ class PositionResource extends Resource
      */
     public static function restoreButtonLabel(): string
     {
-        return __('orchid.resources.button.restore_button.label.title');
+        return __('app.orchid.resources.position_resource.restore_button_label');
     }
 
     /**
@@ -201,7 +201,7 @@ class PositionResource extends Resource
      */
     public static function restoreToastMessage(): string
     {
-        return __('orchid.resources.position.restore_toast.message.title');
+        return __('app.orchid.resources.position_resource.restore_toast_message');
     }
 
     /**
@@ -211,7 +211,7 @@ class PositionResource extends Resource
      */
     public static function createBreadcrumbsMessage(): string
     {
-        return __('orchid.resources.breadcrumbs.create_breadcrumbs.message.title');
+        return __('app.orchid.resources.position_resource.create_breadcrumbs_message');
     }
 
     /**
@@ -221,7 +221,7 @@ class PositionResource extends Resource
      */
     public static function editBreadcrumbsMessage(): string
     {
-        return __('orchid.resources.breadcrumbs.edit_breadcrumbs.message.title');
+        return __('app.orchid.resources.position_resource.edit_breadcrumbs_message');
     }
 
     /**
@@ -231,6 +231,6 @@ class PositionResource extends Resource
      */
     public static function description(): ?string
     {
-        return __('orchid.resources.position.description');
+        return __('app.orchid.resources.position_resource.description');
     }
 }

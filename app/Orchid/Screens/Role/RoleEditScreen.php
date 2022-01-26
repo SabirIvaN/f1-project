@@ -66,11 +66,11 @@ class RoleEditScreen extends Screen
     public function commandBar(): array
     {
         return [
-            Button::make(__('orchid.screens.role.edit.command.save.title'))
+            Button::make(__('app.orchid.screens.role.role_edit_screen.command_bar.save.header'))
                 ->icon('check')
                 ->method('save'),
 
-            Button::make(__('orchid.screens.role.edit.command.remove.title'))
+            Button::make(__('app.orchid.screens.role.role_edit_screen.command_bar.remove.header'))
                 ->icon('trash')
                 ->method('remove')
                 ->canSee($this->exist),
@@ -88,14 +88,14 @@ class RoleEditScreen extends Screen
             Layout::block([
                 RoleEditLayout::class,
             ])
-                ->title(__('orchid.screens.role.edit.layout.role_edit.title'))
-                ->description(__('orchid.screens.role.edit.layout.role_edit.description')),
+                ->title(__('app.orchid.screens.role.role_edit_screen.layout.role_edit_layout.title'))
+                ->description(__('app.orchid.screens.role.role_edit_screen.layout.role_edit_layout.placeholder')),
 
             Layout::block([
                 RolePermissionLayout::class,
             ])
-                ->title(__('orchid.screens.role.edit.layout.role_permission.title'))
-                ->description(__('orchid.screens.role.edit.layout.role_permission.description')),
+                ->title(__('app.orchid.screens.role.role_edit_screen.layout.role_permission_layout.title'))
+                ->description(__('app.orchid.screens.role.role_edit_screen.layout.role_permission_layout.description')),
         ];
     }
 
@@ -127,7 +127,7 @@ class RoleEditScreen extends Screen
 
         $role->save();
 
-        Toast::info(__('orchid.screens.role.edit.info.save'));
+        Toast::info(__('app.orchid.screens.role.role_edit_screen.save.toast'));
 
         return redirect()->route('platform.systems.roles');
     }
@@ -143,7 +143,7 @@ class RoleEditScreen extends Screen
     {
         $role->delete();
 
-        Toast::info(__('orchid.screens.role.edit.info.remove'));
+        Toast::info(__('app.orchid.screens.role.role_edit_screen.remove.toast'));
 
         return redirect()->route('platform.systems.roles');
     }

@@ -53,7 +53,7 @@ class RoleListScreen extends Screen
     public function commandBar(): array
     {
         return [
-            Link::make(__('orchid.screens.role.list.command.add.title'))
+            Link::make(__('app.orchid.screens.role.role_list_screen.command_bar.add.header'))
                 ->icon('plus')
                 ->href(route('platform.systems.roles.create')),
         ];
