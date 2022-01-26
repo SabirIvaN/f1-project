@@ -21,14 +21,14 @@ class UserListScreen extends Screen
      *
      * @var string
      */
-    public $name = 'Сотрудники';
+    public $name = 'Пользователи';
 
     /**
      * Display header description.
      *
      * @var string
      */
-    public $description = 'Все зарегестрированные сотрудники';
+    public $description = 'Все зарегестрированные пользователи';
 
     /**
      * @var string

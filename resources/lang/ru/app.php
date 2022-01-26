@@ -259,7 +259,7 @@ return [
             ],
 
             'city_resource'     => [
-                'label'  => 'Города',
+                'label'  => 'Обслуживаемые города',
                 'fields' => [
                     'name' => [
                         'title'       => 'Название',
@@ -287,7 +287,7 @@ return [
             ],
 
             'position_resource' => [
-                'label'  => 'Позиции',
+                'label'  => 'Профессии',
                 'fields' => [
                     'name' => [
                         'title'       => 'Название',
@@ -317,11 +317,11 @@ return [
                 'restore_toast_message'      => 'Позиция восстановлена',
                 'create_breadcrumbs_message' => 'Создать',
                 'edit_breadcrumbs_message'   => 'Изменить',
-                'description'                => 'Позиции персонала компании',
+                'description'                => 'Профессии персонала компании',
             ],
 
             'service_resource'  => [
-                'label'  => 'Услуги',
+                'label'  => 'Перечень услуг',
                 'fields' => [
                     'name' => [
                         'title'       => 'Название',
@@ -363,7 +363,7 @@ return [
                 'restore_toast_message'      => 'Услуга восстановлена',
                 'create_breadcrumbs_message' => 'Создать',
                 'edit_breadcrumbs_message'   => 'Изменить',
-                'description'                => 'Услуги оказываемые компанией',
+                'description'                => 'Перечень услуг оказываемых компанией',
             ],
         ],
 

@@ -17,14 +17,14 @@ class RoleListScreen extends Screen
      *
      * @var string
      */
-    public $name = 'Управление ролями';
+    public $name = 'Роли';
 
     /**
      * Display header description.
      *
      * @var string
      */
-    public $description = 'Права доступа';
+    public $description = 'Управление ролями, определяющими права пользователя';
 
     /**
      * @var string
