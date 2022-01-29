@@ -23,7 +23,7 @@ Route::screen('profile', \App\Orchid\Screens\User\UserProfileScreen::class)
     ->breadcrumbs(function (Trail $trail) {
         return $trail
             ->parent('platform.index')
-            ->push(__('Profile'), route('platform.profile'));
+            ->push(__('routes.platform.profile.index'), route('platform.profile'));
     });
 
 Route::screen('users/{user}/edit', \App\Orchid\Screens\User\UserEditScreen::class)->name('platform.systems.users.edit');
@@ -33,7 +33,7 @@ Route::screen('users/create', \App\Orchid\Screens\User\UserEditScreen::class)
     ->breadcrumbs(function (Trail $trail) {
         return $trail
             ->parent('platform.systems.users')
-            ->push(__('Create'), route('platform.systems.users.create'));
+            ->push(__('routes.platform.users.create'), route('platform.systems.users.create'));
     });
 
 Route::screen('users', \App\Orchid\Screens\User\UserListScreen::class)
@@ -41,7 +41,7 @@ Route::screen('users', \App\Orchid\Screens\User\UserListScreen::class)
     ->breadcrumbs(function (Trail $trail) {
         return $trail
             ->parent('platform.index')
-            ->push(__('Users'), route('platform.systems.users'));
+            ->push(__('routes.platform.users.index'), route('platform.systems.users'));
     });
 
 Route::screen('roles/{roles}/edit', \App\Orchid\Screens\Role\RoleEditScreen::class)
@@ -49,7 +49,7 @@ Route::screen('roles/{roles}/edit', \App\Orchid\Screens\Role\RoleEditScreen::cla
     ->breadcrumbs(function (Trail $trail, $role) {
         return $trail
             ->parent('platform.systems.roles')
-            ->push(__('Role'), route('platform.systems.roles.edit', $role));
+            ->push(__('routes.platform.roles.edit'), route('platform.systems.roles.edit', $role));
     });
 
 Route::screen('roles/create', \App\Orchid\Screens\Role\RoleEditScreen::class)
@@ -57,7 +57,7 @@ Route::screen('roles/create', \App\Orchid\Screens\Role\RoleEditScreen::class)
     ->breadcrumbs(function (Trail $trail) {
         return $trail
             ->parent('platform.systems.roles')
-            ->push(__('Create'), route('platform.systems.roles.create'));
+            ->push(__('routes.platform.roles.create'), route('platform.systems.roles.create'));
     });
 
 Route::screen('roles', \App\Orchid\Screens\Role\RoleListScreen::class)
@@ -65,5 +65,5 @@ Route::screen('roles', \App\Orchid\Screens\Role\RoleListScreen::class)
     ->breadcrumbs(function (Trail $trail) {
         return $trail
             ->parent('platform.index')
-            ->push(__('Roles'), route('platform.systems.roles'));
+            ->push(__('routes.platform.roles.index'), route('platform.systems.roles'));
     });

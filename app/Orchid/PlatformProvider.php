@@ -41,11 +41,11 @@ class PlatformProvider extends OrchidServiceProvider
                 ->title(__('app.orchid.platform_provider.register_main_menu.city.title')),
 
             Menu::make(__('app.orchid.platform_provider.register_main_menu.service.header'))
-                ->icon('briefcase')
+                ->icon('list')
                 ->url(URL::route('platform.index') . '/crud/list/service-resources'),
 
             Menu::make(__('app.orchid.platform_provider.register_main_menu.user.header'))
-                ->icon('user')
+                ->icon('people')
                 ->route('platform.systems.users')
                 ->permission('platform.systems.users')
                 ->title(__('app.orchid.platform_provider.register_main_menu.user.title')),
