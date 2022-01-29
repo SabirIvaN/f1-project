@@ -1,4 +1,1 @@
-document
-    .querySelector('.btn-close')
-    .classList
-    .remove('d-none');
+document.querySelector('.btn-close').classList.remove('d-none');
