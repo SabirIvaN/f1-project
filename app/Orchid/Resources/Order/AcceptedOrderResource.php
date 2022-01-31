@@ -6,7 +6,6 @@ use App\Orchid\Actions\Order\CompletionAction;
 use App\Orchid\Filters\Order\AcceptedOrderFilter;
 use Orchid\Crud\Resource;
 use Orchid\Screen\Fields\Input;
-use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Sight;
 use Orchid\Screen\TD;
@@ -73,21 +72,11 @@ class AcceptedOrderResource extends Resource
             TD::make('name', __('app.orchid.resources.order.columns.name.header')),
 
             TD::make('service', __('app.orchid.resources.order.columns.service.header'))->render(function ($order) {
-                return $order
-                    ->services[0]
-                    ->name;
-            }),
-
-            TD::make('price', __('app.orchid.resources.order.columns.price.header'))->render(function ($order) {
-                return $order
-                    ->services[0]
-                    ->price . __('app.orchid.resources.order.columns.price.currency');
+                return $order->services[0]->name;
             }),
 
             TD::make('created_at', __('app.orchid.resources.order.columns.created_at.header'))->render(function ($model) {
-                return $model
-                    ->created_at
-                    ->format('d.m.Y h:i');
+                return $model->created_at->format('d.m.Y h:i');
             }),
         ];
     }
@@ -107,21 +96,11 @@ class AcceptedOrderResource extends Resource
             Sight::make('email', __('app.orchid.resources.order.legend.email.header')),
 
             Sight::make('address', __('app.orchid.resources.order.legend.address.header'))->render(function ($order) {
-                return $order
-                    ->cities[0]
-                    ->name . ', ' . $order->address;
+                return $order->cities[0]->name . ', ' . $order->address;
             }),
 
             Sight::make('service', __('app.orchid.resources.order.legend.service.header'))->render(function ($order) {
-                return $order
-                    ->services[0]
-                    ->name;
-            }),
-
-            Sight::make('price', __('app.orchid.resources.order.legend.price.header'))->render(function ($order) {
-                return $order
-                    ->services[0]
-                    ->price . __('app.orchid.resources.service_resource.legend.price.currency');
+                return $order->services[0]->name;
             }),
 
             Sight::make('comment', __('app.orchid.resources.order.legend.comment.header')),
@@ -131,9 +110,7 @@ class AcceptedOrderResource extends Resource
             }),
 
             Sight::make('created_at', __('app.orchid.resources.order.legend.created_at.header'))->render(function ($model) {
-                return $model
-                    ->created_at
-                    ->format('d.m.Y h:i');
+                return $model->created_at->format('d.m.Y h:i');
             }),
         ];
     }

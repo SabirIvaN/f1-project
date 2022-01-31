@@ -1,7 +1,4 @@
 <?php
-/**
- * @see https://github.com/artesaos/seotools
- */
 
 return [
     'meta' => [
@@ -9,10 +6,18 @@ return [
          * The default configurations to be used by the meta generator.
          */
         'defaults'       => [
-            'title'        => false, // set false to total remove
-            'titleBefore'  => false, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
-            'description'  => 'Мы F1 - фирма-новичок из Санкт-Петербурга, названная в честь клавиши F1. Мы чиним принтеры, меняем, заправляем картриджи и делаем это хорошо.', // set false to total remove
+
+            // set false to total remove
+            'title'        => false,
+
+            // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
+            'titleBefore'  => false,
+
+            // set false to total remove
+            'description'  => 'Мы F1 - фирма-новичок из Санкт-Петербурга, названная в честь клавиши F1. Мы чиним принтеры, меняем, заправляем картриджи и делаем это хорошо.',
+
             'separator'    => false,
+
             'keywords'     => [
                 'F1',
                 'Санкт-Петербург',
@@ -23,8 +28,12 @@ return [
                 'Высокое качество',
                 'Разумные цены',
             ],
-            'canonical'    => false, // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
-            'robots'       => false, // Set to 'all', 'none' or any combination of index/noindex and follow/nofollow
+
+            // Set to null or 'full' to use Url::full(), set to 'current' to use Url::current(), set false to total remove
+            'canonical'    => false,
+
+            // Set to 'all', 'none' or any combination of index/noindex and follow/nofollow
+            'robots'       => false,
         ],
         /*
          * Webmaster tags are always added.
@@ -45,9 +54,15 @@ return [
          * The default configurations to be used by the opengraph generator.
          */
         'defaults' => [
-            'title'       => 'Over 9000 Thousand!', // set false to total remove
-            'description' => 'For those who helped create the Genki Dama', // set false to total remove
-            'url'         => false, // Set null for using Url::current(), set false to total remove
+
+            // set false to total remove
+            'title'       => 'Over 9000 Thousand!',
+
+            // set false to total remove
+            'description' => 'For those who helped create the Genki Dama',
+
+            // Set null for using Url::current(), set false to total remove
+            'url'         => false,
             'type'        => false,
             'site_name'   => false,
             'images'      => [],

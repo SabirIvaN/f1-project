@@ -37,6 +37,7 @@ class ListScreen extends CrudScreen
     {
         return [
             $this->actionsButtons(),
+
             Link::make($this->resource::createButtonLabel())
                 ->route('platform.resource.create', $this->resource::uriKey())
                 ->canSee($this->can('create'))
@@ -66,7 +67,8 @@ class ListScreen extends CrudScreen
         $grid->push(TD::make(__('app.orchid.screens.crud.list_screen.layout.actions.header'))
             ->cantHide()
             ->render(function (Model $model) {
-                return $this->getTableActions($model)
+                return $this
+                    ->getTableActions($model)
                     ->alignCenter()
                     ->autoWidth()
                     ->render();

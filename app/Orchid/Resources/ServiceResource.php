@@ -51,9 +51,7 @@ class ServiceResource extends Resource
 
             TD::make('name', __('app.orchid.resources.service_resource.columns.name.header')),
 
-            TD::make('price', __('app.orchid.resources.service_resource.columns.price.header'))->render(function ($model) {
-                return (string) $model->price . __('app.orchid.resources.service_resource.columns.price.currency');
-            }),
+            TD::make('price', __('app.orchid.resources.service_resource.columns.price.header')),
 
             TD::make('description', __('app.orchid.resources.service_resource.columns.description.header')),
 
@@ -81,9 +79,7 @@ class ServiceResource extends Resource
 
             Sight::make('name', __('app.orchid.resources.service_resource.legend.name.header')),
 
-            Sight::make('price', __('app.orchid.resources.service_resource.legend.price.header'))->render(function ($model) {
-                return (string) $model->price . __('app.orchid.resources.service_resource.legend.price.currency');
-            }),
+            Sight::make('price', __('app.orchid.resources.service_resource.legend.price.header')),
 
             Sight::make('description', __('app.orchid.resources.service_resource.legend.description.header')),
 

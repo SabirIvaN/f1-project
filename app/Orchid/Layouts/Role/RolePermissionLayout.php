@@ -31,9 +31,7 @@ class RolePermissionLayout extends Rows
         $this->user = $this->query->get('user');
 
         return $this->generatedPermissionFields(
-            $this
-                ->query
-                ->getContent('permission')
+            $this->query->getContent('permission')
         );
     }
 
@@ -58,10 +56,7 @@ class RolePermissionLayout extends Rows
      *
      * @return Collection
      */
-    private function makeCheckBoxGroup(
-        Collection $permissions,
-        string $title,
-    ): Collection {
+    private function makeCheckBoxGroup(Collection $permissions, string $title,): Collection {
         return $permissions
             ->map(function (array $chunks) {
                 return $this->makeCheckBox(collect($chunks));
@@ -91,22 +86,16 @@ class RolePermissionLayout extends Rows
             ->placeholder($chunks->get('description'))
             ->value($chunks->get('active'))
             ->sendTrueOrFalse()
-            ->indeterminate($this->getIndeterminateStatus(
-                $chunks->get('slug'),
-                $chunks->get('active')
-            ));
+            ->indeterminate($this->getIndeterminateStatus($chunks->get('slug'), $chunks->get('active')));
     }
 
     /**
-     * @param $slug
-     * @param $value
+     * @param mixed $slug
+     * @param mixed $value
      *
      * @return bool
      */
-    private function getIndeterminateStatus(
-        $slug,
-        $value,
-    ): bool {
+    private function getIndeterminateStatus(mixed $slug, mixed $value): bool {
         return optional($this->user)->hasAccess($slug) === true && $value === false;
     }
 }

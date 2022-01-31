@@ -24,9 +24,7 @@ class UserPresenter extends Presenter implements Searchable, Personable
      */
     public function title(): string
     {
-        return $this
-            ->entity
-            ->name;
+        return $this->entity->name;
     }
 
     /**
@@ -78,8 +76,6 @@ class UserPresenter extends Presenter implements Searchable, Personable
      */
     public function searchQuery(string $query = null): Builder
     {
-        return $this
-            ->entity
-            ->search($query);
+        return $this->entity->search($query);
     }
 }

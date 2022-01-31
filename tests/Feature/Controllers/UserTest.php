@@ -20,8 +20,6 @@ class UserTest extends TestCase
      */
     public function testIndex()
     {
-        $this
-            ->get(route('user.index'))
-            ->assertOk();
+        $this->get(route('user.index'))->assertOk();
     }
 }

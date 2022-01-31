@@ -97,17 +97,12 @@ class UserListScreen extends Screen
      * @param User    $user
      * @param Request $request
      */
-    public function saveUser(
-        User $user,
-        Request $request,
-    ): void {
+    public function saveUser(User $user, Request $request): void {
         $request->validate([
             'user.email' => 'required|unique:users,email,' . $user->id,
         ]);
 
-        $user
-            ->fill($request->input('user'))
-            ->save();
+        $user->fill($request->input('user'))->save();
 
         Toast::info(__('app.orchid.screens.user.user_list_screen.save_user.toast'));
     }
@@ -117,8 +112,7 @@ class UserListScreen extends Screen
      */
     public function remove(Request $request): void
     {
-        User::findOrFail($request->get('id'))
-            ->delete();
+        User::findOrFail($request->get('id'))->delete();
 
         Toast::info(__('app.orchid.screens.user.user_list_screen.remove.toast'));
     }

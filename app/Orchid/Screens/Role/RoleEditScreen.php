@@ -85,15 +85,11 @@ class RoleEditScreen extends Screen
     public function layout(): array
     {
         return [
-            Layout::block([
-                RoleEditLayout::class,
-            ])
+            Layout::block([RoleEditLayout::class])
                 ->title(__('app.orchid.screens.role.role_edit_screen.layout.role_edit_layout.title'))
                 ->description(__('app.orchid.screens.role.role_edit_screen.layout.role_edit_layout.placeholder')),
 
-            Layout::block([
-                RolePermissionLayout::class,
-            ])
+            Layout::block([RolePermissionLayout::class])
                 ->title(__('app.orchid.screens.role.role_edit_screen.layout.role_permission_layout.title'))
                 ->description(__('app.orchid.screens.role.role_edit_screen.layout.role_permission_layout.description')),
         ];
@@ -105,26 +101,17 @@ class RoleEditScreen extends Screen
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function save(
-        Role $role,
-        Request $request,
-    ) {
+    public function save(Role $role, Request $request) {
         $request->validate([
-            'role.slug' => [
-                'required',
-                Rule::unique(Role::class, 'slug')->ignore($role),
-            ],
+            'role.slug' => ['required', Rule::unique(Role::class, 'slug')->ignore($role)],
         ]);
-
         $role->fill($request->get('role'));
-
         $role->permissions = collect($request->get('permissions'))
             ->map(function ($value, $key) {
                 return [base64_decode($key) => $value];
             })
             ->collapse()
             ->toArray();
-
         $role->save();
 
         Toast::info(__('app.orchid.screens.role.role_edit_screen.save.toast'));

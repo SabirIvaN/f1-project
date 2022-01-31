@@ -19,9 +19,7 @@ class UserPasswordLayout extends Rows
     public function fields(): array
     {
         /** @var User $user */
-        $user = $this
-            ->query
-            ->get('user');
+        $user = $this->query->get('user');
 
         $placeholder = $user->exists
             ? __('app.orchid.layouts.user.user_password_layout.fields.placeholder.current_password')

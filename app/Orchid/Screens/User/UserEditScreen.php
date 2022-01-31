@@ -167,15 +167,9 @@ class UserEditScreen extends Screen
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function save(
-        User $user,
-        Request $request,
-    ) {
+    public function save(User $user, Request $request) {
         $request->validate([
-            'user.email' => [
-                'required',
-                Rule::unique(User::class, 'email')->ignore($user),
-            ],
+            'user.email' => ['required', Rule::unique(User::class, 'email')->ignore($user)],
         ]);
 
         $permissions = collect($request->get('permissions'))
@@ -199,13 +193,10 @@ class UserEditScreen extends Screen
             ->fill([
                 'permissions' => $permissions,
             ]);
-
         $user
             ->position()
             ->associate(Position::find($userData['position_id']));
-
         $user->save();
-
         $user->replaceRoles($request->input('user.roles'));
 
         Toast::info(__('app.orchid.screens.user.user_edit_screen.save.toast'));

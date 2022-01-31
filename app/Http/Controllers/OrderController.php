@@ -20,9 +20,9 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create(int $id)
     {
-        $cities = City::all();
+        $cities  = City::all();
         $service = Service::find($id);
 
         return view('web.content.order.create', [

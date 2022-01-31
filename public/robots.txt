@@ -1,2 +1,32 @@
+User-agent: Yandex
+
+Disallow: /*.pdf
+Disallow: /*.xls
+Disallow: /*.doc
+Disallow: /*.ppt
+Disallow: /*.txt
+
+Allow: /*/css/*.css
+Allow: /*/js/*.js
+
+User-agent: Googlebot
+
+Disallow: /*.pdf
+Disallow: /*.xls
+Disallow: /*.doc
+Disallow: /*.ppt
+Disallow: /*.txt
+
+Allow: /*/css/*.css
+Allow: /*/js/*.js
+
 User-agent: *
-Disallow:
+
+Disallow: /*.pdf
+Disallow: /*.xls
+Disallow: /*.doc
+Disallow: /*.ppt
+Disallow: /*.txt
+
+Allow: /*/css/*.css
+Allow: /*/js/*.js

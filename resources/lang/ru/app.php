@@ -18,7 +18,6 @@ return [
                 'name'      => ['header' => 'ФИО:'],
                 'phone'     => ['header' => 'Телефон:'],
                 'service'   => ['header' => 'Услуга:'],
-                'price'     => ['header' => 'Цена:'],
                 'city'      => ['header' => 'Город:'],
                 'address'   => ['header' => 'Адрес:'],
                 'comment'   => ['header' => 'Комментарий:'],
@@ -216,10 +215,6 @@ return [
                 'columns' => [
                     'name'    => ['header' => 'Полное имя'],
                     'service' => ['header' => 'Услуга'],
-                    'price'   => [
-                        'header'   => 'Цена',
-                        'currency' => '₽',
-                    ],
                     'created_at' => ['header' => 'Поступил'],
                 ],
                 'legend' => [
@@ -228,7 +223,6 @@ return [
                     'email'     => ['header' => 'E-Mail'],
                     'address'   => ['header' => 'Адрес'],
                     'service'   => ['header' => 'Услуга'],
-                    'price'     => ['header' => 'Цена'],
                     'comment'   => ['header' => 'Комментарий'],
                     'completed' => [
                         'header' => 'Завершенность',
@@ -337,19 +331,13 @@ return [
                     ],
                 ],
                 'columns' => [
-                    'name'  => ['header' => 'Название'],
-                    'price' => [
-                        'header'   => 'Цена',
-                        'currency' => '₽',
-                    ],
+                    'name'        => ['header' => 'Название'],
+                    'price'       => ['header' => 'Цена'],
                     'description' => ['header' => 'Описание'],
                 ],
                 'legend' => [
-                    'name'  => ['header' => 'Название'],
-                    'price' => [
-                        'header'   => 'Цена',
-                        'currency' => '₽',
-                    ],
+                    'name'        => ['header' => 'Название'],
+                    'price'       => ['header' => 'Цена'],
                     'description' => ['header' => 'Описание'],
                 ],
                 'create_button_label'        => 'Создать',
@@ -435,9 +423,7 @@ return [
                                 будут удалены безвозвратно. Перед удалением вашего учетная запись, пожалуйста,
                                 загрузите любые данные или информацию, которые вы хотите сохранить.',
                         ],
-                        'save' => [
-                            'header' => 'Сохранить',
-                        ],
+                        'save' => ['header' => 'Сохранить'],
                     ],
                     'layout' => [
                         'user_edit_layout' => [
@@ -538,27 +524,17 @@ return [
                     'header' => 'Пользователи',
                     'title'  => 'Сотрудники',
                 ],
-                'position' => [
-                    'header' => 'Профессии',
-                ],
-                'roles' => [
-                    'header' => 'Роли',
-                ],
+                'position' => ['header' => 'Профессии'],
+                'roles'    => ['header' => 'Роли'],
             ],
             'register_profile_menu' => [
-                'profile_menu' => [
-                    'header' => 'Профиль',
-                ],
+                'profile_menu' => ['header' => 'Профиль'],
             ],
             'register_permissions' => [
                 'permissions' => [
                     'header' => 'Система',
-                    'roles'  => [
-                        'header' => 'Роли',
-                    ],
-                    'users' => [
-                        'header' => 'Пользователи',
-                    ],
+                    'roles'  => ['header' => 'Роли'],
+                    'users'  => ['header' => 'Пользователи'],
                 ],
             ],
         ],

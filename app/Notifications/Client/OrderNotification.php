@@ -20,10 +20,7 @@ class OrderNotification extends Notification
      *
      * @return void
      */
-    public function __construct(
-        Order $order,
-        bool $comment = false,
-    ) {
+    public function __construct(Order $order, bool $comment = false) {
         $this->order   = $order;
         $this->comment = $comment;
     }
@@ -35,9 +32,7 @@ class OrderNotification extends Notification
      */
     public function via()
     {
-        return [
-            'mail'
-        ];
+        return ['mail'];
     }
 
     /**
@@ -59,10 +54,6 @@ class OrderNotification extends Notification
             'service' => [
                 'header'  => __('app.notifications.client.order_notification.service.header'),
                 'content' => Activist::map($this->order->services, 'name')->flatten()[0],
-            ],
-            'price' => [
-                'header'  => __('app.notifications.client.order_notification.price.header'),
-                'content' => Activist::map($this->order->services, 'price')->flatten()[0],
             ],
             'city' => [
                 'header'  => __('app.notifications.client.order_notification.city.header'),

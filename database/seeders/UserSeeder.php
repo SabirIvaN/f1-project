@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'position_id'       => 1,
             'name'              => 'Андрей Викторович Янчеленко',
-            'email'             => 'andyan@f1.com',
+            'email'             => 'yanchelenko@rambler.ru',
             'email_verified_at' => now(),
             'password'          => Hash::make('password'),
             'remember_token'    => Str::random(10),
@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'position_id'       => 2,
             'name'              => 'Антон Николаевич Соломин',
-            'email'             => 'antsol@f1.com',
+            'email'             => 'antsol65@yandex.ru',
             'email_verified_at' => now(),
             'password'          => Hash::make('password'),
             'remember_token'    => Str::random(10),
