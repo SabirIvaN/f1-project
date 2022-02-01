@@ -113,17 +113,17 @@ return [
                     'title'          => 'Контакты',
                     'header'         => 'По всем вопросам:',
                     'corporate_mail' => [
-                        'header' => 'Пишите нам на корпоративную почту',
+                        'header' => 'Пишите нам',
                         'yandex' => [
-                            'header' => 'Yandex:',
+                            'header' => 'Yandex',
                             'email'  => 'f1-workshop@yandex.ru',
                         ],
                         'google' => [
-                            'header' => 'Google:',
+                            'header' => 'Google',
                             'email'  => 'f1-workshop@google.ru',
                         ],
                     ],
-                    'employees_email' => ['header' => 'Пишите нашим сотрудникам при появлении проблем'],
+                    'employees_email' => ['header' => 'Пишите нашим сотрудниками'],
                 ],
             ],
 
