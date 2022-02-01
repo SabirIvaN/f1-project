@@ -113,7 +113,7 @@ return [
                     'title'          => 'Контакты',
                     'header'         => 'По всем вопросам:',
                     'corporate_mail' => [
-                        'header' => 'Пишите нам',
+                        'header' => 'Пишите нам на корпоративную почту',
                         'yandex' => [
                             'header' => 'Yandex',
                             'email'  => 'f1-workshop@yandex.ru',
