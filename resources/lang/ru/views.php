@@ -204,7 +204,7 @@ return [
 
         'layout'  => [
             'subviews' => [
-                'footer' => ['owner' => 'ИП Янчеленко А. В.'],
+                'footer' => ['owner' => 'ИП Янчеленко И. В.'],
                 'header' => [
                     'welcome' => 'Главная страница',
                     'user'    => 'Контакты',
