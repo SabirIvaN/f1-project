@@ -10,7 +10,7 @@
 
     {!! SEOMeta::generate() !!}
 
-    <!-- Favicon -->
+    <!-- Favicons -->
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="{!! asset('mstile-144x144.png') !!}">
     <meta name="msapplication-config" content="{!! asset('browserconfiguration.xml') !!}" />
