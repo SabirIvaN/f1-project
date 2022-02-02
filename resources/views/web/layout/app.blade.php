@@ -4,22 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <meta name="robots" content="all"/>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="all"/>
 
     {!! SEOMeta::generate() !!}
 
     <!-- Favicon -->
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="{!! asset('mstile-144x144.png') !!}">
+    <meta name="msapplication-config" content="{!! asset('browserconfiguration.xml') !!}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{!! asset('favicon-16x16.png') !!}">
     <link rel="icon" type="image/png" sizes="32x32" href="{!! asset('favicon-32x32.png') !!}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{!! asset('favicon-48x48.png') !!}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{!! asset('favicon-48x48.png') !!}">
     <link rel="apple-touch-icon" sizes="60x60" href="{!! asset('apple-touch-icon-60x60.png') !!}">
     <link rel="apple-touch-icon" sizes="76x76" href="{!! asset('apple-touch-icon-76x76.png') !!}">
     <link rel="apple-touch-icon" sizes="120x120" href="{!! asset('apple-touch-icon-120x120.png') !!}">
     <link rel="apple-touch-icon" sizes="152x152" href="{!! asset('apple-touch-icon-152x152.png') !!}">
     <link rel="apple-touch-icon" sizes="180x180" href="{!! asset('apple-touch-icon-180x180.png') !!}">
+    <link rel="mask-icon" href="{!! asset('favicon-apple-safari-icon.svg') !!}">
     <link rel="manifest" href="{!! asset('site.webmanifest') !!}">
 
     <!-- Styles -->
