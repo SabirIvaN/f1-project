@@ -6,7 +6,7 @@ return [
 
         'controllers' => [
             'order_controller' => [
-                'store' => ['flash' => 'Спасибо за заказ! Мы отправили Вам сообщение на электронную почту!'],
+                'store' => ['flash' => 'Спасибо за заказ! Мы отправили сообщение на Вашу электронную почту!'],
             ],
         ],
 
@@ -21,14 +21,14 @@ return [
                 'city'      => ['header' => 'Город:'],
                 'address'   => ['header' => 'Адрес:'],
                 'comment'   => ['header' => 'Комментарий:'],
-                'gratitude' => ['line' => 'Спасибо за заказ! Мы скоро с Вами свяжемся.'],
-                'check'     => ['line' => 'Пожалуйста, проверьте информацию о Вашем заказе. Если Вы найдете ошибку, скажите об этом нам.'],
+                'gratitude' => ['line' => 'Спасибо за заказ! Мы скоро свяжемся с Вами.'],
+                'check'     => ['line' => 'Пожалуйста, проверьте информацию о Вашем заказе. Если Вы найдете ошибку, сообщите об этом нам.'],
             ],
         ],
         'dashboard' => [
             'order_notification' => [
                 'title'   => 'Новый заказ',
-                'message' => 'Сделан новый заказ. Для просмотра заказа нажмите на панель уведомления.',
+                'message' => 'Поступил заказ. Для просмотра данных о нем нажмите на уведомление.',
             ],
         ],
     ],
@@ -41,8 +41,8 @@ return [
                     'button' => ['header' => 'Завершить'],
                     'handle' => [
                         'toast' => [
-                            'single' => ['header' => 'Заказ завершен!'],
-                            'plural' => ['header' => 'Заказы завершены!'],
+                            'single' => ['header' => 'Заказ был завершен.'],
+                            'plural' => ['header' => 'Заказы были завершены.'],
                         ],
                     ],
                 ],
@@ -50,8 +50,8 @@ return [
                     'button' => ['header' => 'Возобновить'],
                     'handle' => [
                         'toast' => [
-                            'single' => ['header' => 'Заказ завершен!'],
-                            'plural' => ['header' => 'Заказы завершены!'],
+                            'single' => ['header' => 'Заказ был возобновлен.'],
+                            'plural' => ['header' => 'Заказы был возобновлен.'],
                         ],
                     ],
                 ],
@@ -101,7 +101,7 @@ return [
                         'old_password'          => [
                             'title'       => 'Текущий пароль',
                             'placeholder' => 'Укажите текущий пароль',
-                            'help'        => 'Это ваш пароль, установленный на данный момент.',
+                            'help'        => 'Это ваш пароль, установленный сейчас.',
                         ],
                         'password'              => [
                             'title'       => 'Новый пароль',
@@ -109,7 +109,7 @@ return [
                         ],
                         'password_confirmation' => [
                             'title'       => 'Подтвердите новый пароль',
-                            'placeholder' => 'Введите пароль, который нужно установить',
+                            'placeholder' => 'Введите пароль, который нужно установить, еще раз',
                             'help'        => 'Хороший пароль должен содержать от 15 символов до 8 символов, включая цифры и строчные буквы.',
                         ],
                     ],
@@ -118,20 +118,20 @@ return [
                 'user_edit_layout'             => [
                     'fields' => [
                         'name'  => [
-                            'placeholder' => 'Полное имя',
-                            'title'       => 'Имя',
+                            'placeholder' => 'Иванов Иван Иванович',
+                            'title'       => 'Ф. И. О.',
                         ],
                         'email' => [
                             'placeholder' => 'example@mail.com',
-                            'title'       => 'E-Mail',
+                            'title'       => 'Адрес электронной почты',
                         ],
                     ],
                 ],
 
                 'user_list_layout'             => [
                     'columns' => [
-                        'name'       => ['header' => 'Полное имя'],
-                        'email'      => ['header' => 'E-Mail'],
+                        'name'       => ['header' => 'Ф. И. О.'],
+                        'email'      => ['header' => 'Адрес электронной почты'],
                         'updated_at' => ['header' => 'Последнее изменение'],
                         'actions'    => [
                             'header' => 'Действия',
@@ -163,7 +163,7 @@ return [
                     'fields' => [
                         'position_id' => [
                             'title' => 'Название позиции',
-                            'help'  => 'Позиция, которую пользователь занимает в компании',
+                            'help'  => 'Позиция, которую пользователь занимает в компании.',
                         ],
                     ],
                 ],
@@ -172,7 +172,7 @@ return [
                     'fields' => [
                         'roles' => [
                             'title' => 'Имя роли',
-                            'help'  => 'Укажите, к каким группам должна принадлежать эта учетная запись',
+                            'help'  => 'Укажите, к каким ролям должна принадлежать эта учетная запись.',
                         ],
                     ],
                 ],
@@ -192,20 +192,28 @@ return [
             'order'    => [
                 'fields' => [
                     'name' => [
-                        'title'       => 'Полное имя',
+                        'title'       => 'Ф. И. О.',
                         'placeholder' => 'Иванов Иван Иванович',
                     ],
                     'phone' => [
                         'title'       => 'Телефон',
                         'placeholder' => '+7 (000) 000-00-00',
                     ],
+                    'service' => [
+                        'title'       => 'Услуга',
+                        'placeholder' => 'Какая-то услуга',
+                    ],
                     'email' => [
-                        'title'       => 'E-Mail',
+                        'title'       => 'Адрес электронной почты',
                         'placeholder' => 'example@mail.com',
                     ],
+                    'city' => [
+                        'title'       => 'Город',
+                        'placeholder' => 'Санкт-Петербург',
+                    ],
                     'address' => [
-                        'title'       => 'Адрес',
-                        'placeholder' => 'г. Примерово, ул. Примерная, д. 5, кв. 5',
+                        'title'       => 'Адрес проживания',
+                        'placeholder' => 'ул. Примерная, д. 5, кв. 5',
                     ],
                     'comment' => [
                         'title'       => 'Комментарий',
@@ -213,15 +221,15 @@ return [
                     ],
                 ],
                 'columns' => [
-                    'name'    => ['header' => 'Полное имя'],
+                    'name'    => ['header' => 'Ф. И. О.'],
                     'service' => ['header' => 'Услуга'],
                     'created_at' => ['header' => 'Поступил'],
                 ],
                 'legend' => [
-                    'name'      => ['header' => 'Полное имя'],
+                    'name'      => ['header' => 'Ф. И. О.'],
                     'phone'     => ['header' => 'Телефон'],
-                    'email'     => ['header' => 'E-Mail'],
-                    'address'   => ['header' => 'Адрес'],
+                    'email'     => ['header' => 'Адрес электронной почты'],
+                    'address'   => ['header' => 'Адрес проживания'],
                     'service'   => ['header' => 'Услуга'],
                     'comment'   => ['header' => 'Комментарий'],
                     'completed' => [
@@ -232,14 +240,14 @@ return [
                     'created_at' => ['header' => 'Поступил'],
                 ],
                 'create_button_label'        => 'Создать',
-                'create_toast_message'       => 'Заказ создан',
+                'create_toast_message'       => 'Заказ был создан.',
                 'update_button_label'        => 'Обновить',
-                'update_toast_message'       => 'Заказ обновлен',
+                'update_toast_message'       => 'Заказ был обновлен.',
                 'delete_button_label'        => 'Удалить',
-                'delete_toast_message'       => 'Заказ удален',
+                'delete_toast_message'       => 'Заказ был удален.',
                 'save_button_label'          => 'Сохранить',
                 'restore_button_label'       => 'Восстановить',
-                'restore_toast_message'      => 'Заказ восстановлен',
+                'restore_toast_message'      => 'Заказ был восстановлен.',
                 'create_breadcrumbs_message' => 'Создать',
                 'edit_breadcrumbs_message'   => 'Изменить',
                 'accepted_order_resource'    => [
@@ -267,17 +275,17 @@ return [
                     'name' => ['header' => 'Название'],
                 ],
                 'create_button_label'        => 'Создать',
-                'create_toast_message'       => 'Город создан',
+                'create_toast_message'       => 'Город был создан.',
                 'update_button_label'        => 'Обновить',
-                'update_toast_message'       => 'Город обновлен',
+                'update_toast_message'       => 'Город был обновлен.',
                 'delete_button_label'        => 'Удалить',
-                'delete_toast_message'       => 'Город удален',
+                'delete_toast_message'       => 'Город был удален.',
                 'save_button_label'          => 'Сохранить',
                 'restore_button_label'       => 'Восстановить',
-                'restore_toast_message'      => 'Город восстановлен',
+                'restore_toast_message'      => 'Город был восстановлен.',
                 'create_breadcrumbs_message' => 'Создать',
                 'edit_breadcrumbs_message'   => 'Изменить',
-                'description'                => 'Города и любые населенные пункты обслуживаемые компанией',
+                'description'                => 'Города и любые населенные пункты, обслуживаемые компанией',
             ],
 
             'position_resource' => [
@@ -301,14 +309,14 @@ return [
                     'description' => ['header' => 'Описание'],
                 ],
                 'create_button_label'        => 'Создать',
-                'create_toast_message'       => 'Позиция создана',
+                'create_toast_message'       => 'Позиция была создана.',
                 'update_button_label'        => 'Обновить',
-                'update_toast_message'       => 'Позиция обновлена',
+                'update_toast_message'       => 'Позиция была обновлена.',
                 'delete_button_label'        => 'Удалить',
-                'delete_toast_message'       => 'Позиция удалена',
+                'delete_toast_message'       => 'Позиция была удалена.',
                 'save_button_label'          => 'Сохранить',
                 'restore_button_label'       => 'Восстановить',
-                'restore_toast_message'      => 'Позиция восстановлена',
+                'restore_toast_message'      => 'Позиция была восстановлена.',
                 'create_breadcrumbs_message' => 'Создать',
                 'edit_breadcrumbs_message'   => 'Изменить',
                 'description'                => 'Профессии персонала компании',
@@ -341,17 +349,17 @@ return [
                     'description' => ['header' => 'Описание'],
                 ],
                 'create_button_label'        => 'Создать',
-                'create_toast_message'       => 'Услуга создана',
+                'create_toast_message'       => 'Услуга была создана.',
                 'update_button_label'        => 'Обновить',
-                'update_toast_message'       => 'Услуга обновлена',
+                'update_toast_message'       => 'Услуга была обновлена.',
                 'delete_button_label'        => 'Удалить',
-                'delete_toast_message'       => 'Услуга удалена',
+                'delete_toast_message'       => 'Услуга была удалена.',
                 'save_button_label'          => 'Сохранить',
                 'restore_button_label'       => 'Восстановить',
-                'restore_toast_message'      => 'Услуга восстановлена',
+                'restore_toast_message'      => 'Услуга была восстановлена.',
                 'create_breadcrumbs_message' => 'Создать',
                 'edit_breadcrumbs_message'   => 'Изменить',
-                'description'                => 'Перечень услуг оказываемых компанией',
+                'description'                => 'Перечень услуг, оказываемых компанией',
             ],
         ],
 
@@ -401,8 +409,8 @@ return [
                                 операций в определенной области.',
                         ],
                     ],
-                    'save'   => ['toast' => 'Роль была сохранена'],
-                    'remove' => ['toast' => 'Роль была удалена'],
+                    'save'   => ['toast' => 'Роль была сохранена.'],
+                    'remove' => ['toast' => 'Роль была удалена.'],
                 ],
                 'role_list_screen' => [
                     'command_bar' => [
@@ -431,7 +439,7 @@ return [
                             'description' => 'Обновите информацию профиля вашей учетной записи и адрес
                                 электронной почты.',
                             'commands' => [
-                                'save' => ['header' => 'Сотрудник был сохранен.'],
+                                'save' => ['header' => 'Сохранить'],
                             ],
                         ],
                         'user_password_layout' => [
@@ -439,23 +447,22 @@ return [
                             'description' => 'Убедитесь, что в вашей учетной записи используется длинный
                                 случайный пароль, чтобы оставаться в безопасности.',
                             'commands' => [
-                                'save' => ['header' => 'Сотрудник был сохранен.'],
+                                'save' => ['header' => 'Сохранить'],
                             ],
                         ],
                         'user_position_layout' => [
                             'title'       => 'Позиция',
-                            'description' => 'Позиция определяет функкции выполняемые пользователем
-                                во время рабочего процесса.',
+                            'description' => 'Позиция определяет функции, 
+                                выполняемые пользователем во время рабочего процесса.',
                             'commands' => [
-                                'save' => ['header' => 'Сотрудник был сохранен.'],
+                                'save' => ['header' => 'Сохранить'],
                             ],
                         ],
                         'user_role_layout' => [
                             'title'       => 'Роли',
-                            'description' => 'Позиция определяет функкции выполняемые пользователем
-                                во время рабочего процесса.',
+                            'description' => 'Роль определяет права пользователя, которые позволяют ему выполнять определенные действия.',
                             'commands' => [
-                                'save' => ['header' => 'Сотрудник был сохранен.'],
+                                'save' => ['header' => 'Сохранить'],
                             ],
                         ],
                         'role_permission_layout' => [
@@ -463,7 +470,7 @@ return [
                             'description' => 'Разрешить пользователю выполнять некоторые действия,
                                 которые не предусмотрены его ролями.',
                             'commands' => [
-                                'save' => ['header' => 'Сотрудник был сохранен.'],
+                                'save' => ['header' => 'Сохранить'],
                             ],
                         ],
                     ],

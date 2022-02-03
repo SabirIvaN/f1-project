@@ -2,10 +2,15 @@
 
 namespace App\Orchid\Resources\Order;
 
+use App\Models\City;
+use App\Models\Service;
 use App\Orchid\Actions\Order\CompletionAction;
 use App\Orchid\Filters\Order\AcceptedOrderFilter;
+use Illuminate\Database\Eloquent\Model;
 use Orchid\Crud\Resource;
+use Orchid\Crud\ResourceRequest;
 use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\Select;
 use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Sight;
 use Orchid\Screen\TD;
@@ -34,20 +39,31 @@ class AcceptedOrderResource extends Resource
             Input::make('phone')
                 ->title(__('app.orchid.resources.order.fields.phone.title'))
                 ->placeholder(__('app.orchid.resources.order.fields.phone.placeholder'))
-                ->mask('+7 (999) 999-9999'),
+                ->mask('+7 (999) 999-99-99'),
+
+            Select::make('city')
+                ->fromModel(City::class, 'name')
+                ->title(__('app.orchid.resources.order.fields.city.title'))
+                ->placeholder(__('app.orchid.resources.order.fields.city.placeholder')),
+
+            Input::make('address')
+                ->title(__('app.orchid.resources.order.fields.address.title'))
+                ->placeholder(__('app.orchid.resources.order.fields.address.placeholder')),
+
+            Select::make('service')
+                ->fromModel(Service::class, 'name')
+                ->title(__('app.orchid.resources.order.fields.service.title'))
+                ->placeholder(__('app.orchid.resources.order.fields.service.placeholder')),
 
             Input::make('email')
                 ->type('email')
                 ->title(__('app.orchid.resources.order.fields.email.title'))
                 ->placeholder(__('app.orchid.resources.order.fields.email.placeholder')),
 
-            Input::make('address')
-                ->title(__('app.orchid.resources.order.fields.address.title'))
-                ->placeholder(__('app.orchid.resources.order.fields.address.placeholder')),
-
             TextArea::make('comment')
                 ->title(__('app.orchid.resources.order.fields.comment.title'))
-                ->placeholder(__('app.orchid.resources.order.fields.comment.placeholder')),
+                ->placeholder(__('app.orchid.resources.order.fields.comment.placeholder'))
+                ->rows(5),
         ];
     }
 
@@ -75,8 +91,8 @@ class AcceptedOrderResource extends Resource
                 return $order->services[0]->name;
             }),
 
-            TD::make('created_at', __('app.orchid.resources.order.columns.created_at.header'))->render(function ($model) {
-                return $model->created_at->format('d.m.Y h:i');
+            TD::make('created_at', __('app.orchid.resources.order.columns.created_at.header'))->render(function ($order) {
+                return $order->created_at->format('d.m.Y h:i');
             }),
         ];
     }
@@ -287,5 +303,49 @@ class AcceptedOrderResource extends Resource
     public static function description(): ?string
     {
         return __('app.orchid.resources.order.accepted_order_resource.description');
+    }
+
+    /**
+     * Action to create and update the model
+     *
+     * @param ResourceRequest $request
+     * @param Model           $model
+     */
+    public function onSave(ResourceRequest $request, Model $model)
+    {
+        $data = $request->all();
+
+        $model->fill($data);
+        $model->save();
+        $model
+            ->cities()
+            ->detach($model->cities);
+        $model
+            ->cities()
+            ->attach(City::find($data['city']));
+        $model
+            ->services()
+            ->detach($model->services);
+        $model
+            ->services()
+            ->attach(Service::find($data['service']));
+    }
+
+    /**
+     * Action to delete a model
+     *
+     * @param Model $model
+     *
+     * @throws Exception
+     */
+    public function onDelete(Model $model)
+    {
+        $model
+            ->cities()
+            ->detach($model->cities);
+        $model
+            ->services()
+            ->detach($model->services);
+        $model->delete();
     }
 }

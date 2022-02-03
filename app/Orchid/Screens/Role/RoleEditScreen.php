@@ -87,7 +87,7 @@ class RoleEditScreen extends Screen
         return [
             Layout::block([RoleEditLayout::class])
                 ->title(__('app.orchid.screens.role.role_edit_screen.layout.role_edit_layout.title'))
-                ->description(__('app.orchid.screens.role.role_edit_screen.layout.role_edit_layout.placeholder')),
+                ->description(__('app.orchid.screens.role.role_edit_screen.layout.role_edit_layout.description')),
 
             Layout::block([RolePermissionLayout::class])
                 ->title(__('app.orchid.screens.role.role_edit_screen.layout.role_permission_layout.title'))

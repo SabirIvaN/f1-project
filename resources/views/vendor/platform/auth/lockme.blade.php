@@ -19,7 +19,7 @@
             ->required()
             ->tabindex(1)
             ->autofocus()
-            ->placeholder(__('views.vendor.platform.auth.lockme.password'))
+            ->placeholder(__('views.vendor.platform.auth.lockme.password.placeholder'))
     !!}
 </div>
 

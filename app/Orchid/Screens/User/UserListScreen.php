@@ -28,7 +28,7 @@ class UserListScreen extends Screen
      *
      * @var string
      */
-    public $description = 'Все зарегестрированные пользователи';
+    public $description = 'Все зарегистрированные пользователи';
 
     /**
      * @var string

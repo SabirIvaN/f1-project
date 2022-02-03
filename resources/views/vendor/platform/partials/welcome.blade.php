@@ -67,9 +67,7 @@
             </h3>
             <p class="ms-md-5 ps-md-1">
                 {!! __('views.vendor.platform.partials.welcome.documentation.text') !!}
-                <a href="https://github.com/SabirIvaN/f1-project" target="_blank" class="text-u-l">
-                    {!! __('views.vendor.platform.partials.welcome.documentation.link') !!}
-                </a>.
+                <a href="https://github.com/SabirIvaN/f1-project" target="_blank" class="text-u-l">{!! __('views.vendor.platform.partials.welcome.documentation.link') !!}</a>{!! __('views.vendor.platform.partials.welcome.documentation.point') !!}
             </p>
         </div>
 
