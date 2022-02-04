@@ -3,6 +3,7 @@
 namespace App\Orchid\Resources\Order;
 
 use App\Models\City;
+use App\Models\Order;
 use App\Models\Service;
 use App\Orchid\Actions\Order\RenewingAction;
 use App\Orchid\Filters\Order\CompletedOrderFilter;
@@ -25,6 +26,13 @@ class CompletedOrderResource extends Resource
     public static $model = \App\Models\Order::class;
 
     /**
+     * The model id for working with the current resource.
+     *
+     * @var string
+     */
+    public mixed $id = null;
+
+    /**
      * Get the fields displayed by the resource.
      *
      * @return array
@@ -32,6 +40,14 @@ class CompletedOrderResource extends Resource
     public function fields(): array
     {
         return [
+            Input::make('id')
+                ->value(function (int $id) {
+                    $this->id = is_int($id) ? $id : false;
+
+                    return $this->id;
+                })
+                ->canSee(false),
+
             Input::make('name')
                 ->title(__('app.orchid.resources.order.fields.name.title'))
                 ->placeholder(__('app.orchid.resources.order.fields.name.placeholder')),
@@ -43,6 +59,11 @@ class CompletedOrderResource extends Resource
 
             Select::make('city')
                 ->fromModel(City::class, 'name')
+                ->value(function () {
+                    $order = Order::find($this->id);
+
+                    return $order !== null ? $order->cities[0]->id : false;
+                })
                 ->title(__('app.orchid.resources.order.fields.city.title'))
                 ->placeholder(__('app.orchid.resources.order.fields.city.placeholder')),
 
@@ -52,6 +73,11 @@ class CompletedOrderResource extends Resource
 
             Select::make('service')
                 ->fromModel(Service::class, 'name')
+                ->value(function () {
+                    $order = Order::find($this->id);
+
+                    return $order !== null ? $order->services[0]->id : false;
+                })
                 ->title(__('app.orchid.resources.order.fields.service.title'))
                 ->placeholder(__('app.orchid.resources.order.fields.service.placeholder')),
 
@@ -316,6 +342,7 @@ class CompletedOrderResource extends Resource
         $data = $request->all();
 
         $model->fill($data);
+        $model->completed = 1;
         $model->save();
         $model
             ->cities()
