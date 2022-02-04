@@ -71,6 +71,7 @@ return [
                     ],
                 ],
             ],
+            'dashboard' => ['upward' => 'Наверх'],
         ],
 
     ],

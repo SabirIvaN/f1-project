@@ -29,7 +29,7 @@ class UserEditScreen extends Screen
      *
      * @var string
      */
-    public $name = 'Редактировать Сотрудника';
+    public $name = 'Редактировать пользователя';
 
     /**
      * Display header description.
@@ -60,7 +60,7 @@ class UserEditScreen extends Screen
         $this->user = $user;
 
         if (!$user->exists) {
-            $this->name = 'Создать сотрудника';
+            $this->name = 'Создать пользователя';
         }
 
         $user->load(['roles']);
