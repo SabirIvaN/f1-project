@@ -62,7 +62,9 @@ class CompletedOrderResource extends Resource
                 ->value(function () {
                     $order = Order::find($this->id);
 
-                    return $order !== null ? $order->cities[0]->id : false;
+                    return ($this->id !== null && isset($order->cities[0]->id))
+                        ? $order->cities[0]->id
+                        : false;
                 })
                 ->title(__('app.orchid.resources.order.fields.city.title'))
                 ->placeholder(__('app.orchid.resources.order.fields.city.placeholder')),
@@ -76,7 +78,9 @@ class CompletedOrderResource extends Resource
                 ->value(function () {
                     $order = Order::find($this->id);
 
-                    return $order !== null ? $order->services[0]->id : false;
+                    return ($this->id !== null && isset($order->services[0]->id))
+                        ? $order->services[0]->id
+                        : false;
                 })
                 ->title(__('app.orchid.resources.order.fields.service.title'))
                 ->placeholder(__('app.orchid.resources.order.fields.service.placeholder')),
@@ -138,7 +142,9 @@ class CompletedOrderResource extends Resource
             Sight::make('email', __('app.orchid.resources.order.legend.email.header')),
 
             Sight::make('address', __('app.orchid.resources.order.legend.address.header'))->render(function ($order) {
-                return $order->cities[0]->name . ', ' . $order->address;
+                return (isset($order->cities[0]->name))
+                    ? $order->cities[0]->name . ', ' . $order->address
+                    : '';
             }),
 
             Sight::make('service', __('app.orchid.resources.order.legend.service.header'))->render(function ($order) {

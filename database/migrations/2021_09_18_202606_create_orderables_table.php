@@ -15,9 +15,12 @@ class CreateOrderablesTable extends Migration
     {
         Schema::create('orderables', function (Blueprint $table) {
             $table->id();
-            $table->integer('order_id');
-            $table->string('orderable_type');
-            $table->integer('orderable_id');
+            $table->integer('order_id')
+                ->nullable();
+            $table->string('orderable_type')
+                ->nullable();
+            $table->integer('orderable_id')
+                ->nullable();
         });
     }
 
