@@ -118,7 +118,9 @@ class CompletedOrderResource extends Resource
             TD::make('name', __('app.orchid.resources.order.columns.name.header')),
 
             TD::make('service', __('app.orchid.resources.order.columns.service.header'))->render(function ($order) {
-                return $order->services[0]->name;
+                return (isset($order->services[0]->name))
+                    ? $order->services[0]->name
+                    : '';
             }),
 
             TD::make('created_at', __('app.orchid.resources.order.columns.created_at.header'))->render(function ($model) {
@@ -148,7 +150,9 @@ class CompletedOrderResource extends Resource
             }),
 
             Sight::make('service', __('app.orchid.resources.order.legend.service.header'))->render(function ($order) {
-                return $order->services[0]->name;
+                return (isset($order->services[0]->name))
+                    ? $order->services[0]->name
+                    : '';
             }),
 
             Sight::make('comment', __('app.orchid.resources.order.legend.comment.header')),
