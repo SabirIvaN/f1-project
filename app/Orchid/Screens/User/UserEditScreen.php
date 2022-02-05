@@ -36,7 +36,7 @@ class UserEditScreen extends Screen
      *
      * @var string
      */
-    public $description = 'Такие данные, как имя, адрес электронной почты и пароль';
+    public $description = 'Введите такие данные, как имя, адрес электронной почты и пароль.';
 
     /**
      * @var string
@@ -167,7 +167,8 @@ class UserEditScreen extends Screen
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function save(User $user, Request $request) {
+    public function save(User $user, Request $request)
+    {
         $request->validate([
             'user.email' => ['required', Rule::unique(User::class, 'email')->ignore($user)],
         ]);

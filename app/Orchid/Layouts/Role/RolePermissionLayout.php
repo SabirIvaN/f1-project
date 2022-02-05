@@ -56,7 +56,8 @@ class RolePermissionLayout extends Rows
      *
      * @return Collection
      */
-    private function makeCheckBoxGroup(Collection $permissions, string $title,): Collection {
+    private function makeCheckBoxGroup(Collection $permissions, string $title,): Collection
+    {
         return $permissions
             ->map(function (array $chunks) {
                 return $this->makeCheckBox(collect($chunks));
@@ -95,7 +96,8 @@ class RolePermissionLayout extends Rows
      *
      * @return bool
      */
-    private function getIndeterminateStatus(mixed $slug, mixed $value): bool {
+    private function getIndeterminateStatus(mixed $slug, mixed $value): bool
+    {
         return optional($this->user)->hasAccess($slug) === true && $value === false;
     }
 }

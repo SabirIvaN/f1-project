@@ -2,6 +2,7 @@
 
 namespace App\Orchid\Resources;
 
+use App\Models\Service;
 use Orchid\Crud\Resource;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Sight;
@@ -14,7 +15,7 @@ class ServiceResource extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\Service::class;
+    public static $model = Service::class;
 
     /**
      * Get the fields displayed by the resource.

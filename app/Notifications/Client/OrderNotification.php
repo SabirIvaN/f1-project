@@ -20,7 +20,8 @@ class OrderNotification extends Notification
      *
      * @return void
      */
-    public function __construct(Order $order, bool $comment = false) {
+    public function __construct(Order $order, bool $comment = false)
+    {
         $this->order   = $order;
         $this->comment = $comment;
     }
@@ -32,7 +33,9 @@ class OrderNotification extends Notification
      */
     public function via()
     {
-        return ['mail'];
+        return [
+            'mail',
+        ];
     }
 
     /**

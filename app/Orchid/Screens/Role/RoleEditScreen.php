@@ -101,7 +101,8 @@ class RoleEditScreen extends Screen
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function save(Role $role, Request $request) {
+    public function save(Role $role, Request $request)
+    {
         $request->validate([
             'role.slug' => ['required', Rule::unique(Role::class, 'slug')->ignore($role)],
         ]);

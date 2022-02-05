@@ -24,7 +24,7 @@ class RoleListScreen extends Screen
      *
      * @var string
      */
-    public $description = 'Управление ролями, определяющими права пользователя';
+    public $description = 'Управление ролями, определяющими права пользователя.';
 
     /**
      * @var string

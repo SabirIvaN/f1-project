@@ -2,6 +2,7 @@
 
 namespace App\Orchid\Resources;
 
+use App\Models\Position;
 use Orchid\Crud\Resource;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\TextArea;
@@ -15,7 +16,7 @@ class PositionResource extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\Position::class;
+    public static $model = Position::class;
 
     /**
      * Get the fields displayed by the resource.

@@ -32,11 +32,7 @@ class UserPresenter extends Presenter implements Searchable, Personable
      */
     public function subTitle(): string
     {
-        $roles = $this
-            ->entity
-            ->roles
-            ->pluck('name')
-            ->implode(' / ');
+        $roles = $this->entity->roles->pluck('name')->implode(' / ');
 
         return empty($roles)
             ? __('app.orchid.presenters.user_presenter.subtitle')

@@ -2,6 +2,7 @@
 
 namespace App\Orchid\Resources;
 
+use App\Models\City;
 use Orchid\Crud\Resource;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Sight;
@@ -14,7 +15,7 @@ class CityResource extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\City::class;
+    public static $model = City::class;
 
     /**
      * Get the fields displayed by the resource.

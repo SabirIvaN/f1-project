@@ -23,7 +23,7 @@ class AcceptedOrderResource extends Resource
      *
      * @var string
      */
-    public static $model = \App\Models\Order::class;
+    public static $model = Order::class;
 
     /**
      * The model id for working with the current resource.

@@ -31,7 +31,7 @@ class UserProfileScreen extends Screen
      *
      * @var string
      */
-    public $description = 'Обновите данные своей учетной записи, такие как имя, адрес электронной почты и пароль';
+    public $description = 'Обновите данные своей учетной записи, такие как имя, адрес электронной почты и пароль.';
 
     /**
      * Query data.

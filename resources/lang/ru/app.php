@@ -15,12 +15,12 @@ return [
     'notifications' => [
         'client' => [
             'order_notification' => [
-                'name'      => ['header' => 'ФИО:'],
-                'phone'     => ['header' => 'Телефон:'],
-                'service'   => ['header' => 'Услуга:'],
-                'city'      => ['header' => 'Город:'],
-                'address'   => ['header' => 'Адрес:'],
-                'comment'   => ['header' => 'Комментарий:'],
+                'name'      => ['header' => 'Ф. И. О.'],
+                'phone'     => ['header' => 'Телефон'],
+                'service'   => ['header' => 'Услуга'],
+                'city'      => ['header' => 'Город'],
+                'address'   => ['header' => 'Адрес'],
+                'comment'   => ['header' => 'Комментарий'],
                 'gratitude' => ['line' => 'Спасибо за заказ! Мы скоро свяжемся с Вами.'],
                 'check'     => ['line' => 'Пожалуйста, проверьте информацию о Вашем заказе. Если Вы найдете ошибку, сообщите об этом нам.'],
             ],
@@ -51,7 +51,7 @@ return [
                     'handle' => [
                         'toast' => [
                             'single' => ['header' => 'Заказ был возобновлен.'],
-                            'plural' => ['header' => 'Заказы был возобновлен.'],
+                            'plural' => ['header' => 'Заказы были возобновлен.'],
                         ],
                     ],
                 ],
@@ -72,7 +72,7 @@ return [
                 'role_edit_layout' => [
                     'fields' => [
                         'name' => [
-                            'help'        => 'Имя роли для отображения',
+                            'help'        => 'Название роли для отображения',
                             'placeholder' => 'Название',
                             'title'       => 'Название',
                         ],
@@ -201,7 +201,7 @@ return [
                     ],
                     'service' => [
                         'title'       => 'Услуга',
-                        'placeholder' => 'Какая-то услуга',
+                        'placeholder' => 'Починка гиперпринтера',
                     ],
                     'email' => [
                         'title'       => 'Адрес электронной почты',
@@ -217,12 +217,12 @@ return [
                     ],
                     'comment' => [
                         'title'       => 'Комментарий',
-                        'placeholder' => 'Такие-то и такие-то пожелания к заказу.',
+                        'placeholder' => 'Любые пожелания к заказу.',
                     ],
                 ],
                 'columns' => [
-                    'name'    => ['header' => 'Ф. И. О.'],
-                    'service' => ['header' => 'Услуга'],
+                    'name'       => ['header' => 'Ф. И. О.'],
+                    'service'    => ['header' => 'Услуга'],
                     'created_at' => ['header' => 'Поступил'],
                 ],
                 'legend' => [
@@ -241,23 +241,23 @@ return [
                     'created_at' => ['header' => 'Поступил'],
                 ],
                 'create_button_label'        => 'Создать',
-                'create_toast_message'       => 'Заказ был создан.',
+                'create_toast_message'       => 'Заказ создан.',
                 'update_button_label'        => 'Обновить',
-                'update_toast_message'       => 'Заказ был обновлен.',
+                'update_toast_message'       => 'Заказ обновлен.',
                 'delete_button_label'        => 'Удалить',
-                'delete_toast_message'       => 'Заказ был удален.',
+                'delete_toast_message'       => 'Заказ удален.',
                 'save_button_label'          => 'Сохранить',
                 'restore_button_label'       => 'Восстановить',
-                'restore_toast_message'      => 'Заказ был восстановлен.',
+                'restore_toast_message'      => 'Заказ восстановлен.',
                 'create_breadcrumbs_message' => 'Создать',
                 'edit_breadcrumbs_message'   => 'Изменить',
                 'accepted_order_resource'    => [
                     'label'       => 'Поступившие заказы',
-                    'description' => 'Поступившие заказы, которые необходимо выполнить',
+                    'description' => 'Поступившие заказы, которые необходимо выполнить.',
                 ],
                 'completed_order_resource' => [
                     'label'       => 'Завершенные заказы',
-                    'description' => 'Завершенные заказы, которые были выполнены',
+                    'description' => 'Завершенные заказы, которые уже выполнены.',
                 ],
             ],
 
@@ -276,17 +276,17 @@ return [
                     'name' => ['header' => 'Название'],
                 ],
                 'create_button_label'        => 'Создать',
-                'create_toast_message'       => 'Город был создан.',
+                'create_toast_message'       => 'Город создан.',
                 'update_button_label'        => 'Обновить',
-                'update_toast_message'       => 'Город был обновлен.',
+                'update_toast_message'       => 'Город обновлен.',
                 'delete_button_label'        => 'Удалить',
-                'delete_toast_message'       => 'Город был удален.',
+                'delete_toast_message'       => 'Город удален.',
                 'save_button_label'          => 'Сохранить',
                 'restore_button_label'       => 'Восстановить',
-                'restore_toast_message'      => 'Город был восстановлен.',
+                'restore_toast_message'      => 'Город восстановлен.',
                 'create_breadcrumbs_message' => 'Создать',
                 'edit_breadcrumbs_message'   => 'Изменить',
-                'description'                => 'Города и любые населенные пункты, обслуживаемые компанией',
+                'description'                => 'Города и любые населенные пункты, обслуживаемые компанией.',
             ],
 
             'position_resource' => [
@@ -310,17 +310,17 @@ return [
                     'description' => ['header' => 'Описание'],
                 ],
                 'create_button_label'        => 'Создать',
-                'create_toast_message'       => 'Позиция была создана.',
+                'create_toast_message'       => 'Позиция создана.',
                 'update_button_label'        => 'Обновить',
-                'update_toast_message'       => 'Позиция была обновлена.',
+                'update_toast_message'       => 'Позиция обновлена.',
                 'delete_button_label'        => 'Удалить',
-                'delete_toast_message'       => 'Позиция была удалена.',
+                'delete_toast_message'       => 'Позиция удалена.',
                 'save_button_label'          => 'Сохранить',
                 'restore_button_label'       => 'Восстановить',
-                'restore_toast_message'      => 'Позиция была восстановлена.',
+                'restore_toast_message'      => 'Позиция восстановлена.',
                 'create_breadcrumbs_message' => 'Создать',
                 'edit_breadcrumbs_message'   => 'Изменить',
-                'description'                => 'Профессии персонала компании',
+                'description'                => 'Профессии персонала компании.',
             ],
 
             'service_resource'  => [
@@ -350,17 +350,17 @@ return [
                     'description' => ['header' => 'Описание'],
                 ],
                 'create_button_label'        => 'Создать',
-                'create_toast_message'       => 'Услуга была создана.',
+                'create_toast_message'       => 'Услуга создана.',
                 'update_button_label'        => 'Обновить',
-                'update_toast_message'       => 'Услуга была обновлена.',
+                'update_toast_message'       => 'Услуга обновлена.',
                 'delete_button_label'        => 'Удалить',
-                'delete_toast_message'       => 'Услуга была удалена.',
+                'delete_toast_message'       => 'Услуга удалена.',
                 'save_button_label'          => 'Сохранить',
                 'restore_button_label'       => 'Восстановить',
-                'restore_toast_message'      => 'Услуга была восстановлена.',
+                'restore_toast_message'      => 'Услуга восстановлена.',
                 'create_breadcrumbs_message' => 'Создать',
                 'edit_breadcrumbs_message'   => 'Изменить',
-                'description'                => 'Перечень услуг, оказываемых компанией',
+                'description'                => 'Перечень услуг, оказываемых компанией.',
             ],
         ],
 
@@ -400,9 +400,9 @@ return [
                     'layout' => [
                         'role_edit_layout' => [
                             'title'       => 'Роль',
-                            'description' => 'Роль - это набор разрешений, которые предоставляют
-                                пользователям с этой ролью возможность выполнять определенные задачи или
-                                операции.',
+                            'description' => 'Роль — это набор разрешений, которые предоставляют
+                                пользователям с этой ролью возможность выполнять определенные
+                                задачи или операции.',
                         ],
                         'role_permission_layout' => [
                             'title'       => 'Разрешения',
@@ -410,8 +410,8 @@ return [
                                 операций в определенной области.',
                         ],
                     ],
-                    'save'   => ['toast' => 'Роль была сохранена.'],
-                    'remove' => ['toast' => 'Роль была удалена.'],
+                    'save'   => ['toast' => 'Роль сохранена.'],
+                    'remove' => ['toast' => 'Роль удалена.'],
                 ],
                 'role_list_screen' => [
                     'command_bar' => [
@@ -423,7 +423,7 @@ return [
                 'user_edit_screen'    => [
                     'command_bar' => [
                         'login' => [
-                            'header'  => 'Войти как пользователь',
+                            'header'  => 'Войти заново как этот пользователь',
                             'confirm' => 'Вы можете вернуться в исходное состояние, выйдя из системы.',
                         ],
                         'remove' => [
@@ -453,7 +453,7 @@ return [
                         ],
                         'user_position_layout' => [
                             'title'       => 'Профессия',
-                            'description' => 'Профессия определяет функции, 
+                            'description' => 'Профессия определяет функции,
                                 выполняемые пользователем во время рабочего процесса.',
                             'commands' => [
                                 'save' => ['header' => 'Сохранить'],
@@ -475,16 +475,16 @@ return [
                             ],
                         ],
                     ],
-                    'save'     => ['toast' => 'Сотрудник был сохранен.'],
-                    'remove'   => ['toast' => 'Сотрудник был удален.'],
-                    'login_as' => ['toast' => 'Теперь вы выдаете себя за этого сотрудника']
+                    'save'     => ['toast' => 'Пользователь сохранен.'],
+                    'remove'   => ['toast' => 'Пользователь удален.'],
+                    'login_as' => ['toast' => 'Вы зашли как другой пользователь.']
                 ],
                 'user_list_screen'    => [
                     'command_bar' => [
                         'create' => ['header' => 'Создать']
                     ],
-                    'save_user' => ['toast' => 'Сотрудник был сохранен.'],
-                    'remove'    => ['toast' => 'Сотрудник был удален.'],
+                    'save_user' => ['toast' => 'Пользователь сохранен.'],
+                    'remove'    => ['toast' => 'Пользователь удален.'],
                 ],
                 'user_profile_screen' => [
                     'layout' => [

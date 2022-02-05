@@ -28,7 +28,7 @@ class UserListScreen extends Screen
      *
      * @var string
      */
-    public $description = 'Все зарегистрированные пользователи';
+    public $description = 'Все зарегистрированные пользователи.';
 
     /**
      * @var string
@@ -97,7 +97,8 @@ class UserListScreen extends Screen
      * @param User    $user
      * @param Request $request
      */
-    public function saveUser(User $user, Request $request): void {
+    public function saveUser(User $user, Request $request): void
+    {
         $request->validate([
             'user.email' => 'required|unique:users,email,' . $user->id,
         ]);
