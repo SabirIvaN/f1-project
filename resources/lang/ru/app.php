@@ -229,6 +229,7 @@ return [
                     'name'      => ['header' => 'Ф. И. О.'],
                     'phone'     => ['header' => 'Телефон'],
                     'email'     => ['header' => 'Адрес электронной почты'],
+                    'city'      => ['header' => 'Город'],
                     'address'   => ['header' => 'Адрес проживания'],
                     'service'   => ['header' => 'Услуга'],
                     'comment'   => ['header' => 'Комментарий'],

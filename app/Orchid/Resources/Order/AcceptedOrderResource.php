@@ -143,11 +143,13 @@ class AcceptedOrderResource extends Resource
 
             Sight::make('email', __('app.orchid.resources.order.legend.email.header')),
 
-            Sight::make('address', __('app.orchid.resources.order.legend.address.header'))->render(function ($order) {
+            Sight::make('city', __('app.orchid.resources.order.legend.city.header'))->render(function ($order) {
                 return (isset($order->cities[0]->name))
-                    ? $order->cities[0]->name . ', ' . $order->address
+                    ? $order->cities[0]->name
                     : '';
             }),
+
+            Sight::make('address', __('app.orchid.resources.order.legend.address.header')),
 
             Sight::make('service', __('app.orchid.resources.order.legend.service.header'))->render(function ($order) {
                 return (isset($order->services[0]->name))
@@ -358,14 +360,20 @@ class AcceptedOrderResource extends Resource
             ->cities()
             ->detach($model->cities);
         $model
-            ->cities()
-            ->attach(City::find($data['city']));
-        $model
             ->services()
             ->detach($model->services);
-        $model
-            ->services()
-            ->attach(Service::find($data['service']));
+
+        if (!empty($data['city'])) {
+            $model
+                ->cities()
+                ->attach(City::find($data['city']));
+        }
+
+        if (!empty($data['service'])) {
+            $model
+                ->services()
+                ->attach(Service::find($data['service']));
+        }
     }
 
     /**

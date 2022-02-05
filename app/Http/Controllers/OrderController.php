@@ -54,6 +54,7 @@ class OrderController extends Controller
             ->attach(Service::find($data['service_id']));
 
         Notification::route('mail', $order->email)->notify(new ClientNotification($order));
+        Notification::route('mail', env('MAIL_FROM_ADDRESS'))->notify(new ClientNotification($order));
         Notification::send(User::all(), new DashboardNotification($order));
 
         flash(__('app.http.controllers.order_controller.store.flash'))
