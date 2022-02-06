@@ -13,15 +13,13 @@ class UserTest extends TestCase
         $this->artisan('migrate');
     }
 
-     /**
+    /**
      * Testing the index function.
      *
      * @return void
      */
     public function testIndex()
     {
-        $this
-            ->get(route('user.index'))
-            ->assertOk();
+        $this->get(route('user.index'))->assertOk();
     }
 }

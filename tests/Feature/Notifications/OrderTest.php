@@ -5,7 +5,7 @@ namespace Tests\Feature\Notifications;
 use App\Models\City;
 use App\Models\Order;
 use App\Models\Service;
-use App\Notifications\OrderNotification;
+use App\Notifications\Client\OrderNotification;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Notifications\AnonymousNotifiable;
@@ -28,20 +28,14 @@ class OrderTest extends TestCase
 
         $this->artisan('migrate');
 
-        $this->service = Service::factory()
-            ->count(3)
-            ->create();
-        $this->city = City::factory()
-            ->count(10)
-            ->create();
-        $this->order = Order::factory()
-            ->make()
-            ->toArray();
+        $this->service = Service::factory()->count(3)->create();
+        $this->city    = City::factory()->count(10)->create();
+        $this->order   = Order::factory()->make()->toArray();
 
         $this->data = array_merge(
             [
-                'city_id' => $this->city->random()->id,
-                'service_id' => $this->service->random()->id
+                'city_id'    => $this->city->random()->id,
+                'service_id' => $this->service->random()->id,
             ],
             $this->order
         );

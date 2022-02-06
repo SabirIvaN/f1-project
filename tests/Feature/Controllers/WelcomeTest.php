@@ -20,8 +20,6 @@ class WelcomeTest extends TestCase
      */
     public function testShow(): void
     {
-        $this
-            ->get(route('welcome.show'))
-            ->assertOk();
+        $this->get(route('welcome.show'))->assertOk();
     }
 }

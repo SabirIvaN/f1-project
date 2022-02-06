@@ -29,26 +29,18 @@ class OrderTest extends TestCase
 
         $this->artisan('migrate');
 
-        $this->position = Position::factory()
-            ->count(2)
-            ->create();
-        $this->service = Service::factory()
-            ->count(3)
-            ->create();
-        $this->city = City::factory()
-            ->count(10)
-            ->create();
-        $this->user = User::factory()
+        $this->position = Position::factory()->count(2)->create();
+        $this->service  = Service::factory()->count(3)->create();
+        $this->city     = City::factory()->count(10)->create();
+        $this->user     = User::factory()
             ->for($this->position->random())
             ->count(2)
             ->create();
-        $this->order = Order::factory()
-            ->make()
-            ->toArray();
+        $this->order = Order::factory()->make()->toArray();
 
         $this->data = array_merge(
             [
-                'city_id' => $this->city->random()->id,
+                'city_id'    => $this->city->random()->id,
                 'service_id' => $this->service->random()->id
             ],
             $this->order

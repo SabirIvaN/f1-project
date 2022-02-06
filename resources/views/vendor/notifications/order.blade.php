@@ -5,9 +5,9 @@
 # {{ $greeting }}
 @else
 @if ($level === 'error')
-# @lang(__('notification.order.error'))
+# @lang(__('views.vendor.notifications.order.error'))
 @else
-# @lang(__('notification.order.greeting'))
+# @lang(__('views.vendor.notifications.order.greeting'))
 @endif
 @endif
 
@@ -21,7 +21,7 @@
 |                           |                          |
 | ------------------------- | ------------------------ |
 @foreach ($rows as $row)
-| @lang($row['title'])     | {!! $row['content'] !!} |
+| @lang($row['header'])      |  {!! $row['content'] !!} |
 @endforeach
 @endcomponent
 
@@ -29,7 +29,7 @@
 @if(!empty($salutation))
 {{ $salutation }}
 @else
-@lang(__('notification.order.goodbye'))
+@lang(__('views.vendor.notifications.order.goodbye'))
 {{ config('app.name') }}.
 @endif
 

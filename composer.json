@@ -9,6 +9,8 @@
     ],
     "require": {
         "php": "^7.3|^8.0",
+        "artesaos/seotools": "^0.20.2",
+        "doctrine/dbal": "^3.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laracasts/flash": "^3.2",
@@ -16,6 +18,8 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravelcollective/html": "^6.2",
+        "orchid/crud": "^3.1",
+        "orchid/platform": "^10.18",
         "rollbar/rollbar-laravel": "^7.0"
     },
     "require-dev": {
@@ -33,7 +37,13 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/Orchid/Screens/Crud/CreateScreen.php",
+            "app/Orchid/Screens/Crud/EditScreen.php",
+            "app/Orchid/Screens/Crud/ListScreen.php",
+            "app/Orchid/Screens/Crud/ViewScreen.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

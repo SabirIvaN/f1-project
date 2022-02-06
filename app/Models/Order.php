@@ -2,14 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Orchid\Attachment\Attachable;
+use Orchid\Filters\Filterable;
+use Orchid\Screen\AsSource;
 
 class Order extends Model
 {
+    use AsSource;
+    use Attachable;
+    use Filterable;
     use HasFactory;
-    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -22,6 +26,7 @@ class Order extends Model
         'email',
         'address',
         'comment',
+        'completed',
     ];
 
     /**

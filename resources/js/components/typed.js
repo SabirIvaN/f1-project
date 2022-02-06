@@ -15,7 +15,7 @@ startBannerEn.textContent = '';
 endBannerRu.textContent = '';
 endBannerEn.textContent = '';
 
-function typed (element, firstElement, secondElement) {
+function typed(element, firstElement, secondElement) {
     var typed = new Typed(element, {
         strings: [firstElement, secondElement],
         backDelay: 3000,

@@ -1,8 +1,8 @@
-function blinkSmile (selector, firstElement, secondElement, time) {
+function blinkSmile(selector, firstElement, secondElement, time) {
     var flag = true;
 
     setInterval(function () {
-        if(flag){
+        if (flag) {
             selector.textContent = firstElement;
         } else {
             selector.textContent = secondElement;

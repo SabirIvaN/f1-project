@@ -22,11 +22,12 @@ class OrderFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
-            'phone' => $this->faker->phoneNumber(),
-            'email' => $this->faker->email(),
-            'address'  => $this->faker->sentence(),
-            'comment' => $this->faker->text(),
+            'name'      => $this->faker->name(),
+            'phone'     => $this->faker->phoneNumber(),
+            'email'     => $this->faker->email(),
+            'address'   => $this->faker->sentence(),
+            'comment'   => $this->faker->text(),
+            'completed' => $this->faker->boolean(),
         ];
     }
 }

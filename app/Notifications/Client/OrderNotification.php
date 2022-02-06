@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Notifications;
+namespace App\Notifications\Client;
 
 use App\Helpers\Activist;
 use App\Models\Order;
@@ -20,11 +20,9 @@ class OrderNotification extends Notification
      *
      * @return void
      */
-    public function __construct(
-        Order $order,
-        bool $comment = false,
-    ) {
-        $this->order = $order;
+    public function __construct(Order $order, bool $comment = false)
+    {
+        $this->order   = $order;
         $this->comment = $comment;
     }
 
@@ -35,7 +33,9 @@ class OrderNotification extends Notification
      */
     public function via()
     {
-        return ['mail'];
+        return [
+            'mail',
+        ];
     }
 
     /**
@@ -47,41 +47,37 @@ class OrderNotification extends Notification
     {
         $rows = [
             'name' => [
-                'title' =>  __('notification.order.name'),
+                'header'  => __('app.notifications.client.order_notification.name.header'),
                 'content' => $this->order->name,
             ],
             'phone' => [
-                'title' => __('notification.order.phone'),
+                'header'  => __('app.notifications.client.order_notification.phone.header'),
                 'content' => $this->order->phone,
             ],
             'service' => [
-                'title' => __('notification.order.service'),
+                'header'  => __('app.notifications.client.order_notification.service.header'),
                 'content' => Activist::map($this->order->services, 'name')->flatten()[0],
             ],
-            'price' => [
-                'title' => __('notification.order.price'),
-                'content' => Activist::map($this->order->services, 'price')->flatten()[0],
-            ],
             'city' => [
-                'title' => __('notification.order.city'),
+                'header'  => __('app.notifications.client.order_notification.city.header'),
                 'content' => Activist::map($this->order->cities, 'name')->flatten()[0],
             ],
             'address' => [
-                'title' => __('notification.order.address'),
+                'header'  => __('app.notifications.client.order_notification.address.header'),
                 'content' => $this->order->address,
             ],
         ];
 
         if ($this->comment === true) {
             $rows['comment'] = [
-                'title' => __('notification.order.comment'),
+                'header'  => __('app.notifications.client.order_notification.comment.header'),
                 'content' => $this->order->comment,
             ];
         }
 
         return (new MailMessage())
-            ->line(__('notification.order.gratitude'))
-            ->line(__('notification.order.check'))
+            ->line(__('app.notifications.client.order_notification.gratitude.line'))
+            ->line(__('app.notifications.client.order_notification.check.line'))
             ->markdown('vendor.notifications.order', ['rows' => $rows]);
     }
 }

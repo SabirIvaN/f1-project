@@ -1,7 +1,7 @@
 @extends('web.layout.app', [
-    'code' => '419',
-    'description' => __('errors.pageExpired'),
-    'error' => true,
+    'code'        => __('views.web.errors.419.code'),
+    'description' => __('views.web.errors.419.description'),
+    'error'       => true,
 ])
 
-@section('title', '419')
+@section('title', __('views.web.errors.419.title'))

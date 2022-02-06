@@ -15,25 +15,25 @@ class ServiceSeeder extends Seeder
     public function run()
     {
         DB::table('services')->insert([
-            'name' => 'Заправить картридж',
-            'price' => 100,
+            'name'        => 'Заправить картридж',
+            'price'       => 'от 300₽',
             'description' => 'Почистим, Заправим, Заменим',
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at'  => now(),
+            'updated_at'  => now(),
         ]);
         DB::table('services')->insert([
-            'name' => 'Заменить картридж',
-            'price' => 200,
+            'name'        => 'Починить оргтехнику',
+            'price'       => 'от 1000₽',
+            'description' => 'Найдем проблему, Починим, Проверим',
+            'created_at'  => now(),
+            'updated_at'  => now(),
+        ]);
+        DB::table('services')->insert([
+            'name'        => 'Закупить расходники',
+            'price'       => 'от 500₽',
             'description' => 'Закажем, Доставим, Установим',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-        DB::table('services')->insert([
-            'name' => 'Починить принтер',
-            'price' => 300,
-            'description' => 'Починим, Почистим, Проверим',
-            'created_at' => now(),
-            'updated_at' => now(),
+            'created_at'  => now(),
+            'updated_at'  => now(),
         ]);
     }
 }
