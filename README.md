@@ -2,7 +2,7 @@
 
 [![F1 Project](https://github.com/SabirIvaN/f1-project/actions/workflows/main.yml/badge.svg)](https://github.com/SabirIvaN/f1-project/actions/workflows/main.yml)
 
-This web application is publicly available with the permission of F1.
+This web application is publicly available with the permission of F1 company.
 
 This web-application for a company that sells and refills cartridges, as well as repairs F1 printers.
 
