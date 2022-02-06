@@ -15,27 +15,47 @@ class CitySeeder extends Seeder
     public function run()
     {
         DB::table('cities')->insert([
-            'name'       => 'Санкт-Петербург',
+            'name'       => 'г. Санкт-Петербург',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('cities')->insert([
-            'name'       => 'Гатчина',
+            'name'       => 'г. Зеленогорск',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('cities')->insert([
-            'name'       => 'Петергоф',
+            'name'       => 'г. Колпино',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('cities')->insert([
-            'name'       => 'Ломоносов',
+            'name'       => 'г. Красное Село',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
         DB::table('cities')->insert([
-            'name'       => 'Кронштадт',
+            'name'       => 'г. Кронштадт',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('cities')->insert([
+            'name'       => 'г. Ломоносов ',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('cities')->insert([
+            'name'       => 'г. Павловск',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('cities')->insert([
+            'name'       => 'г. Пушкин',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('cities')->insert([
+            'name'       => 'г. Сестрорецк',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
