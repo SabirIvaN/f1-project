@@ -3,7 +3,7 @@
 
 @section('body-right')
 <div class="form-signin container h-full p-0 px-sm-5 py-5 my-sm-5">
-    <a class="d-flex justify-content-center mb-4" href="{{Dashboard::prefix()}}">
+    <a class="d-flex justify-content-center mb-4" href="{{ Dashboard::prefix() }}">
         @includeFirst([config('platform.template.header'), 'platform::header'])
     </a>
     <div class="row justify-content-center">
