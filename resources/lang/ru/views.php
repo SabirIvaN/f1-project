@@ -128,13 +128,13 @@ return [
                     'header'         => 'По всем вопросам:',
                     'corporate_mail' => [
                         'header' => 'Пишите нам на корпоративную почту',
-                        'yandex' => [
-                            'header' => 'Yandex',
-                            'email'  => 'f1-workshop@yandex.ru',
+                        'sales' => [
+                            'header' => 'Отдел продаж',
+                            'email'  => 'sales@f1-workshop.ru',
                         ],
-                        'google' => [
-                            'header' => 'Google',
-                            'email'  => 'f1-workshop@google.ru',
+                        'tech' => [
+                            'header' => 'Технический отдел',
+                            'email'  => 'support@f1-workshop.ru',
                         ],
                     ],
                     'employees_email' => ['header' => 'Пишите нашим сотрудниками'],

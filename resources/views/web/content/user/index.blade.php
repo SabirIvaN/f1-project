@@ -15,18 +15,18 @@
         </div>
         <div class="col-sm-4 col-md-filing mb-4">
             <h4 class="fs-4 mb-2">
-                {!! __('views.web.content.user.index.corporate_mail.yandex.header') !!}:
+                {!! __('views.web.content.user.index.corporate_mail.sales.header') !!}:
             </h4>
             <b>
-                {!! __('views.web.content.user.index.corporate_mail.yandex.email') !!}
+                {!! __('views.web.content.user.index.corporate_mail.sales.email') !!}
             </b>
         </div>
         <div class="col-sm-4 col-md-filing mb-4">
             <h4 class="fs-4 mb-2">
-                {!! __('views.web.content.user.index.corporate_mail.google.header') !!}:
+                {!! __('views.web.content.user.index.corporate_mail.tech.header') !!}:
             </h4>
             <b>
-                {!! __('views.web.content.user.index.corporate_mail.google.email') !!}
+                {!! __('views.web.content.user.index.corporate_mail.tech.email') !!}
             </b>
         </div>
     </div>
