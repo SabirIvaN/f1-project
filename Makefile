@@ -6,6 +6,7 @@ setup:
 	php artisan migrate:fresh
 	php artisan db:seed
 	npm install
+	npm run dev
 
 setup-sweb:
 	php8.0 composer.phar install
@@ -14,6 +15,7 @@ setup-sweb:
 	php8.0 artisan migrate:fresh
 	php8.0 artisan db:seed
 	npm install
+	npm run prod
 
 seed:
 	php artisan migrate:fresh
