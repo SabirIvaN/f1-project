@@ -26,7 +26,7 @@ seed-sweb:
 	php8.0 artisan db:seed
 
 lint:
-	php composer.phar phpcs
+	composer phpcs
 
 lint-sweb:
 	php8.0 composer.phar phpcs
