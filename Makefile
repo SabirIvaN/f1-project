@@ -1,6 +1,6 @@
 setup:
 	composer install
-	cp -n .env.example .env|| true
+	cp -n .env.example .env || true
 	php artisan key:gen --ansi
 	touch database/database.sqlite
 	php artisan migrate:fresh
@@ -10,7 +10,7 @@ setup:
 
 setup-sweb:
 	php8.0 composer.phar install
-	cp -n .env.example .env|| true
+	cp -n .env.example .env || true
 	php8.0 artisan key:gen --ansi
 	php8.0 artisan migrate:fresh
 	php8.0 artisan db:seed
