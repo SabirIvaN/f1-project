@@ -8,7 +8,7 @@ setup:
 	npm install
 
 setup-sweb:
-	composer install
+	php8.0 composer.phar install
 	cp -n .env.example .env|| true
 	php8.0 artisan key:gen --ansi
 	php8.0 artisan migrate:fresh
@@ -24,7 +24,7 @@ seed-sweb:
 	php8.0 artisan db:seed
 
 lint:
-	composer phpcs
+	php8.0 composer.phar phpcs
 
 test:
 	php artisan test
