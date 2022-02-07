@@ -28,9 +28,6 @@ seed-sweb:
 lint:
 	composer phpcs
 
-lint-sweb:
-	php8.0 composer.phar phpcs
-
 test:
 	php artisan test
 
