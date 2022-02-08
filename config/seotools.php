@@ -24,7 +24,7 @@ return [
          */
         'webmaster_tags' => [
             'google'    => null,
-            'yandex'    => null,
+            'yandex'    => '1e9c147c0e06a0d7',
         ],
     ],
 ];
