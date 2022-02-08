@@ -6,7 +6,7 @@ This web application is publicly available with the permission of F1 company.
 
 This web-application for a company that sells and refills cartridges, as well as repairs F1 printers.
 
-To view the test version of the site, follow the link: [f1-project-staging.herokuapp.com](https://f1-project-staging.herokuapp.com).
+To view the web application, follow the link: https://f1-workshop.ru.
 
 ## Local instalation
 
