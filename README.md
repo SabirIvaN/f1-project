@@ -6,8 +6,6 @@ This web application is publicly available with the permission of F1 company.
 
 This web-application for a company that sells and refills cartridges, as well as repairs F1 printers.
 
-To view the web application, follow the link: https://f1-workshop.ru.
-
 ## Local instalation
 
 1. If you are installing the project locally run `make setup` to install dependencies, generate .env file and app key.
